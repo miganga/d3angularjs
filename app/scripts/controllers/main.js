@@ -16,19 +16,26 @@ angular.module('partnerApp')
                 return memo + num;
             }, 0) / arr.length;
         }
+
+        $scope.superDouble = _.range(1,20).map(function(data) {
+            return [data,Math.round(Math.random() * data * 100)%100];
+        });
+        console.log($scope.superDouble);
+        /*Pie Stuff*/
         $scope.superData = _.range(1,20);
         $scope.superData = _.map($scope.superData, function(num) {
-           return Math.round(Math.random() * num * 100)%100;
+            return Math.round(Math.random() * num * 100)%100;
         });
         $scope.maxValue = _.max($scope.superData);
         $scope.minValue = _.min($scope.superData);
         $scope.averageValue = Math.round(average($scope.superData));
-        console.log($scope.superData);
+        /*console.log($scope.superData);
         console.log($scope.maxValue);
         console.log($scope.minValue);
-        console.log($scope.averageValue);
+        console.log($scope.averageValue);*/
         $scope.data = {
-            header: "Average Order Value",
+            pieHeader: "Average Order Value",
+            lineHeader: "Products Sold",
             data: {
                 data: $scope.superData
             }

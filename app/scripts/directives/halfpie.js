@@ -9,7 +9,7 @@
 angular.module('partnerApp')
     .directive('halfPie', function () {
         return {
-            template: '<div class="halfpie"><h3>{{ data.header }}</h3>' +
+            template: '<div class="halfpie"><h3>{{ data.pieHeader }}</h3>' +
                 '<div>' +
                 '<span class="average">€{{ averageValue }}</span><span class="left">€{{ minValue }}</span><span class="right">€{{ maxValue }}</span></div>' +
                 '</div>',
