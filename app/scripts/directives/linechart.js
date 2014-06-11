@@ -9,7 +9,7 @@
 angular.module('partnerApp')
   .directive('lineChart', function () {
         return {
-            template: '<div class="linechart"><h3>{{ data.lineHeader }}</h3><span> </span></sp></div>',
+            template: '<div class="linechart"></div>',
             restrict: 'E',
             replace: true,
             link: function postLink(scope, element, attrs) {
@@ -37,7 +37,7 @@ angular.module('partnerApp')
 
                 // define dimensions of graph
                 var m = [80, 80, 80, 80]; // margins
-                var w = 400 - m[1] - m[3]; // width
+                var w = 250 - m[1] - m[3]; // width
                 var h = 100 - m[0] - m[2]; // height
 
                 // create a simple data array that we'll plot with a line (this array represents only the Y values, X will just be the index location)

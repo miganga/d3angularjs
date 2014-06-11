@@ -99,10 +99,10 @@ body {
 }
 
 
+
 /* tell the SVG path to be a thin blue line without any area fill */
 .linechart {
-  min-height: 760px;
-  margin: 6rem 0;
+
 }
 .linechart h3 {
   position: relative;
@@ -126,10 +126,6 @@ body {
 
 .linechart svg {
   z-index: 120000;
-  position: relative;
-  margin: 0 auto;
-  top: 18rem;
-  left: 2rem;
 }
 
 .axis {
@@ -153,10 +149,24 @@ body {
   stroke: #000;
 }
 
+/*KPI STUFF*/
+.kpi-container {
+
+}
+
+.kpi-banner {
+  background-color: rgb(238, 238, 238);
+  border-radius: 3%;
+  padding: 2rem 0;
+  margin: 0 2rem;
+  width: 29.2%;
+}
+
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 730px;
+    max-width: 1150px;
   }
 
   /* Remove the padding we set earlier */
