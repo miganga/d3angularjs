@@ -1,0 +1,109 @@
+/* Mixin that generates the rating element for the header and the KPI-Container*/
+@mixin rating-element($size){
+  margin-top: -($size/2);
+  height: $size;
+  width: $size;
+}
+
+@mixin rating-element-small($size){
+  margin-top: -($size/2);
+  margin-left: -($size/2);
+  height: $size;
+  width: $size;
+}
+
+/* Variables like Color Values */
+$color-negative: #f27779;
+$color-positive: #6dbd58;
+$color-container: #f4f3f3;
+$white: #ffffff;
+
+/* Using that to use padding to position elements inside the containers without changing the width */
+.pure-g > div {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Setting min and max width */
+.container{
+  min-width: 1024px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+
+/* Header styling */
+.header-top{
+  padding: 1em 0;
+}
+
+.header-top__item{
+  position: relative;
+  &.no-box{
+    text-align: center;
+    background: $white;
+    padding: 1em 0;
+  }
+  & > div{
+    display: inline-block;
+  }
+  .text-content{
+    border-radius: 10px;
+    background: $color-container;
+    width: 79%;
+    height: 100%;
+    line-height: 1;
+  }
+  &.left{
+    .rating__element{
+      left: 0;
+    }
+    .text-content{
+      padding: 1em 0 1em 4.5em;
+      margin-left: 10px;
+    }
+  }
+  &.right{
+    .rating__element{
+      right: 0;
+    }
+    .text-content{
+      margin-right: 10px;
+      text-align: right;
+      padding: 1em 4.5em 1em 0;
+    }
+  }
+}
+
+/* Styling of rating element */
+.rating__element{
+  position: absolute;
+  top: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  @include rating-element(70px);
+  &.positive{
+    background: $color-positive;
+  }
+  &.negative{
+    background: $color-negative;
+  }
+  &.small{
+    @include rating-element-small(70px);
+  }
+}
+
+.element__content{
+  text-align: center;
+  color: $white;
+  margin-top: 60%;
+}
+
+
+/* Styling of the bigger KPI-Container */
+
+.kpi-container{
+  background: $color-container;
+}
