@@ -6,10 +6,11 @@
 }
 
 @mixin rating-element-small($size){
-  margin-top: -($size/2);
-  margin-left: -($size/2);
+  margin-top: -($size/4);
+  margin-left: -($size/4);
   height: $size;
   width: $size;
+  top: 0;
 }
 
 /* Variables like Color Values */
@@ -17,6 +18,7 @@ $color-negative: #f27779;
 $color-positive: #6dbd58;
 $color-container: #f4f3f3;
 $white: #ffffff;
+$color-brightblue: #1b9ad6;
 
 /* Using that to use padding to position elements inside the containers without changing the width */
 .pure-g > div {
@@ -84,14 +86,8 @@ $white: #ffffff;
   -moz-border-radius: 50%;
   border-radius: 50%;
   @include rating-element(70px);
-  &.positive{
-    background: $color-positive;
-  }
-  &.negative{
-    background: $color-negative;
-  }
   &.small{
-    @include rating-element-small(70px);
+    @include rating-element-small(40px);
   }
 }
 
@@ -102,8 +98,60 @@ $white: #ffffff;
 }
 
 
+.positive{
+  .rating__element{
+    background: $color-positive;
+  }
+}
+.negative{
+  .rating__element{
+    background: $color-negative;
+  }
+}
+
 /* Styling of the bigger KPI-Container */
 
-.kpi-container{
-  background: $color-container;
+.kpi-banner{
+  padding: 0 13px;
+  position: relative;
+  margin-bottom: 13px;
+  &.first{
+    padding-left: 0;
+  }
+  &.last{
+    padding-right: 0;
+  }
+  &.negative{
+    .kpi-display-circle{
+      border-color: $color-negative;
+    }
+  }
+  &.positive{
+    .kpi-display-circle{
+      border-color: $color-positive;
+    }
+  }
+  .kpi-container__content{
+    background: $color-container;
+    overflow: hidden;
+    text-align: center;
+  }
+}
+
+.kpi-display-circle{
+  border: 7px solid black;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 0 auto;
+  background: $white;
+  margin-bottom: 20px;
+}
+.linechart{
+  margin: 10px 0;
+  path {
+    stroke: $color-brightblue;
+    stroke-width: 2;
+    fill: none;
+  }
 }
