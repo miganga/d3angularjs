@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Directive: lineChart', function () {
+xdescribe('Directive: lineChart', function () {
 
   // load the directive's module
   beforeEach(module('partnerApp'));

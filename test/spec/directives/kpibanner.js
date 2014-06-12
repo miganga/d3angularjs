@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Directive: kpiBanner', function () {
+xdescribe('Directive: kpiBanner', function () {
 
   // load the directive's module
   beforeEach(module('partnerApp'));

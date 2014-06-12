@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Controller: BenchmarkCtrl', function () {
+xdescribe('Controller: BenchmarkCtrl', function () {
 
   // load the controller's module
   beforeEach(module('partnerApp'));

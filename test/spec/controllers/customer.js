@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Controller: CustomerCtrl', function () {
+xdescribe('Controller: CustomerCtrl', function () {
 
   // load the controller's module
   beforeEach(module('partnerApp'));

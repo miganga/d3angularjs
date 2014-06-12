@@ -131,7 +131,14 @@
         <div class="col-xs-4 text-center">
             <h4>Customer Orders</h4>
 
-            <div><line-comp></line-comp></div>
+            <div>
+                <line-comp width="150" height="100" css-class="bar-one" bar-data="customerOrdersData.totalNumber">
+                    {{ customerOrdersData.totalNumber }}
+                </line-comp>
+                <line-comp width="150" height="100" css-class="bar-two" bar-data="customerOrdersData.totalNumberBenchmark">
+                    {{ customerOrdersData.totalNumberBenchmark }}
+                </line-comp>
+            </div>
         </div>
         <div class="col-xs-4 text-center">
             <h4>Revenue</h4>

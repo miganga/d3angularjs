@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Directive: lineComp', function () {
+xdescribe('Directive: lineComp', function () {
 
   // load the directive's module
   beforeEach(module('partnerApp'));

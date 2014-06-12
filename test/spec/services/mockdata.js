@@ -3,7 +3,7 @@
 describe('Service: mockData', function () {
 
   // load the service's module
-  beforeEach(module('partnerApp'));
+  beforeEach(module('partnerApp.services'));
 
   // instantiate service
   var mockData;

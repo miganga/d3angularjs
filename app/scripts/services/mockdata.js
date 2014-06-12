@@ -7,7 +7,8 @@
  * # mockData
  * Factory in the partnerApp.
  */
-angular.module('partnerApp')
+angular.module('partnerApp.services',[]);
+angular.module('partnerApp.services')
     .factory('mockData', function ($q, $http) {
         // Service logic
         // ...

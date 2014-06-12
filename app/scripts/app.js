@@ -10,6 +10,7 @@
  */
 angular
     .module('partnerApp', [
+        'partnerApp.services',
         'ngAnimate',
         'ngCookies',
         'ngResource',
@@ -17,6 +18,7 @@ angular
         'ngSanitize',
         'ngTouch',
         'ui.router'
+
     ]).config(function($stateProvider){
         $stateProvider
             .state("overview", {
@@ -36,26 +38,4 @@ angular
                 }
             });
     });
-    /*.config(function ($routeProvider) {
-        $routeProvider
-            .when('/', {
-                templateUrl: 'views/overview.html',
-                controller: 'OverviewCtrl'
 
-            })
-            .when('/customer', {
-                templateUrl: 'views/customer.html',
-                controller: 'CustomerCtrl'
-            })
-            .when('/product', {
-                templateUrl: 'views/product.html',
-                controller: 'ProductCtrl'
-            })
-            .when('/benchmark', {
-                templateUrl: 'views/benchmark.html',
-                controller: 'BenchmarkCtrl'
-            })
-            .otherwise({
-                redirectTo: '/overview'
-            });
-    });*/

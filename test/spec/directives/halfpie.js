@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Directive: halfPie', function () {
+xdescribe('Directive: halfPie', function () {
 
   // load the directive's module
   beforeEach(module('partnerApp'));

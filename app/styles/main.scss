@@ -161,6 +161,19 @@ body {
   display: none;
 }
 
+/*bar chart graphics*/
+.bar:nth-child(1) {
+  fill: #009cdf;
+  stroke-width: 1;
+  stroke: rgb(177, 177, 177);
+}
+
+.bar:nth-child(2) {
+  fill: white;
+  stroke-width: 1;
+  stroke: rgb(177, 177, 177);
+}
+
 
 
 .axis {
