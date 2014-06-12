@@ -19,12 +19,28 @@
         <div class="col-xs-4 text-center kpi-banner">
             <h4>Revenue</h4>
 
-            <div><img src="http://placehold.it/200x200"></div>
+	        <div>
+		        <kpi-banner total-number="customerRevenueData.totalNumber"
+		                    change-percent="customerRevenueData.changePercentage"
+		                    change-amount="customerRevenueData.changeAmount" line-data="customerTransactionsData"
+		                    line-average="customerRevenueData.monthlyAverage" currency-switch="'on'">
+			        <line-chart></line-chart>
+		        </kpi-banner>
+
+	        </div>
         </div>
         <div class="col-xs-4 text-center kpi-banner">
             <h4>Products Sold</h4>
 
-            <div><img src="http://placehold.it/200x200"></div>
+	        <div>
+		        <kpi-banner total-number="customerOrdersData.totalNumber"
+		                    change-percent="customerOrdersData.changePercentage"
+		                    change-amount="customerOrdersData.changeAmount" line-data="customerTransactionsData"
+		                    line-average="customerOrdersData.monthlyAverage" currency-switch="'off'">
+			        <line-chart></line-chart>
+		        </kpi-banner>
+
+	        </div>
         </div>
     </div>
 
@@ -62,19 +78,19 @@
             <td>Returning Customers</td>
             <td>DATA</td>
             <td>DATA</td>
-            <td><img src="http://placehold.it/50x50"> <img src="http://placehold.it/150x50"></td>
+            <td><half-pie></half-pie> <line-chart></line-chart></td>
         </tr>
         <tr>
             <td>Average Order Value (AOV)</td>
             <td>DATA</td>
             <td>DATA</td>
-            <td><img src="http://placehold.it/50x50"> <img src="http://placehold.it/150x50"></td>
+	        <td><half-pie></half-pie> <line-chart></line-chart></td>
         </tr>
         <tr>
             <td>Products Per Order (PPO)</td>
             <td>DATA</td>
             <td>DATA</td>
-            <td><img src="http://placehold.it/50x50"> <img src="http://placehold.it/150x50"></td>
+	        <td><half-pie></half-pie> <line-chart></line-chart></td>
         </tr>
         </tbody>
     </table>
@@ -92,19 +108,19 @@
             <td>Customer Satisfaction</td>
             <td>DATA</td>
             <td>DATA</td>
-            <td><img src="http://placehold.it/50x50"> <img src="http://placehold.it/150x50"></td>
+	        <td><half-pie></half-pie> <line-chart></line-chart></td>
         </tr>
         <tr>
             <td>Review Conversion</td>
             <td>DATA</td>
             <td>DATA</td>
-            <td><img src="http://placehold.it/50x50"> <img src="http://placehold.it/150x50"></td>
+	        <td><half-pie></half-pie> <line-chart></line-chart></td>
         </tr>
         <tr>
             <td>Return Rate (RR)</td>
             <td>DATA</td>
             <td>DATA</td>
-            <td><img src="http://placehold.it/50x50"> <img src="http://placehold.it/150x50"></td>
+	        <td><half-pie></half-pie> <line-chart></line-chart></td>
         </tr>
         </tbody>
     </table>

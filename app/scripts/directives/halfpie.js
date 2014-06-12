@@ -9,17 +9,16 @@
 angular.module('partnerApp')
     .directive('halfPie', function () {
         return {
-            template: '<div class="halfpie"><h3>{{ data.pieHeader }}</h3>' +
-                '<div>' +
-                '<span class="average">€{{ averageValue }}</span><span class="left">€{{ minValue }}</span><span class="right">€{{ maxValue }}</span></div>' +
+            template: '<div class="halfpie">' +
+                '' +
                 '</div>',
             restrict: 'E',
             replace: true,
             link: function postLink(scope, element, attrs) {
                 // the D3 bits...
                 var color = d3.scale.category10();
-                var width = 500;
-                var height = 500;
+                var width = 50;
+                var height = 50;
                 var pi = Math.PI;
                 var pie = d3.layout.pie()
                     .sort(null)

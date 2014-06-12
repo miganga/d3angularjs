@@ -10,6 +10,7 @@
 angular.module('partnerApp')
   .controller('OverviewCtrl', function ($scope, mockData) {
         $scope.customerOrdersData = {};
+        $scope.customerRevenueData = {};
         /*Transaction Data*/
         var promise = mockData.customerTransactions();
         promise.then(function(data) {
@@ -27,6 +28,28 @@ angular.module('partnerApp')
                     }).reduce(function(memo, num) {
                         return memo + num;
                     }));
+                    /*Total revenues per customer*/
+                    $scope.customerRevenueData.totalNumber = Math.round(_.map($scope.customerTransactionsData.rows,function(val,key,memo) {
+                        return val.values[3].value;
+                    }).reduce(function(memo, num) {
+                        return memo + num;
+                    }));
+                    /*All revenue data in an array*/
+                    var revenueCountMonthly = _.map($scope.customerTransactionsBenchmark.rows,function(val,key) {
+                        return val.values[3].value;
+                    });
+
+                    $scope.customerRevenueData.totalNumberBenchmark = _.reduce(revenueCountMonthly, function(total,value,index,array) {
+                        return index > 21 && index < 21 + 7 ? total+value : total
+                    },0);
+
+                    $scope.customerRevenueData.changeAmount = Math.round(Math.abs($scope.customerRevenueData.totalNumber - $scope.customerRevenueData.totalNumberBenchmark));
+                    $scope.customerRevenueData.changePercentage = Math.round(($scope.customerRevenueData.totalNumber - $scope.customerRevenueData.totalNumberBenchmark) / $scope.customerRevenueData.totalNumberBenchmark * 100);
+                    $scope.customerRevenueData.monthlyAverage = Math.round(_.reduce(revenueCountMonthly, function (t, v, i) {
+                        return t + v;
+                    }, 0) / 4);
+
+
 
                     /*calculates a range of data from an object */
                     var calculateRange = function (objectArray, week) {
@@ -70,7 +93,7 @@ angular.module('partnerApp')
         });
         //console.log($scope.superDouble);
         /*Pie Stuff*/
-        $scope.superData = _.range(1,20);
+        $scope.superData = _.range(1,30);
         $scope.superData = _.map($scope.superData, function(num) {
             return Math.round(Math.random() * num * 100)%100;
         });

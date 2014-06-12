@@ -36,9 +36,9 @@ angular.module('partnerApp')
                 /* implementation heavily influenced by http://bl.ocks.org/1166403 */
 
                 // define dimensions of graph
-                var m = [80, 80, 80, 80]; // margins
+                var m = [10, 80, 10, 80]; // margins
                 var w = 250 - m[1] - m[3]; // width
-                var h = 100 - m[0] - m[2]; // height
+                var h = 50 - m[0] - m[2]; // height
 
                 // create a simple data array that we'll plot with a line (this array represents only the Y values, X will just be the index location)
                 var data = scope.superData;
