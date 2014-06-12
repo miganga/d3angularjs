@@ -41,6 +41,15 @@ angular.module('partnerApp')
                     deferred.resolve(data);
                 });
                 return deferred.promise;
+            },
+            cTD: function () {
+                return $http.get('data/transaction-data.json')
+            },
+            cTB: function () {
+                return $http.get('data/transaction-benchmark.json');
+            },
+            cTM: function () {
+                return $http.get('data/transaction-benchmark.json');
             }
         };
     });

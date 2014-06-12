@@ -17,15 +17,26 @@ angular
         'ngSanitize',
         'ngTouch',
         'ui.router'
-    ])/*.config(function($stateProvider){
+    ]).config(function($stateProvider){
         $stateProvider
-            .state("home", {
+            .state("overview", {
                 url: '/',
                 templateUrl: 'views/overview.html',
-                controller: 'OverviewCtrl'
+                controller: 'OverviewCtrl',
+                resolve: {
+                    cTD: function(mockData) {
+                        return mockData.cTD();
+                    },
+                    cTB: function(mockData) {
+                        return mockData.cTD();
+                    },
+                    cTM: function(mockData) {
+                        return mockData.cTM();
+                    }
+                }
             });
-    });*/
-    .config(function ($routeProvider) {
+    });
+    /*.config(function ($routeProvider) {
         $routeProvider
             .when('/', {
                 templateUrl: 'views/overview.html',
@@ -47,4 +58,4 @@ angular
             .otherwise({
                 redirectTo: '/overview'
             });
-    });
+    });*/
