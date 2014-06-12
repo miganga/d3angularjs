@@ -15,27 +15,22 @@ angular
         'ngResource',
         'ngRoute',
         'ngSanitize',
-        'ngTouch'
-    ])
+        'ngTouch',
+        'ui.router'
+    ])/*.config(function($stateProvider){
+        $stateProvider
+            .state("home", {
+                url: '/',
+                templateUrl: 'views/overview.html',
+                controller: 'OverviewCtrl'
+            });
+    });*/
     .config(function ($routeProvider) {
         $routeProvider
             .when('/', {
                 templateUrl: 'views/overview.html',
                 controller: 'OverviewCtrl'
-                /*resolve: {
-                    customerTransactionsData: function (mockData) {
-                        var promise = mockData.customerTransactions();
-                        promise.then(function (data) {
-                            return data.data;
-                        });
-                    },
-                    customerTransactionsBenchmark: function (mockData) {
-                        var promise = mockData.customerTransactionsBenchmark();
-                        promise.then(function (data) {
-                            return data.data;
-                        });
-                    }
-                }*/
+
             })
             .when('/customer', {
                 templateUrl: 'views/customer.html',
