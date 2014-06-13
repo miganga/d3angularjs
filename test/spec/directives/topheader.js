@@ -1,6 +1,6 @@
 'use strict';
 
-xdescribe('Directive: topHeader', function () {
+describe('Directive: topHeader', function () {
 
   // load the directive's module
   beforeEach(module('partnerApp'));
@@ -15,6 +15,6 @@ xdescribe('Directive: topHeader', function () {
   it('should make hidden element visible', inject(function ($compile) {
     element = angular.element('<top-header></top-header>');
     element = $compile(element)(scope);
-    expect(element.text()).toBe('this is the topHeader directive');
+    expect(element.text()).toBe('');
   }));
 });
