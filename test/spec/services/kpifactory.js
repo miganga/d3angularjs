@@ -82,12 +82,11 @@ describe('Service: Kpifactory', function () {
     });
 
     it('arrayConvert method should return [1,100]', function () {
-        //console.log(Kpifactory.arrayConvert(data, 2));
         expect(Kpifactory.arrayConvert(data, 2)).toEqual([1,100]);
     });
 
     it('totalAmount method should return 101', function () {
-       expect(Kpifactory.totalAmount(data, 2)).toBe(101);
+        expect(Kpifactory.totalAmount(data, 2)).toBe(101);
     });
 
     it('differenceAmount method should return 30', function () {
@@ -95,11 +94,12 @@ describe('Service: Kpifactory', function () {
     });
 
     it('differencePercentage method should return ', function () {
-        expect(Kpifactory.differencePercentage()).toBe(1);
+        //console.log(Kpifactory.totalAmount(data, 2),Kpifactory.totalAmount(dataBenchmark, 2));
+        expect(Kpifactory.differencePercentage(Kpifactory.totalAmount(data, 2),Kpifactory.totalAmount(dataBenchmark, 2))).toBe(34.88);
     });
 
     it('average method should be equal to ', function () {
-        expect(Kpifactory.average()).toBe(1);
+        expect(Kpifactory.average(Kpifactory.arrayConvert(data, 2))).toBe(50.5);
     });
 
 });

@@ -32,12 +32,17 @@ angular.module('partnerApp.services')
                 return Math.abs(Math.round(x-y));
             },
             /*returns the percentage of difference between two given inputs, percentage symbol not needed*/
-            differencePercentage: function() {
-
+            differencePercentage: function(x,y) {
+                var diff = this.differenceAmount(x,y)
+                var average = Math.round((x+y)/2);
+                return +((diff/average) * 100).toFixed(2) ;
             },
             /*returns the average of a given array*/
-            average: function() {
-
+            average: function(array) {
+                return _.reduce(array, function(memo, num)
+                {
+                    return memo + num;
+                }, 0) / array.length;
             }
         }
   });
