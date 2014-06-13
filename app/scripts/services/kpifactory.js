@@ -18,8 +18,9 @@ angular.module('partnerApp.services')
                     return val.values[index].value;
                 });
             },
-            /*gives the sum of given array within the object array*/
-            totalAmount: function(data, index) {
+            // TODO make the function to extract data per a timeframe daily, monthly, weekly per index
+            /*gives the sum of a given property within the array of objects by a time period( actual, last week, etc 1,2,3,4 max.)*/
+            totalAmount: function(data, index, timePeriod) {
                 return _.map(data,function(val,key) {
                     return val.values[index].value;
                 })
@@ -33,16 +34,25 @@ angular.module('partnerApp.services')
             },
             /*returns the percentage of difference between two given inputs, percentage symbol not needed*/
             differencePercentage: function(x,y) {
-                var diff = this.differenceAmount(x,y)
+                var diff = this.differenceAmount(x,y);
                 var average = Math.round((x+y)/2);
                 return +((diff/average) * 100).toFixed(2) ;
             },
             /*returns the average of a given array*/
             average: function(array) {
-                return _.reduce(array, function(memo, num)
+                return Math.round(_.reduce(array, function(memo, num)
                 {
                     return memo + num;
-                }, 0) / array.length;
+                }, 0) / array.length);
+            },
+            /*topValue method should return the highest number within an array of properties of an object*/
+            topValue: function(object, index) {
+                return _.map(object,function(val,key) {
+                    return val.values[index].value;
+                })
+                    .reduce(function(total,value,index,array) {
+                        return total < value ? total = Math.round(value) : total;
+                    },0);
             }
         }
   });

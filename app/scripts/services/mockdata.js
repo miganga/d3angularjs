@@ -43,13 +43,13 @@ angular.module('partnerApp.services')
                 return deferred.promise;
             },*/
             customerTransactions: function () {
-                return $http.get('data/transaction-data.json')
+                return $http.get('data/transaction-weekly-with-benchmark.json')
             },
             customerTransactionsBenchmark: function () {
                 return $http.get('data/transaction-benchmark.json');
             },
             customerTransactionsMonthly: function () {
-                return $http.get('data/transaction-benchmark.json');
+                return $http.get('data/transaction-monthly-with-benchmark.json');
             }
         };
     });
