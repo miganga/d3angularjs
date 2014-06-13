@@ -21,7 +21,7 @@ angular.module('partnerApp.services')
 
         // Public API here
         return {
-            customerTransactions: function () {
+            /*customerTransactions: function () {
                 var deferred = $q.defer();
                 $http.get('data/transaction-data.json').then(function (data) {
                     deferred.resolve(data);
@@ -41,14 +41,14 @@ angular.module('partnerApp.services')
                     deferred.resolve(data);
                 });
                 return deferred.promise;
-            },
-            cTD: function () {
+            },*/
+            customerTransactions: function () {
                 return $http.get('data/transaction-data.json')
             },
-            cTB: function () {
+            customerTransactionsBenchmark: function () {
                 return $http.get('data/transaction-benchmark.json');
             },
-            cTM: function () {
+            customerTransactionsMonthly: function () {
                 return $http.get('data/transaction-benchmark.json');
             }
         };

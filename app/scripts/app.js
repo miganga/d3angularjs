@@ -27,14 +27,14 @@ angular
                 templateUrl: 'views/overview.html',
                 controller: 'OverviewCtrl',
                 resolve: {
-                    cTD: function(mockData) {
-                        return mockData.cTD();
+                    customerTransactions: function(mockData) {
+                        return mockData.customerTransactions();
                     },
-                    cTB: function(mockData) {
-                        return mockData.cTD();
+                    customerTransactionsBenchmark: function(mockData) {
+                        return mockData.customerTransactionsBenchmark();
                     },
-                    cTM: function(mockData) {
-                        return mockData.cTM();
+                    customerTransactionsMonthly: function(mockData) {
+                        return mockData.customerTransactionsMonthly();
                     }
                 }
             });

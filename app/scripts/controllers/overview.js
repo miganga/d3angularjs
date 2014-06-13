@@ -8,12 +8,12 @@
  * Controller of the partnerApp
  */
 angular.module('partnerApp')
-  .controller('OverviewCtrl', function ($scope, mockData, cTD, cTM, cTB) {
+  .controller('OverviewCtrl', function ($scope, mockData, customerTransactions, customerTransactionsBenchmark, customerTransactionsMonthly) {
         $scope.customerOrdersData = {};
         $scope.customerRevenueData = {};
 
-        $scope.customerTransactionsData = cTD.data;
-        $scope.customerTransactionsBenchmark = cTM.data;
+        $scope.customerTransactionsData = customerTransactions.data;
+        $scope.customerTransactionsBenchmark = customerTransactionsMonthly.data;
 
 
         /*Total transactions per customer*/
