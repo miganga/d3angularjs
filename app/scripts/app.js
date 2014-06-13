@@ -8,6 +8,7 @@
  *
  * Main module of the application.
  */
+angular.module('partnerApp.services',[]);
 angular
     .module('partnerApp', [
         'partnerApp.services',
