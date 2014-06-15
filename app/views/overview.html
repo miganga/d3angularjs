@@ -11,7 +11,7 @@
                     <kpi-banner total-number="customerOrdersData.totalNumber"
                                 change-percent="customerOrdersData.changePercentage"
                                 change-amount="customerOrdersData.changeAmount" line-data="customerTransactionsData"
-                                line-average="customerOrdersData.monthlyAverage" currency-switch="'off'">
+                                line-average="customerOrdersData.weeklyAverage" currency-switch="'off'">
                         <line-chart></line-chart>
                     </kpi-banner>
 
@@ -28,7 +28,7 @@
                     <kpi-banner total-number="customerRevenueData.totalNumber"
                                 change-percent="customerRevenueData.changePercentage"
                                 change-amount="customerRevenueData.changeAmount" line-data="customerTransactionsData"
-                                line-average="customerRevenueData.monthlyAverage" currency-switch="'on'">
+                                line-average="customerRevenueData.weeklyAverage" currency-switch="'on'">
                         <line-chart></line-chart>
                     </kpi-banner>
                 </div>
@@ -39,10 +39,10 @@
             <div class="kpi-container__content">
                 <h4>Products Sold</h4>
                 <div class="kpi-display-circle">
-                    <kpi-banner total-number="customerOrdersData.totalNumber"
-                                change-percent="customerOrdersData.changePercentage"
-                                change-amount="customerOrdersData.changeAmount" line-data="customerTransactionsData"
-                                line-average="customerOrdersData.monthlyAverage" currency-switch="'off'">
+                    <kpi-banner total-number="customerProductData.totalNumber"
+                                change-percent="customerProductData.changePercentage"
+                                change-amount="customerProductData.changeAmount" line-data="customerTransactionsData"
+                                line-average="customerProductData.monthlyAverage" currency-switch="'off'">
                         <line-chart></line-chart>
                     </kpi-banner>
                 </div>

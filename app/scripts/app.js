@@ -20,7 +20,7 @@ angular
         'ngTouch',
         'ui.router'
 
-    ]).config(function($stateProvider){
+    ]).config(function($stateProvider, $urlRouterProvider){
         $stateProvider
             .state("overview", {
                 url: '/',
@@ -38,5 +38,7 @@ angular
                     }
                 }
             });
+        // if none of the above states are matched, use this as the fallback
+        $urlRouterProvider.otherwise('/');
     });
 

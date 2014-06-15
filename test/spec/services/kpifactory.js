@@ -3,11 +3,11 @@
 describe('Service: Kpifactory', function () {
 
     // load the service's module
-    beforeEach(module('partnerApp.services'));
+    beforeEach(module('partnerApp.services','fakeData'));
 
     // instantiate service
-    var Kpifactory, data, dataBenchmark;
-    beforeEach(inject(function (_Kpifactory_) {
+    var Kpifactory, data, dataBenchmark, monthlyTransactionDataWithBenchmark, httpBackend;
+    beforeEach(inject(function (_Kpifactory_, $httpBackend, monthlyJSON, $http) {
         Kpifactory = _Kpifactory_;
         data = [
             {
@@ -75,6 +75,20 @@ describe('Service: Kpifactory', function () {
                     }
                 ]
             }];
+
+        /*fake monthly data with actual and benchmark data including returning values*/
+        httpBackend = $httpBackend;
+        $httpBackend.whenGET('/data').respond(monthlyJSON);
+
+        $http.get('/data').
+            success(function(data, status, headers, config) {
+                if (data) {
+                    monthlyTransactionDataWithBenchmark = data;
+                }
+            }).
+            error(function(data, status, headers, config) {
+                console.error('Error fetching feed:', data);
+            });
     }));
 
     it('exists', function () {
@@ -106,7 +120,22 @@ describe('Service: Kpifactory', function () {
         expect(Kpifactory.topValue(dataBenchmark, 2)).toBe(70);
     });
 
-    it('returningCustomerRate method should return the percentage of total returning customers', function () {
+    it('totalAmountWithRange method with actual parameter should return the total of 42-55 array index members', function () {
+        httpBackend.flush();
+        expect(Kpifactory.totalAmountWithRange(monthlyTransactionDataWithBenchmark.data.rows,2,'actual')).toBe(679);
+    });
+
+    it('totalAmountWithRange method with last parameter should return the total of 28-41 array index members', function () {
+        httpBackend.flush();
+        expect(Kpifactory.totalAmountWithRange(monthlyTransactionDataWithBenchmark.data.rows,2,'last')).toBe(887);
+    });
+
+    it('totalAmountWithRange method with whole parameter should return the total of all array index members', function () {
+        httpBackend.flush();
+        expect(Kpifactory.totalAmountWithRange(monthlyTransactionDataWithBenchmark.data.rows,2,'whole')).toBe(3165);
+    });
+
+    xit('returningCustomerRate method should return the percentage of total returning customers', function () {
         expect(Kpifactory.returningCustomerRate(data)).toBe(1);
     });
 

@@ -18,15 +18,44 @@ angular.module('partnerApp.services')
                     return val.values[index].value;
                 });
             },
-            // TODO make the function to extract data per a timeframe daily, monthly, weekly per index
-            /*gives the sum of a given property within the array of objects by a time period( actual, last week, etc 1,2,3,4 max.)*/
-            totalAmount: function(data, index, timePeriod) {
+            /*gives the sum of a given property index in an array of objects*/
+            totalAmount: function(data, index) {
                 return _.map(data,function(val,key) {
                     return val.values[index].value;
                 })
                     .reduce(function(total,value,index,array) {
                         return Math.round(total + value);
                     },0);
+            },
+            // TODO make the function to extract data per a timeframe daily, monthly, weekly per index
+            /*gives the sum of a given property within the range of array index from a monthly report*/
+            totalAmountWithRange: function(data, index, timePeriod) {
+                switch (timePeriod) {
+                    case "actual":
+                        return _.map(data,function(val,key) {
+                            return val.values[index].value;
+                        })
+                            .reduce(function(total,value,indice,array) {
+                                return indice > 41 && index < 56 ? Math.round(total + value) : total;
+                            },0);
+                        break;
+                    case "last":
+                        return _.map(data,function(val,key) {
+                            return val.values[index].value;
+                        })
+                            .reduce(function(total,value,indice,array) {
+                                return indice > 27 && indice < 42 ? Math.round(total + value) : total;
+                            },0);
+                        break;
+                    case "whole":
+                        return _.map(data,function(val,key) {
+                            return val.values[index].value;
+                        })
+                            .reduce(function(total,value,indice,array) {
+                                return Math.round(total + value);
+                            },0);
+                        break;
+                }
             },
             /*calculates the difference between two given inputs, returns it in abs format*/
             differenceAmount: function(x,y) {
