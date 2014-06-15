@@ -23,7 +23,7 @@ angular.module('partnerApp')
         $scope.customerOrdersData.totalNumber = Kpifactory.totalAmountWithRange($scope.customerTransactionsMonthly.rows,2,'actual');
 
         /*Total transactions by day in an array*/
-        var transactionCountMonthly = Kpifactory.arrayConvert($scope.customerTransactionsMonthly.benchmarkResult.rows, 2);
+        $scope.transactionCountMonthly = Kpifactory.arrayConvert($scope.customerTransactionsMonthly.benchmarkResult.rows, 2);
 
         /*Total transactions per customer - Benchmark*/
         $scope.customerOrdersData.totalNumberBenchmark = Kpifactory.totalAmountWithRange($scope.customerTransactionsMonthly.benchmarkResult.rows,2,'last');
@@ -31,7 +31,7 @@ angular.module('partnerApp')
         /*Transaction Percentage, Change Amount, Monthly Average*/
         $scope.customerOrdersData.changeAmount = Kpifactory.differenceAmount($scope.customerOrdersData.totalNumber, $scope.customerOrdersData.totalNumberBenchmark);
         $scope.customerOrdersData.changePercentage = Kpifactory.differencePercentage($scope.customerOrdersData.totalNumber, $scope.customerOrdersData.totalNumberBenchmark);
-        $scope.customerOrdersData.monthlyAverage = Kpifactory.average(transactionCountMonthly);
+        $scope.customerOrdersData.monthlyAverage = Kpifactory.average($scope.transactionCountMonthly);
         $scope.customerOrdersData.weeklyAverage = $scope.customerOrdersData.monthlyAverage * 7;
 
 
@@ -41,14 +41,14 @@ angular.module('partnerApp')
         $scope.customerRevenueData.totalNumber = Kpifactory.totalAmountWithRange($scope.customerTransactionsMonthly.rows,3,'actual');
 
         /*Total revenue by day in an array*/
-        var revenueCountMonthly = Kpifactory.arrayConvert($scope.customerTransactionsMonthly.benchmarkResult.rows, 3);
+        $scope.revenueCountMonthly = Kpifactory.arrayConvert($scope.customerTransactionsMonthly.benchmarkResult.rows, 3);
 
         $scope.customerRevenueData.totalNumberBenchmark = Kpifactory.totalAmountWithRange($scope.customerTransactionsMonthly.benchmarkResult.rows,3,'last');
 
         /*Transaction Percentage, Change Amount, Monthly Average*/
         $scope.customerRevenueData.changeAmount = Kpifactory.differenceAmount($scope.customerRevenueData.totalNumber, $scope.customerRevenueData.totalNumberBenchmark);
         $scope.customerRevenueData.changePercentage = Kpifactory.differencePercentage($scope.customerRevenueData.totalNumber, $scope.customerRevenueData.totalNumberBenchmark);
-        $scope.customerRevenueData.monthlyAverage = Kpifactory.average(revenueCountMonthly);
+        $scope.customerRevenueData.monthlyAverage = Kpifactory.average($scope.revenueCountMonthly);
         $scope.customerRevenueData.weeklyAverage = $scope.customerRevenueData.monthlyAverage * 7;
 
         /*PRODUCT DATA; THIRD KPI*/

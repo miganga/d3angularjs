@@ -12,6 +12,9 @@ angular.module('partnerApp')
             template: '<div class="linechart"></div>',
             restrict: 'E',
             replace: true,
+            scope: {
+                data : '=lineData'
+            },
             link: function postLink(scope, element, attrs) {
                 // the D3 bits...
                 /*var color = d3.scale.category10();
@@ -41,12 +44,13 @@ angular.module('partnerApp')
                 var h = 30 - m[0] - m[2]; // height
 
                 // create a simple data array that we'll plot with a line (this array represents only the Y values, X will just be the index location)
-                var data = scope.superData;
+                var data = scope.data;
+                //console.log(data);
 
                 // X scale will fit all values from data[] within pixels 0-w
                 var x = d3.scale.linear().domain([0, data.length]).range([0, w]);
                 // Y scale will fit values from 0-10 within pixels h-0 (Note the inverted domain for the y-scale: bigger is up!)
-                var y = d3.scale.linear().domain([0, 100]).range([h, 0]);
+                var y = d3.scale.linear().domain([0, _.max(data)]).range([h, 0]);
                 // automatically determining max range can work something like this
                 // var y = d3.scale.linear().domain([0, d3.max(data)]).range([h, 0]);
 

@@ -10,9 +10,9 @@
                 <div class="kpi-display-circle">
                     <kpi-banner total-number="customerOrdersData.totalNumber"
                                 change-percent="customerOrdersData.changePercentage"
-                                change-amount="customerOrdersData.changeAmount" line-data="customerTransactionsData"
+                                change-amount="customerOrdersData.changeAmount" line-data="transactionCountMonthly"
                                 line-average="customerOrdersData.weeklyAverage" currency-switch="'off'">
-                        <line-chart></line-chart>
+                        <line-chart line-data="transactionCountMonthly"></line-chart>
                     </kpi-banner>
 
                 </div>
@@ -27,9 +27,9 @@
                 <div class="kpi-display-circle">
                     <kpi-banner total-number="customerRevenueData.totalNumber"
                                 change-percent="customerRevenueData.changePercentage"
-                                change-amount="customerRevenueData.changeAmount" line-data="customerTransactionsData"
+                                change-amount="customerRevenueData.changeAmount" line-data="revenueCountMonthly"
                                 line-average="customerRevenueData.weeklyAverage" currency-switch="'on'">
-                        <line-chart></line-chart>
+                        <line-chart line-data="revenueCountMonthly"></line-chart>
                     </kpi-banner>
                 </div>
             </div>
@@ -41,9 +41,9 @@
                 <div class="kpi-display-circle">
                     <kpi-banner total-number="customerProductData.totalNumber"
                                 change-percent="customerProductData.changePercentage"
-                                change-amount="customerProductData.changeAmount" line-data="customerTransactionsData"
-                                line-average="customerProductData.monthlyAverage" currency-switch="'off'">
-                        <line-chart></line-chart>
+                                change-amount="customerProductData.changeAmount" line-data="revenueCountMonthly"
+                                line-average="customerProductData.weeklyAverage" currency-switch="'off'">
+                        <line-chart line-data="revenueCountMonthly"></line-chart>
                     </kpi-banner>
                 </div>
             </div>
@@ -87,19 +87,19 @@
             <td>Returning Customers</td>
             <td>DATA</td>
             <td>DATA</td>
-            <td> <line-chart></line-chart></td>
+            <td> <line-chart line-data="revenueCountMonthly"></line-chart></td>
         </tr>
         <tr>
             <td>Average Order Value (AOV)</td>
             <td>DATA</td>
             <td>DATA</td>
-	        <td> <line-chart></line-chart></td>
+	        <td> <line-chart line-data="revenueCountMonthly"></line-chart></td>
         </tr>
         <tr>
             <td>Products Per Order (PPO)</td>
             <td>DATA</td>
             <td>DATA</td>
-	        <td> <line-chart></line-chart></td>
+	        <td> <line-chart line-data="revenueCountMonthly"></line-chart></td>
         </tr>
         </tbody>
     </table>
@@ -117,19 +117,19 @@
             <td>Customer Satisfaction</td>
             <td>DATA</td>
             <td>DATA</td>
-	        <td> <line-chart></line-chart></td>
+	        <td> <line-chart line-data="revenueCountMonthly"></line-chart></td>
         </tr>
         <tr>
             <td>Review Conversion</td>
             <td>DATA</td>
             <td>DATA</td>
-	        <td> <line-chart></line-chart></td>
+	        <td> <line-chart line-data="revenueCountMonthly"></line-chart></td>
         </tr>
         <tr>
             <td>Return Rate (RR)</td>
             <td>DATA</td>
             <td>DATA</td>
-	        <td> <line-chart></line-chart></td>
+	        <td> <line-chart line-data="revenueCountMonthly"></line-chart></td>
         </tr>
         </tbody>
     </table>
