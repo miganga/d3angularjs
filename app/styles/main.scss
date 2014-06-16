@@ -108,7 +108,15 @@ body {
   margin: 0 -9%;
 }
 
+.chart rect {
+  fill: steelblue;
+}
 
+.chart text {
+  fill: white;
+  font: 10px sans-serif;
+  text-anchor: end;
+}
 
 /* tell the SVG path to be a thin blue line without any area fill */
 .linechart {

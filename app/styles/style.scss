@@ -159,3 +159,14 @@ $color-brightblue: #1b9ad6;
 table{
   width: 100%;
 }
+
+/*Styling for the bar chart comparison*/
+.chart rect {
+  fill: steelblue;
+}
+
+.chart text {
+  fill: white;
+  font: 10px sans-serif;
+  text-anchor: end;
+}

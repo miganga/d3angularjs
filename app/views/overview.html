@@ -141,12 +141,7 @@
             <h4>Customer Orders</h4>
 
             <div>
-                <line-comp width="150" height="100" css-class="bar-one" bar-data="customerOrdersData.totalNumber">
-                    {{ customerOrdersData.totalNumber }}
-                </line-comp>
-                <line-comp width="150" height="100" css-class="bar-two" bar-data="customerOrdersData.totalNumberBenchmark">
-                    {{ customerOrdersData.totalNumberBenchmark }}
-                </line-comp>
+                <line-comp width="200" height="100" first-data="customerOrdersData.totalNumber" second-data="customerOrdersData.totalNumberBenchmark"></line-comp>
             </div>
         </div>
         <div class="pure-u-md-1-3">

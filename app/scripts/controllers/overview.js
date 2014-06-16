@@ -31,10 +31,9 @@ angular.module('partnerApp')
         /*Transaction Percentage, Change Amount, Monthly Average*/
         $scope.customerOrdersData.changeAmount = Math.abs(Kpifactory.differenceAmount($scope.customerOrdersData.totalNumber, $scope.customerOrdersData.totalNumberBenchmark));
         $scope.customerOrdersData.changePercentage = Kpifactory.differencePercentage($scope.customerOrdersData.totalNumber, $scope.customerOrdersData.totalNumberBenchmark);
-        $scope.customerOrdersData.isPositive = $scope.customerOrdersData.changePercentage > 0 ? true : false;
+        $scope.customerOrdersData.isPositive = $scope.customerOrdersData.changePercentage > 0;
         $scope.customerOrdersData.monthlyAverage = Kpifactory.average($scope.transactionCountMonthly);
         $scope.customerOrdersData.weeklyAverage = $scope.customerOrdersData.monthlyAverage * 7;
-
 
         /*REVENUE DATA; SECOND KPI*/
 
@@ -49,7 +48,7 @@ angular.module('partnerApp')
         /*Transaction Percentage, Change Amount, Monthly Average*/
         $scope.customerRevenueData.changeAmount = Math.round(Kpifactory.differenceAmount($scope.customerRevenueData.totalNumber, $scope.customerRevenueData.totalNumberBenchmark));
         $scope.customerRevenueData.changePercentage = Kpifactory.differencePercentage($scope.customerRevenueData.totalNumber, $scope.customerRevenueData.totalNumberBenchmark);
-        $scope.customerRevenueData.isPositive = $scope.customerRevenueData.changePercentage > 0 ? true : false;
+        $scope.customerRevenueData.isPositive = $scope.customerRevenueData.changePercentage > 0;
         $scope.customerRevenueData.monthlyAverage = Kpifactory.average($scope.revenueCountMonthly);
         $scope.customerRevenueData.weeklyAverage = $scope.customerRevenueData.monthlyAverage * 7;
 
@@ -66,14 +65,9 @@ angular.module('partnerApp')
         /*Transaction Percentage, Change Amount, Monthly Average*/
         $scope.customerProductData.changeAmount = Math.round(Kpifactory.differenceAmount($scope.customerProductData.totalNumber, $scope.customerProductData.totalNumberBenchmark));
         $scope.customerProductData.changePercentage = Kpifactory.differencePercentage($scope.customerProductData.totalNumber, $scope.customerProductData.totalNumberBenchmark);
-        $scope.customerProductData.isPositive = $scope.customerProductData.changePercentage > 0 ? true : false;
+        $scope.customerProductData.isPositive = $scope.customerProductData.changePercentage > 0;
         $scope.customerProductData.monthlyAverage = Kpifactory.average(ProductCountMonthly);
         $scope.customerProductData.weeklyAverage = $scope.customerProductData.monthlyAverage * 7;
-
-
-
-
-
 
         // TODO make it a factory
         function average (arr)
@@ -97,5 +91,4 @@ angular.module('partnerApp')
         $scope.superDouble = _.range(1,20).map(function(data) {
             return [data,Math.round(Math.random() * data * 100)%100];
         });
-
   });
