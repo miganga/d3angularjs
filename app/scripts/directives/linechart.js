@@ -13,7 +13,9 @@ angular.module('partnerApp')
             restrict: 'E',
             replace: true,
             scope: {
-                data : '=lineData'
+                data : '=lineData',
+                width : '=',
+                height : '='
             },
             link: function postLink(scope, element, attrs) {
                 // the D3 bits...
@@ -40,8 +42,8 @@ angular.module('partnerApp')
 
                 // define dimensions of graph
                 var m = [0, 0, 0, 0]; // margins
-                var w = 150 - m[1] - m[3]; // width
-                var h = 30 - m[0] - m[2]; // height
+                var w = scope.width - m[1] - m[3]; // width
+                var h = scope.height - m[0] - m[2]; // height
 
                 // create a simple data array that we'll plot with a line (this array represents only the Y values, X will just be the index location)
                 var data = scope.data;

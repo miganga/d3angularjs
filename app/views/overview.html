@@ -12,7 +12,7 @@
                                 change-percent="customerOrdersData.changePercentage"
                                 change-amount="customerOrdersData.changeAmount" line-data="transactionCountMonthly"
                                 line-average="customerOrdersData.weeklyAverage" currency-switch="'off'">
-                        <line-chart line-data="transactionCountMonthly"></line-chart>
+                        <line-chart line-data="transactionCountMonthly" width="150" height="30"></line-chart>
                     </kpi-banner>
 
                 </div>
@@ -29,7 +29,7 @@
                                 change-percent="customerRevenueData.changePercentage"
                                 change-amount="customerRevenueData.changeAmount" line-data="revenueCountMonthly"
                                 line-average="customerRevenueData.weeklyAverage" currency-switch="'on'">
-                        <line-chart line-data="revenueCountMonthly"></line-chart>
+                        <line-chart line-data="revenueCountMonthly" width="150" height="30"></line-chart>
                     </kpi-banner>
                 </div>
             </div>
@@ -43,7 +43,7 @@
                                 change-percent="customerProductData.changePercentage"
                                 change-amount="customerProductData.changeAmount" line-data="revenueCountMonthly"
                                 line-average="customerProductData.weeklyAverage" currency-switch="'off'">
-                        <line-chart line-data="revenueCountMonthly"></line-chart>
+                        <line-chart line-data="revenueCountMonthly" width="150" height="30"></line-chart>
                     </kpi-banner>
                 </div>
             </div>
@@ -87,19 +87,19 @@
             <td>Returning Customers</td>
             <td>DATA</td>
             <td>DATA</td>
-            <td> <line-chart line-data="revenueCountMonthly"></line-chart></td>
+            <td> <line-chart line-data="revenueCountMonthly" width="300" height="30"></line-chart></td>
         </tr>
         <tr>
             <td>Average Order Value (AOV)</td>
             <td>DATA</td>
             <td>DATA</td>
-	        <td> <line-chart line-data="revenueCountMonthly"></line-chart></td>
+	        <td> <line-chart line-data="revenueCountMonthly" width="300" height="30"></line-chart></td>
         </tr>
         <tr>
             <td>Products Per Order (PPO)</td>
             <td>DATA</td>
             <td>DATA</td>
-	        <td> <line-chart line-data="revenueCountMonthly"></line-chart></td>
+	        <td> <line-chart line-data="revenueCountMonthly" width="300" height="30"></line-chart></td>
         </tr>
         </tbody>
     </table>
@@ -117,19 +117,19 @@
             <td>Customer Satisfaction</td>
             <td>DATA</td>
             <td>DATA</td>
-	        <td> <line-chart line-data="revenueCountMonthly"></line-chart></td>
+	        <td> <line-chart line-data="revenueCountMonthly" width="300" height="30"></line-chart></td>
         </tr>
         <tr>
             <td>Review Conversion</td>
             <td>DATA</td>
             <td>DATA</td>
-	        <td> <line-chart line-data="revenueCountMonthly"></line-chart></td>
+	        <td> <line-chart line-data="revenueCountMonthly" width="300" height="30"></line-chart></td>
         </tr>
         <tr>
             <td>Return Rate (RR)</td>
             <td>DATA</td>
             <td>DATA</td>
-	        <td> <line-chart line-data="revenueCountMonthly"></line-chart></td>
+	        <td> <line-chart line-data="revenueCountMonthly" width="300" height="30"></line-chart></td>
         </tr>
         </tbody>
     </table>
@@ -141,18 +141,31 @@
             <h4>Customer Orders</h4>
 
             <div>
-                <line-comp width="200" height="100" first-data="customerOrdersData.totalNumber" second-data="customerOrdersData.totalNumberBenchmark"></line-comp>
+                <line-comp width="200" height="100" first-data="customerOrdersData.totalNumber"
+                           second-data="customerOrdersData.totalNumberBenchmark"
+		                first-percentage="customerOrdersData.changePercentage"
+		                second-percentage="customerOrdersData.changePercentage"></line-comp>
             </div>
         </div>
         <div class="pure-u-md-1-3">
             <h4>Revenue</h4>
 
-            <div><img src="http://placehold.it/150x150"></div>
+	        <div>
+		        <line-comp width="200" height="100" first-data="customerRevenueData.totalNumber"
+		                   second-data="customerRevenueData.totalNumberBenchmark"
+		                   first-percentage="customerRevenueData.changePercentage"
+		                   second-percentage="customerRevenueData.changePercentage"></line-comp>
+	        </div>
         </div>
         <div class="pure-u-md-1-3">
             <h4>Products Sold</h4>
 
-            <div><img src="http://placehold.it/150x150"></div>
+	        <div>
+		        <line-comp width="200" height="100" first-data="customerProductData.totalNumber"
+		                   second-data="customerProductData.totalNumberBenchmark"
+		                   first-percentage="customerProductData.changePercentage"
+		                   second-percentage="customerProductData.changePercentage"></line-comp>
+	        </div>
         </div>
     </div>
 </div>

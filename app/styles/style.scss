@@ -166,7 +166,11 @@ table{
 }
 
 .chart text {
-  fill: white;
-  font: 10px sans-serif;
-  text-anchor: end;
+  fill: black;
+  font: 14px sans-serif;
+}
+
+.line-comp-percentage div {
+  width: 25%;
+  float: left;
 }
