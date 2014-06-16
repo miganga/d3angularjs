@@ -12,9 +12,54 @@ angular.module('partnerApp')
         $scope.customerOrdersData = {};
         $scope.customerRevenueData = {};
         $scope.customerProductData = {};
+        $scope.mostNotableChanges = [
+            {
+                type: "Returning Customer Rates",
+                lastWeek: "18%",
+                changePercentage: 7,
+                changeAmount: 1,
+                lineData: [1,2,3,4,5,6,56,7,8,98,34]
+            },
+            {
+                type: "Average Order Value (AOV)",
+                lastWeek: "€38",
+                changePercentage: 10,
+                changeAmount: 5,
+                lineData: [1,2,3,4,5,6,56,7,8,98,34]
+            },
+            {
+                type: "Products Per Order (PPO)",
+                lastWeek: "1.8",
+                changePercentage: 9,
+                changeAmount: 9,
+                lineData: [1,2,3,4,5,6,56,7,8,98,34]
+            },
+            {
+                type: "Customer Satisfaction",
+                lastWeek: "67%",
+                changePercentage: -11,
+                changeAmount: 3,
+                lineData: [1,2,3,4,5,6,56,7,8,98,34]
+            },
+            {
+                type: "Review Conversion",
+                lastWeek: "32%",
+                changePercentage: -16,
+                changeAmount: 7,
+                lineData: [1,2,3,4,5,6,56,7,8,98,34]
+            },
+            {
+                type: "Return Rate (RR)",
+                lastWeek: "1.2%",
+                changePercentage: -5,
+                changeAmount: 9,
+                lineData: [1,2,3,4,5,6,56,7,8,98,34]
+            }
+        ];
 
-        $scope.customerTransactionsData = customerTransactions.data;
-        $scope.customerTransactionsBenchmark = customerTransactions.data.benchmarkResult;
+        /*REST API data*/
+        /*$scope.customerTransactionsData = customerTransactions.data;
+        $scope.customerTransactionsBenchmark = customerTransactions.data.benchmarkResult;*/
         $scope.customerTransactionsMonthly = customerTransactionsMonthly.data;
 
         /*TRANSACTION DATA, FIRST KPI*/
@@ -69,7 +114,7 @@ angular.module('partnerApp')
         $scope.customerProductData.monthlyAverage = Kpifactory.average(ProductCountMonthly);
         $scope.customerProductData.weeklyAverage = $scope.customerProductData.monthlyAverage * 7;
 
-        // TODO make it a factory
+        // TODO make it a factory maybe...
         function average (arr)
         {
             return _.reduce(arr, function(memo, num)
@@ -77,6 +122,13 @@ angular.module('partnerApp')
                 return memo + num;
             }, 0) / arr.length;
         }
+
+
+        /*MOST NOTABLE CHANGES */
+        $scope.reverseUp,  $scope.reverseDown= false;
+        $scope.sorter = 'changePercentage';
+
+
 
             /*Pie Stuff*/
         $scope.superData = _.range(1,30);

@@ -174,3 +174,8 @@ table{
   width: 25%;
   float: left;
 }
+
+/*What went up & down table stylings*/
+.pure-table-horizontal td, .pure-table-horizontal th {
+  width: 20%;
+}
