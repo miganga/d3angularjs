@@ -125,7 +125,8 @@ angular.module('partnerApp')
 
 
         /*MOST NOTABLE CHANGES */
-        $scope.reverseUp,  $scope.reverseDown= false;
+        $scope.reverseUp = false;
+        $scope.reverseDown= false;
         $scope.sorter = 'changePercentage';
 
 

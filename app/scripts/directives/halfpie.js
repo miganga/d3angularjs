@@ -13,12 +13,18 @@ angular.module('partnerApp')
                 '' +
                 '</div>',
             restrict: 'E',
+            scope: {
+                averageValue: '=',
+                maxValue: '=',
+                width: '=',
+                height: '='
+            },
             replace: true,
             link: function postLink(scope, element, attrs) {
                 // the D3 bits...
                 var color = d3.scale.category10();
-                var width = 50;
-                var height = 50;
+                var width = scope.width;
+                var height = scope.height;
                 var pi = Math.PI;
                 var pie = d3.layout.pie()
                     .sort(null)
@@ -30,7 +36,7 @@ angular.module('partnerApp')
                 var svg = d3.select(element[0]).append('svg')
                     .attr({width: width, height: height})
                     .append('g')
-                    .attr('transform', 'translate(' + width / 2 + ',' + height / 2 + ')');
+                    .attr('transform', 'translate(' + width / 2 + ',' + (height - 20) + ')');
                 // add the <path>s for each arc slice
                 svg.selectAll('path').data(pie([scope.averageValue, (scope.maxValue-scope.averageValue)])) // our data
                     .enter().append('path')
