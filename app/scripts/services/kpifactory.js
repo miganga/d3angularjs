@@ -27,7 +27,6 @@ angular.module('partnerApp.services')
                         return Math.round(total + value);
                     },0);
             },
-            // TODO make the function to extract data per a timeframe daily, monthly, weekly per index
             /*gives the sum of a given property within the range of array index from a monthly report*/
             totalAmountWithRange: function(data, index, timePeriod) {
                 switch (timePeriod) {
@@ -59,7 +58,7 @@ angular.module('partnerApp.services')
             },
             /*calculates the difference between two given inputs, returns it in abs format*/
             differenceAmount: function(x,y) {
-                return Math.abs(Math.round(x-y));
+                return Math.round(x-y);
             },
             /*returns the percentage of difference between two given inputs, percentage symbol not needed*/
             differencePercentage: function(x,y) {
