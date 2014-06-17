@@ -82,6 +82,14 @@ angular.module('partnerApp')
 
         ];
 
+        $scope.topFiveCategories = [
+            {name: 'DVD', values: 35},
+            {name: 'Electronics', values: 25},
+            {name: 'Games', values: 12.5},
+            {name: 'GiftCards', values: 12.5},
+            {name: 'Flowers', values: 12.5}
+        ];
+
         /*REST API data*/
         /*$scope.customerTransactionsData = customerTransactions.data;
         $scope.customerTransactionsBenchmark = customerTransactions.data.benchmarkResult;*/
