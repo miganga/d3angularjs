@@ -35,6 +35,9 @@ angular
                     },
                     customerTransactionsMonthly: function(mockData) {
                         return mockData.customerTransactionsMonthly();
+                    },
+                    topSellingProducts: function(mockData) {
+                        return mockData.topSellingProducts();
                     }
                 }
             });

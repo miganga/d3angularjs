@@ -9,18 +9,23 @@
 angular.module('partnerApp')
     .directive('halfPie', function () {
         return {
-            template: '<div class="halfpie">' +
-                '' +
-                '</div>',
+            templateUrl: 'views/halfpie.html',
             restrict: 'E',
             scope: {
                 averageValue: '=',
                 maxValue: '=',
+                minValue: '=',
+                changePercentage: '=',
+                currencySwitch: '=',
                 width: '=',
                 height: '='
             },
             replace: true,
             link: function postLink(scope, element, attrs) {
+                if(scope.changePercentage > 0) scope.percentageSign = "+";
+                if(scope.currencySwitch == 'on') scope.currencySign = '€';
+
+
                 // the D3 bits...
                 var color = d3.scale.category10();
                 var width = scope.width;
@@ -33,7 +38,7 @@ angular.module('partnerApp')
                 var arc = d3.svg.arc()
                     .outerRadius(width / 2 * 0.9)
                     .innerRadius(width / 2 * 0.5);
-                var svg = d3.select(element[0]).append('svg')
+                var svg = d3.select(element[0].children[1]).append('svg')
                     .attr({width: width, height: height})
                     .append('g')
                     .attr('transform', 'translate(' + width / 2 + ',' + (height - 20) + ')');

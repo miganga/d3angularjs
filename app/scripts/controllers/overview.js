@@ -8,7 +8,7 @@
  * Controller of the partnerApp
  */
 angular.module('partnerApp')
-  .controller('OverviewCtrl', function ($scope, mockData, Kpifactory, customerTransactions, customerTransactionsBenchmark, customerTransactionsMonthly) {
+  .controller('OverviewCtrl', function ($scope, mockData, Kpifactory, customerTransactions, customerTransactionsBenchmark, customerTransactionsMonthly, topSellingProducts) {
         $scope.customerOrdersData = {};
         $scope.customerRevenueData = {};
         $scope.customerProductData = {};
@@ -57,10 +57,36 @@ angular.module('partnerApp')
             }
         ];
 
+        $scope.topOrders = [
+            {
+                items: "5",
+                value: "245",
+                time: "Sun, 2:41pm",
+                location: "Berlin, Germany",
+                mostExpensiveProduct: 'Mac Book Mag safe Charger'
+            },
+            {
+                items: "3",
+                value: "45",
+                time: "Tue, 4:41am",
+                location: "Faer, Jamaica",
+                mostExpensiveProduct: 'Banana Flavoured Blunt Wrap'
+            },
+            {
+                items: "2",
+                value: "300",
+                time: "Thu, 7:41pm",
+                location: "Sicily, Italy",
+                mostExpensiveProduct: 'Wusthoff Butcher Knife Set'
+            }
+
+        ];
+
         /*REST API data*/
         /*$scope.customerTransactionsData = customerTransactions.data;
         $scope.customerTransactionsBenchmark = customerTransactions.data.benchmarkResult;*/
         $scope.customerTransactionsMonthly = customerTransactionsMonthly.data;
+        $scope.topSellingProducts = topSellingProducts.data;
 
         /*TRANSACTION DATA, FIRST KPI*/
 

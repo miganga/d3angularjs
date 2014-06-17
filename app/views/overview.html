@@ -1,4 +1,4 @@
-<top-header></top-header>
+<top-header page-name="'Overview'"></top-header>
 <div class="row">
     <h3>Key Performance Indicator (KPI)</h3>
 
@@ -148,7 +148,7 @@
         </div>
     </div>
 </div>
-<top-header></top-header>
+<top-header page-name="'Product Report'"></top-header>
 <div class="row">
 	<h3>Sales Metrics</h3>
 	<div class="kpi-container pure-g">
@@ -157,9 +157,11 @@
 			<div class="kpi-container__content">
 				<h4>Products Per Order</h4>
 				<div>
-					<half-pie average-value="averageValue"
-							max-value="maxValue"
-							height="120"
+					<half-pie average-value="1.8"
+							max-value="3.8"
+							min-value="1.2"
+							change-percentage="82"
+							height="110"
 							width="200"></half-pie>
 				</div>
 			</div>
@@ -171,9 +173,11 @@
 			<div class="kpi-container__content">
 				<h4>Products Sold</h4>
 				<div>
-					<half-pie average-value="averageValue"
-					          max-value="maxValue"
-					          height="120"
+					<half-pie average-value="42"
+					          max-value="59"
+					          min-value="22"
+					          change-percentage="12"
+					          height="110"
 					          width="200"></half-pie>
 				</div>
 			</div>
@@ -183,12 +187,83 @@
 			<div class="kpi-container__content">
 				<h4>Average Order Value</h4>
 				<div>
-					<half-pie average-value="averageValue"
-					          max-value="maxValue"
-					          height="120"
+					<half-pie average-value="31"
+					          max-value="50"
+					          min-value="10"
+					          change-percentage="1.3"
+					          currency-switch="'on'"
+					          height="110"
 					          width="200"></half-pie>
 				</div>
 			</div>
 		</div>
 	</div>
+</div>
+<div class="row top-sell">
+	<h3>Top Selling Products</h3>
+	<table class="table pure-table pure-table-horizontal pure-table-striped">
+		<thead>
+		<tr>
+			<th colspan="3">Ordered by quantity sold</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr ng-repeat="product in topSellingProducts|limitTo:5|orderBy:'quantity':true">
+			<td>{{ $index + 1 }}</td>
+			<td>{{ product.name }}</td>
+			<td>{{ product.quantity }} units</td>
+		</tr>
+		</tbody>
+	</table>
+	<table class="table pure-table pure-table-horizontal pure-table-striped">
+		<thead>
+		<tr>
+			<th colspan="4">Ordered by revenue share</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr ng-repeat="product in topSellingProducts|limitTo:5|orderBy:'revenueShare':true">
+			<td>{{ $index + 1 }}</td>
+			<td>{{ product.name }}</td>
+			<td>{{ product.revenueShare }}%</td>
+			<td>{{ product.revenueValue }} €</td>
+		</tr>
+		</tbody>
+	</table>
+</div>
+<div class="row">
+	<h3>Product Insights</h3>
+	<div class="pure-g">
+		<div class="pure-u-md-1-2">
+			<h4>Top 5 Categories</h4>
+		</div>
+		<div class="pure-u-md-1-2">
+			<h4>Average Product Rating</h4>
+		</div>
+	</div>
+</div>
+<div class="row top-three">
+	<h3>Top 3 Orders</h3>
+	<table class="table pure-table pure-table-horizontal pure-table-striped">
+		<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Items</th>
+			<th>Value</th>
+			<th>Time</th>
+			<th>Location</th>
+			<th>Most Expensive Product</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr ng-repeat="order in topOrders|limitTo:3|orderBy:''">
+			<td>{{ $index + 1 }}</td>
+			<td>{{ order.items }}</td>
+			<td>{{ order.value }}</td>
+			<td>{{ order.time }}</td>
+			<td>{{ order.location }}</td>
+			<td>{{ order.mostExpensiveProduct }}</td>
+		</tr>
+		</tbody>
+	</table>
 </div>

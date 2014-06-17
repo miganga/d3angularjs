@@ -12,6 +12,9 @@ angular.module('partnerApp')
       templateUrl: 'views/topheader.html',
       restrict: 'E',
       replace: true,
+      scope: {
+        pageName: '='
+      },
       link: function postLink(scope, element, attrs) {
 
       }

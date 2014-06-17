@@ -50,6 +50,9 @@ angular.module('partnerApp.services')
             },
             customerTransactionsMonthly: function () {
                 return $http.get('data/transaction-monthly-with-benchmark.json');
+            },
+            topSellingProducts: function () {
+                return $http.get('data/top-selling-products.json');
             }
         };
     });
