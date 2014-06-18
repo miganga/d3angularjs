@@ -22,7 +22,12 @@ angular.module('partnerApp')
                 var xData = _.map(scope.rectData, function (val, key, array) {
                     return val.values;
                 });
-                /*every index exchanged by the sum of children values*/
+                /*scope.rectData.name extracted into an array*/
+                var xName = _.map(scope.rectData, function (val, key, array) {
+                    return val.name;
+                });
+
+                /*every index exchanged by the sum of previous members*/
                 var xxData = _.map(xData, function (val, key, array) {
                     return _.reduce(array, function (total, value, index, array) {
                         return index < key ? (total + value) : total;
@@ -47,6 +52,17 @@ angular.module('partnerApp')
                         return d.values;
                     })])
                     .range([0, width]);
+
+                console.log(x);
+
+                var xRange = d3.scale.ordinal()
+                    .domain(xName)
+                    .rangeRoundBands([0, width]);
+                console.log(xRange);
+
+                var xAxis = d3.svg.axis()
+                    .scale(xRange)
+                    .orient("bottom");
 
                 var svg = d3.select(element[0]).append("svg")
                     .attr("width", width + margin.left + margin.right)
@@ -75,7 +91,14 @@ angular.module('partnerApp')
                     .data(colors)
                     .attr("style", function (d) {
                         return "fill:" + d;
-                    })
+                    });
+
+                svg.append("g")
+                    .attr("class", "x axis")
+                    .attr("transform", "translate(0," + height / 2 + ")")
+                    .call(xAxis);
+
+
 
             }
         };
