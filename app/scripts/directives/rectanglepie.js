@@ -53,7 +53,7 @@ angular.module('partnerApp')
                     })])
                     .range([0, width]);
 
-                console.log(x);
+                /*console.log(x);*/
 
                 var xRange = d3.scale.ordinal()
                     .domain(xName)

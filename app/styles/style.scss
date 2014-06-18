@@ -263,7 +263,7 @@ table {
 .top-three {
   & table {
     width: 100%;
-    float: left;
+    /*float: left;*/
     margin: 0 1rem 2rem;
     border: none;
   }
@@ -288,6 +288,34 @@ table {
   & th:nth-child(6) {
     width: 10%;
   }
+}
+
+/*Star rating system*/
+.rating {
+  background: url(../images/report_star_blue.png) repeat-x top left;
+  background-size: 74px;
+  position: relative;
+  z-index: 2;
+  top: 36.4px;
+  height: 65px;
+  width: 0px;
+}
+
+.rating-bg {
+  background: url(../images/report_star.png) repeat-x top left;
+  background-size: 74px;
+  position: relative;
+  z-index: 1;
+  top: -28px;
+  height: 65px;
+  width: 370px;
+}
+
+.star-rating {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  margin: 0 auto;
 }
 
 
