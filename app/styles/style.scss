@@ -213,6 +213,30 @@ table {
   left: 11.3rem;
 }
 
+/*Half Pie Fixed width stylings*/
+.halfpie-fixed {
+  position: relative;
+  width: 260px;
+  margin: 0 auto;
+  & div:nth-child(1) {
+    float: left;
+    margin-top: 2.4rem;
+  }
+  & div:nth-child(2) {
+    width: 200px;
+    float: left;
+  }
+  & div:nth-child(3) {
+    float: left;
+    margin-top: 2.5rem;
+  }
+  & div:nth-child(4) {
+    position: absolute;
+    top: 3.3rem;
+    left: 6.5rem;
+  }
+}
+
 /*Top Selling Products*/
 .top-sell {
   & table {

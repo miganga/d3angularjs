@@ -57,6 +57,39 @@ angular.module('partnerApp')
             }
         ];
 
+        $scope.customerLoyalty = [
+            {
+                type: "Average Order Value (AOV)",
+                overall: "43 €",
+                newCustomers: "39 €",
+                returningCustomers: "47 €",
+            },
+            {
+                type: "Revenue Share",
+                overall: "100 %",
+                newCustomers: "42 %",
+                returningCustomers: "58 %",
+            },
+            {
+                type: "Items Per Order",
+                overall: "1.4",
+                newCustomers: "1.2",
+                returningCustomers: "1.8",
+            },
+            {
+                type: "Average TBP*",
+                overall: "51 days",
+                newCustomers: "-",
+                returningCustomers: "51 days",
+            },
+            {
+                type: "Life Time Value",
+                overall: "147 €",
+                newCustomers: "147 €",
+                returningCustomers: "147 €",
+            }
+        ];
+
         $scope.topOrders = [
             {
                 items: "5",

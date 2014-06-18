@@ -148,6 +148,109 @@
         </div>
     </div>
 </div>
+
+<top-header page-name="'Customer Report'"></top-header>
+<div class="row">
+	<h3>Customer Loyalty</h3>
+	<div class="kpi-container pure-g">
+		<div class="pure-u-md-1-3 kpi-banner first" ng-class="{true: 'positive', false: 'negative'}[customerOrdersData.isPositive]">
+			<div class="rating__element small"></div>
+			<div class="kpi-container__content">
+				<h4>New VS Returning</h4>
+				<div>
+
+				</div>
+			</div>
+		</div>
+
+
+		<div class="pure-u-md-1-3 kpi-banner" ng-class="{true: 'positive', false: 'negative'}[customerRevenueData.isPositive]">
+			<div class="rating__element small"></div>
+			<div class="kpi-container__content">
+				<h4>New Customers</h4>
+				<div>
+					<half-pie average-value="21"
+					          max-value="34"
+					          min-value="15"
+					          change-percentage="3"
+					          height="110"
+					          width="200"></half-pie>
+				</div>
+			</div>
+		</div>
+		<div class="pure-u-md-1-3 kpi-banner last" ng-class="{true: 'positive', false: 'negative'}[customerProductData.isPositive]">
+			<div class="rating__element small"></div>
+			<div class="kpi-container__content">
+				<h4>Returning Customers</h4>
+				<div>
+					<half-pie average-value="7"
+					          max-value="38"
+					          min-value="9"
+					          change-percentage="10"
+					          currency-switch="'off'"
+					          height="110"
+					          width="200"></half-pie>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<table class="table pure-table pure-table-horizontal pure-table-striped">
+		<thead>
+		<tr>
+			<th>Customers</th>
+			<th>Overall</th>
+			<th>New Customers</th>
+			<th>Returning Customers</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr ng-repeat="change in customerLoyalty">
+			<td>{{ change.type }}</td>
+			<td>{{ change.overall }}</td>
+			<td>{{ change.newCustomers }}</td>
+			<td>{{ change.returningCustomers }}</td>
+			<td> <line-chart line-data="change.lineData" width="300" height="30"></line-chart></td>
+		</tr>
+		</tbody>
+	</table>
+</div>
+<div class="row">
+	<h3>Segmentation, Activity & Feedback</h3>
+	<div class="kpi-container pure-g">
+		<div class="pure-u-md-1-2 kpi-banner first" ng-class="{true: 'positive', false: 'negative'}[customerOrdersData.isPositive]">
+			<div class="rating__element small"></div>
+			<div class="kpi-container__content">
+				<h4>Net Promoter Score</h4>
+				<div>
+					<half-pie average-value="21"
+					          max-value="34"
+					          min-value="15"
+					          change-percentage="3"
+					          height="110"
+					          width="200"></half-pie>
+				</div>
+				<div></div>
+			</div>
+		</div>
+		<div class="pure-u-md-1-2 kpi-banner" ng-class="{true: 'positive', false: 'negative'}[customerRevenueData.isPositive]">
+			<div class="rating__element small"></div>
+			<div class="kpi-container__content">
+				<h4>New Customers</h4>
+				<div>
+					<half-pie average-value="21"
+					          max-value="34"
+					          min-value="15"
+					          change-percentage="3"
+					          height="110"
+					          width="200"></half-pie>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
 <top-header page-name="'Product Report'"></top-header>
 <div class="row">
 	<h3>Sales Metrics</h3>
