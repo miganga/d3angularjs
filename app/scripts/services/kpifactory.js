@@ -56,7 +56,7 @@ angular.module('partnerApp.services')
                         break;
                 }
             },
-            /*calculates the difference between two given inputs, returns it in abs format*/
+            /*calculates the difference between two given inputs, returns it in round format*/
             differenceAmount: function(x,y) {
                 return Math.round(x-y);
             },

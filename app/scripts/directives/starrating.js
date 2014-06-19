@@ -20,7 +20,7 @@ angular.module('partnerApp')
                 height: '='
             },
             controller: function($scope) {
-                $scope.ratingWidth = $scope.average/5*$scope.width;
+                $scope.ratingWidth = (($scope.average/5*$scope.width)-1);
             },
             link: function postLink(scope, element, attrs) {
                element.css("width",scope.width);

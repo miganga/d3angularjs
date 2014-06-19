@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Directive: starRating', function () {
+xdescribe('Directive: starRating', function () {
 
   // load the directive's module
   beforeEach(module('partnerApp'));

@@ -237,6 +237,40 @@ table {
   }
 }
 
+/*Full Pie stylings*/
+.fullpie {
+  position: relative;
+  width: 93%;
+  margin: 0 1rem;
+  & div:nth-child(1) {
+    float: left;
+    margin-top: 2.4rem;
+  }
+  & div:nth-child(2) {
+    width: 200px;
+    float: left;
+  }
+  & div:nth-child(3) {
+    float: left;
+  }
+  & div:nth-child(4) {
+    float: left;
+    padding-top: 1rem;
+  }
+}
+
+/*Rectangle Chart Stylings*/
+.rectchart {
+  & .big {
+    font-size: 30px;
+    fill: white;
+  }
+  & .small {
+    font-size: 14px;
+    fill: white;
+  }
+}
+
 /*Top Selling Products*/
 .top-sell {
   & table {

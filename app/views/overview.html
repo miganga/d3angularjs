@@ -158,7 +158,12 @@
 			<div class="kpi-container__content">
 				<h4>New VS Returning</h4>
 				<div>
-
+					<full-pie first-value="21"
+					          second-value="7"
+					          first-name="'New'"
+					          second-name="'Returning'"
+					          height="110"
+					          width="110"></full-pie>
 				</div>
 			</div>
 		</div>
@@ -242,7 +247,28 @@
 			<div class="rating__element small"></div>
 			<div class="kpi-container__content">
 				<h4>Review Conversion</h4>
+				<rect-chart rect-data="36"
+				            change-percentage="+4"
+				               width="380"
+				               height="100"></rect-chart>
+			</div>
+		</div>
+	</div>
+</div>
 
+<div class="row">
+	<div class="kpi-container pure-g">
+		<div class="pure-u-md-1-2 kpi-banner first" ng-class="{true: 'positive', false: 'negative'}[customerOrdersData.isPositive]">
+			<div class="kpi-container__content">
+				<h4>Best Day Of The Week</h4>
+				<h3>Thursday</h3>
+				<p>21 % of all orders </p>
+				<div>
+					<best-time rect-data="36"
+					            change-percentage="+4"
+					            width="465"
+					            height="110"></best-time>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -342,7 +368,7 @@
 		</div>
 		<div class="pure-u-md-1-2">
 			<h4>Average Product Rating<br><em>based on 128 ratings</em></h4>
-			<star-rating average="3.2"
+			<star-rating average="2.5"
 			        change-percentage="+3.2"
 					average-values=""
 					width="370"

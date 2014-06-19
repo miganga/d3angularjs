@@ -1,6 +1,6 @@
 'use strict';
 
-xdescribe('Directive: rectanglePie', function () {
+describe('Directive: fullPie', function () {
 
   // load the directive's module
   beforeEach(module('partnerApp'));
@@ -13,8 +13,8 @@ xdescribe('Directive: rectanglePie', function () {
   }));
 
   it('should make hidden element visible', inject(function ($compile) {
-    element = angular.element('<rectangle-pie></rectangle-pie>');
+    element = angular.element('<full-pie></full-pie>');
     element = $compile(element)(scope);
-    expect(element.text()).toBe('this is the rectanglePie directive');
+    expect(element.text()).toBe('this is the fullPie directive');
   }));
 });
