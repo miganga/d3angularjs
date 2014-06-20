@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Directive: rectChart', function () {
+describe('Directive: bestDay', function () {
 
   // load the directive's module
   beforeEach(module('partnerApp'));
@@ -13,8 +13,8 @@ describe('Directive: rectChart', function () {
   }));
 
   it('should make hidden element visible', inject(function ($compile) {
-   /* element = angular.element('<rect-chart></rect-chart>');
-    element = $compile(element)(scope);*/
-
+    element = angular.element('<best-day></best-day>');
+    element = $compile(element)(scope);
+    expect(element.text()).toBe('this is the bestDay directive');
   }));
 });

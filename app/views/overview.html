@@ -264,10 +264,23 @@
 				<h3>Thursday</h3>
 				<p>21 % of all orders </p>
 				<div>
+					<best-day rect-data="36"
+					           change-percentage="+4"
+					           width="465"
+					           height="110"></best-day>
+				</div>
+			</div>
+		</div>
+		<div class="pure-u-md-1-2 kpi-banner first" ng-class="{true: 'positive', false: 'negative'}[customerOrdersData.isPositive]">
+			<div class="kpi-container__content">
+				<h4>Best Time Of The Day</h4>
+				<h3>12:00 - 14:00</h3>
+				<p>20 % of all orders </p>
+				<div>
 					<best-time rect-data="36"
-					            change-percentage="+4"
-					            width="465"
-					            height="110"></best-time>
+					           change-percentage="+4"
+					           width="465"
+					           height="110"></best-time>
 				</div>
 			</div>
 		</div>

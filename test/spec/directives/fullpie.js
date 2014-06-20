@@ -15,6 +15,6 @@ describe('Directive: fullPie', function () {
   it('should make hidden element visible', inject(function ($compile) {
     element = angular.element('<full-pie></full-pie>');
     element = $compile(element)(scope);
-    expect(element.text()).toBe('this is the fullPie directive');
+
   }));
 });

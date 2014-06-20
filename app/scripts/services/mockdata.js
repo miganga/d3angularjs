@@ -53,6 +53,11 @@ angular.module('partnerApp.services')
             },
             topSellingProducts: function () {
                 return $http.get('data/top-selling-products.json');
+            },
+            randomData: function (range, maxValue) {
+                return _.range(0, range).map(function (data) {
+                    return Math.round(Math.random() * data * maxValue) % maxValue;
+                });
             }
         };
     });

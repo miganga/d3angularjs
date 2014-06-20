@@ -26,6 +26,7 @@ module.exports = function(config) {
             'app/bower_components/angular-touch/angular-touch.js',
             'app/bower_components/angular-ui-router/release/angular-ui-router.js',
             'app/bower_components/underscore/underscore.js',
+            'app/bower_components/d3/d3.js',
             'app/scripts/**/*.js',
             'test/mock/**/*.js',
             'test/spec/**/*.js'
