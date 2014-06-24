@@ -26,7 +26,7 @@ angular.module('partnerApp')
                element.css("width",scope.width);
                element.css("height",scope.height);
                element.children('.rating').css("width",scope.ratingWidth);
-               console.log(scope.ratingWidth);
+               /*console.log(scope.ratingWidth);*/
             }
         };
     });

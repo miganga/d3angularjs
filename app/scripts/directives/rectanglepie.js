@@ -58,7 +58,7 @@ angular.module('partnerApp')
                 var xRange = d3.scale.ordinal()
                     .domain(xName)
                     .rangeRoundBands([0, width]);
-                console.log(xRange);
+                /*console.log(xRange);*/
 
                 var xAxis = d3.svg.axis()
                     .scale(xRange)

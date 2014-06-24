@@ -27,13 +27,13 @@ angular.module('partnerApp')
                 $scope.orders = mockData.randomData(12, 100);
                 /*colors are organized by lowest, highest and mids*/
                 $scope.colors = organizeFactory.colorPicker($scope.orders);
-                console.log($scope.orders);
+                /*console.log($scope.orders);*/
             },
             link: function postLink(scope, element, attrs) {
 
                 /*colors from left to right*/
                 var colors = ['009cdf', 'ffffff'];
-                console.log(scope.bars);
+                /*console.log(scope.bars);*/
 
                 var x = d3.scale.linear()
                     .domain([0,7])
@@ -43,7 +43,7 @@ angular.module('partnerApp')
                     .domain([0,100])
                     .range([0, scope.height-20]);
 
-                console.log(x(2));
+                /*console.log(x(2));*/
 
                 /*margin settings*/
                 var margin = {top: 0, right: 0, bottom: 0, left: 0},

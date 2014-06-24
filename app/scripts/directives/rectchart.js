@@ -24,7 +24,7 @@ angular.module('partnerApp')
                 $scope.xData = [0,$scope.data[0]];
             },
             link: function postLink(scope, element, attrs) {
-                console.log(scope.data);
+                /*console.log(scope.data);*/
 
                 /*colors from left to right*/
                 var colors = ['009cdf', 'ffffff'];

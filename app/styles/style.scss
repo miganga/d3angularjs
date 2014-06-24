@@ -47,6 +47,9 @@ $color-brightblue: #1b9ad6;
     background: $white;
     padding: 1em 0;
   }
+  & h1 {
+    margin: 0;
+  }
   & > div {
     display: inline-block;
   }
@@ -57,23 +60,57 @@ $color-brightblue: #1b9ad6;
     height: 100%;
     line-height: 1;
   }
+  &.positive {
+    .rating__element {
+      background: url("../images/big_up_arrow.png") #6dbd58;
+      background-size: 100%;
+    }
+  }
+  &.negative {
+    .rating__element {
+      background: url('../images/big_down_arrow.png') $color-negative;
+      background-size: 100%;
+    }
+  }
   &.left {
     .rating__element {
       left: 0;
+      top: 42px;
     }
     .text-content {
       padding: 1em 0 1em 4.5em;
       margin-left: 10px;
+      min-height: 50px;
+      text-align: center;
+      & span {
+        position: relative;
+        top: 1rem;
+        margin: 0 -0.6rem;
+        width: 100%;
+        display: block;
+        font-size: 1.2em;
+      }
     }
   }
   &.right {
     .rating__element {
       right: 0;
+      top: 42px;
     }
     .text-content {
       margin-right: 10px;
       text-align: right;
       padding: 1em 4.5em 1em 0;
+      min-height: 50px;
+      text-align: center;
+      & span {
+        position: relative;
+        top: 1rem;
+        margin: 0 0.6rem;
+        width: 100%;
+        display: block;
+        font-size: 1.2em;
+      }
     }
   }
 }
@@ -87,7 +124,7 @@ $color-brightblue: #1b9ad6;
   border-radius: 50%;
   @include rating-element(70px);
   &.small {
-    @include rating-element-small(40px);
+    @include rating-element-small(48px);
   }
 }
 
@@ -99,13 +136,15 @@ $color-brightblue: #1b9ad6;
 
 .positive {
   .rating__element {
-    background: $color-positive;
+    background: url('../images/small_up_arrow.png') $color-positive;
+    background-size: 100%;
   }
 }
 
 .negative {
   .rating__element {
-    background: $color-negative;
+    background: url('../images/small_down_arrow.png') $color-negative;
+    background-size: 100%;
   }
 }
 
@@ -140,8 +179,8 @@ $color-brightblue: #1b9ad6;
 
 .kpi-display-circle {
   border: 7px solid black;
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
   margin: 0 auto;
   background: $white;
@@ -350,6 +389,47 @@ table {
   overflow: hidden;
   text-align: center;
   margin: 0 auto;
+}
+
+/*vertical align table setup, div needs to be nested in valign class*/
+.valign {
+  display: table-row;
+  height: 5rem;
+  & div {
+    vertical-align: middle;
+    display: table-cell;
+  }
+}
+
+.div-table {
+  display: table;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/*Performance chart*/
+.performance {
+  & path:first-child {
+    stroke: rgb(221, 221, 221);
+    stroke-width: 7px;
+    fill: none;
+  }
+  & path:nth-child(2) {
+    stroke: rgb(221, 2, 221);
+    stroke-width: 7px;
+    fill: none;
+  }
+}
+
+.domain {
+  fill: none;
+}
+
+.x-axis line, .y-axis line {
+  fill: none;
+  stroke: black;
+  shape-rendering: crispEdges;
 }
 
 
