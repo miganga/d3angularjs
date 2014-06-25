@@ -1,0 +1,125 @@
+/*Header styles*/
+h1 {
+  font-size: 3em;
+  /* 3x body copy size = 48px */
+  line-height: 1.05;
+  /* keep to a multiple of the 20px line height
+  and something more appropriate for display headings */
+}
+
+h2 {
+  font-size: 2.25em;
+  /* 2.25x body copy size = 36px */
+  line-height: 1.25;
+}
+
+h3 {
+  font-size: 1.75em;
+  /* 1.75x body copy size = 28px */
+  line-height: 1.25;
+}
+
+h4 {
+  line-height: 1.22222222;
+  /* (22px / 18px */
+}
+
+.h-42 {
+  font-size: 36px;
+  line-height: 1.25;
+}
+.h-32 {
+  font-size: 32px;
+  line-height: 1.25;
+}
+.h-24 {
+  font-size: 24px;
+  line-height: 1.25;
+}
+
+.kpi-banner {
+
+}
+
+.header-top__item {
+  position: relative;
+  border-radius: 5%;
+  &.no-box {
+    text-align: center;
+    background: $white;
+    padding: 1em 0;
+  }
+  & h1 {
+    margin: 0;
+  }
+  & > div {
+    display: inline-block;
+  }
+  .text-content {
+    border-radius: 10px;
+    background: $color-container;
+    width: 79%;
+    height: 100%;
+    line-height: 1;
+  }
+  &.positive {
+    .rating__element {
+      background: url("../images/big_up_arrow.png") #6dbd58;
+      background-size: 100%;
+    }
+  }
+  &.negative {
+    .rating__element {
+      background: url('../images/big_down_arrow.png') $color-negative;
+      background-size: 100%;
+    }
+  }
+  &.left {
+    .rating__element {
+      left: -5%;
+      top: 50%;
+    }
+    .text-content {
+      padding: 1em 0 1em 4.5em;
+      margin-left: 10px;
+      min-height: 50px;
+      text-align: center;
+      & span {
+        position: relative;
+        top: 1rem;
+        margin: 0 -0.6rem;
+        width: 100%;
+        display: block;
+        font-size: 1.2em;
+      }
+    }
+  }
+  &.right {
+    .rating__element {
+      right: -5%;
+      top: 42px;
+    }
+    .text-content {
+      margin-right: 10px;
+      text-align: right;
+      padding: 1em 4.5em 1em 0;
+      min-height: 50px;
+      text-align: center;
+      & span {
+        position: relative;
+        top: 1rem;
+        margin: 0 0.6rem;
+        width: 100%;
+        display: block;
+        font-size: 1.2em;
+      }
+    }
+  }
+}
+
+/* Styling of rating element */
+.rating__element {
+  &.small {
+    margin-left: -0.6rem;
+  }
+}

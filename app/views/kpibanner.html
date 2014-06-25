@@ -1,7 +1,8 @@
 <div>
     <h1>{{ totalNumber }}<span>{{ currencySign }}</span></h1>
-    <span>{{ changePercentage }} {{ changePercent }}%</span>
-    <span>({{ changeAmount }}{{ currencySign }})</span><br>
+    <span class="change-color">{{ changePercentage }} {{ changePercent }}%</span>
+    <span class="change-color">({{ changeAmount }}{{ currencySign }})</span><br><br>
+	<span>4w</span>
     <div ng-transclude></div>
-    <span>{{ lineAverage }}</span>
+    <span>avg. {{ lineAverage }}</span>
 </div>

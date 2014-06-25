@@ -1,0 +1,32 @@
+/* Variables like Color Values */
+$color-negative: #f27779;
+$color-positive: #6dbd58;
+$color-container: #f4f3f3;
+$white: #ffffff;
+$color-brightblue: #1b9ad6;
+$line-gray: #949090;
+$font-gray: #565150;
+$table-bg: #f9f9f9;
+$bar-blue: #009cdf;
+$bar-stroke-gray: #c6c4c3;
+
+
+/* Mixin that generates the rating element for the header and the KPI-Container*/
+@mixin rating-element($size) {
+  margin-top: -($size/2);
+  height: $size;
+  width: $size;
+}
+
+@mixin rating-element-small($size) {
+  margin-top: -($size/4);
+  margin-left: -($size/4);
+  height: $size;
+  width: $size;
+  top: 0;
+}
+
+@mixin grey-box() {
+  background: #f4f3f3;
+  border-radius: 4%;
+}

@@ -19,6 +19,8 @@ $color-positive: #6dbd58;
 $color-container: #f4f3f3;
 $white: #ffffff;
 $color-brightblue: #1b9ad6;
+$line-gray: #949090;
+$font-gray: #565150;
 
 /* Using that to use padding to position elements inside the containers without changing the width */
 .pure-g > div {
@@ -40,8 +42,10 @@ $color-brightblue: #1b9ad6;
   margin-top: 2rem;
 }
 
+/*
 .header-top__item {
   position: relative;
+  border-radius: 5%;
   &.no-box {
     text-align: center;
     background: $white;
@@ -114,6 +118,7 @@ $color-brightblue: #1b9ad6;
     }
   }
 }
+*/
 
 /* Styling of rating element */
 .rating__element {
@@ -122,7 +127,7 @@ $color-brightblue: #1b9ad6;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
-  @include rating-element(70px);
+  @include rating-element(100px);
   &.small {
     @include rating-element-small(48px);
   }
@@ -151,29 +156,33 @@ $color-brightblue: #1b9ad6;
 /* Styling of the bigger KPI-Container */
 
 .kpi-banner {
-  padding: 0 13px;
   position: relative;
   margin-bottom: 13px;
-  &.first {
-    padding-left: 0;
-  }
-  &.last {
-    padding-right: 0;
+  color: $line-gray;
+  &:last-child {
+    margin-right: 0;
   }
   &.negative {
     .kpi-display-circle {
       border-color: $color-negative;
+    }
+    .change-color {
+      color: $color-negative;
     }
   }
   &.positive {
     .kpi-display-circle {
       border-color: $color-positive;
     }
+    .change-color {
+      color: $color-positive;
+    }
   }
   .kpi-container__content {
     background: $color-container;
     overflow: hidden;
     text-align: center;
+    border-radius: 4%;
   }
 }
 
@@ -190,7 +199,7 @@ $color-brightblue: #1b9ad6;
 .linechart {
   margin: 10px 0;
   path {
-    stroke: $color-brightblue;
+    stroke: $line-gray;
     stroke-width: 2;
     fill: none;
   }
@@ -198,21 +207,6 @@ $color-brightblue: #1b9ad6;
 
 table {
   width: 100%;
-}
-
-/*Styling for the bar chart comparison*/
-.chart rect {
-  fill: steelblue;
-}
-
-.chart text {
-  fill: black;
-  font: 14px sans-serif;
-}
-
-.line-comp-percentage div {
-  width: 25%;
-  float: left;
 }
 
 /*What went up & down table stylings*/

@@ -19,6 +19,7 @@ angular.module('partnerApp')
                 currencySwitch: '=',
                 lineAverage: '='
             },
+            replace: true,
             transclude: true,
             link: function postLink(scope, element, attrs) {
                 if(scope.changePercent > 0) scope.changePercentage = "+";

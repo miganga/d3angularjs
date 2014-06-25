@@ -1,0 +1,239 @@
+/*general*/
+.text-center {
+  text-align: center;
+}
+
+.skinny {
+  font-weight: 200;
+}
+
+/*Layout*/
+#layout {
+  margin: 0 auto;
+  width: 95%;
+  max-width: 1280px;
+}
+
+/*Header styles*/
+h1 {
+  font-size: 2em;
+  /* 2x body copy size = 32px */
+  line-height: 1.25;
+  /* 45px / 36px */
+}
+
+h2 {
+  font-size: 1.625em;
+  /* 1.625x body copy size = 26px */
+  line-height: 1.15384615;
+  /* 30px / 26px */
+}
+
+h3 {
+  font-size: 1.375em;
+  /* 1.375x body copy size = 22px */
+  line-height: 1.13636364;
+  /* 25px / 22px */
+}
+
+h4 {
+  font-size: 1.125em;
+  /* 1.125x body copy size = 18px */
+  line-height: 1.11111111;
+}
+
+/*Report Header */
+.header-top {
+  margin-top: 0;
+}
+
+.header-top__item {
+  background: #f4f3f3;
+  h2 {
+    line-height: 0;
+    margin: 0;
+  }
+  &.left {
+    .rating__element {
+      left: 11px;
+      top: 42px;
+      position: absolute;
+      z-index: 1;
+    }
+    .text-content {
+      padding: 1em 0 1em 0;
+      margin-left: 6rem;
+      width: 70%;
+      & span {
+        position: relative;
+        top: 1rem;
+        margin: 0 0.2rem;
+        width: 96.8%;
+        display: block;
+        font-size: 1.2em;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+    }
+  }
+  &.right {
+    .rating__element {
+      right: 11px;
+      top: 42px;
+      position: absolute;
+      z-index: 1;
+    }
+    .text-content {
+      padding: 1em 0 1em 0;
+      margin-right: 6rem;
+      width: 70%;
+      & span {
+        position: relative;
+        top: 1rem;
+        margin: 0 0.2rem;
+        width: 96.8%;
+        display: block;
+        font-size: 1.2em;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+
+/* Styling of rating element */
+.rating__element {
+  &.small {
+    margin-left: 0.4rem;
+  }
+}
+
+/* Styling of the bigger KPI-Container */
+
+.kpi-container {
+  & h1, h2, h3, h4 {
+    font-weight: 200;
+  }
+}
+
+.kpi-banner {
+  h1, h2, h3, h4 {
+    color: $font-gray;
+  }
+  h1, h2, h3, h4 {
+    font-weight: 200;
+  }
+  h3 {
+    font-size: 1.55em;
+  }
+  &.first {
+    padding: 0 13px;
+  }
+  &.last {
+    padding: 0 13px;
+  }
+  &.negative {
+    .kpi-display-circle {
+    }
+  }
+  &.positive {
+    .kpi-display-circle {
+    }
+  }
+  .kpi-container__content {
+  }
+}
+
+.kpi-display-circle {
+  & > div {
+    padding-top: 2.5rem;
+    > h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      line-height: 0;
+    }
+  }
+}
+
+.kpi-stats {
+  @include grey-box;
+  padding-top: 1rem;
+  & .h-24 {
+    color: $font-gray;
+    font-weight: 200;
+  }
+}
+
+/*Tables*/
+.report-table {
+  font-size: 1.125em;
+  line-height: 1.22222222;
+  margin-bottom: 2rem;
+  & .rating__element {
+    &.small {
+      width: 25px;
+      height: 25px;
+      top: 16px;
+    }
+  }
+  &.table {
+    border:none;
+    border-collapse: separate;
+  }
+  & thead {
+    background: none;
+    color: $line-gray;
+  }
+  & thead th:first-child {
+    position:relative;
+  }
+  & thead th:first-child span {
+    margin-left: 1.8rem;
+  }
+  & th {
+    font-weight: 400;
+  }
+  & tr:nth-child(2n-1) td {
+    background-color: $table-bg;
+  }
+  & tr td:nth-child(2) {
+    font-weight: bold;
+  }
+  &.table:nth-child(2) td:nth-child(3) {
+    color: $color-positive;
+  }
+  &.table:nth-child(3) td:nth-child(3) {
+    color: $color-negative;
+  }
+  & td, th {
+    border-bottom: none;
+  }
+}
+
+/*Line Comp Charts*/
+.chart {
+  rect:first-child {
+    fill: $bar-blue;
+  }
+  rect:nth-child(2) {
+    fill: $white;
+    stroke: $bar-stroke-gray;
+  }
+  text {
+    fill: black;
+    font: 24px sans-serif;
+    color: $font-gray;
+  }
+  text:nth-child(3) {
+    font-weight: bold;
+  }
+}
+.line-comp-percentage div {
+  width: 20%;
+  display: inline-block;
+  margin-right: 1.3rem;
+}
+
