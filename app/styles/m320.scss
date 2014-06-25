@@ -253,3 +253,13 @@ h4 {
   position: relative;
 }
 
+.net-promoter {
+  & .halfpie-fixed {
+    margin: 0 2rem;
+  }
+  & div:nth-child(3) span {
+    display: block;
+    margin: 1.3rem 0;
+  }
+}
+
