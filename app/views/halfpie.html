@@ -2,5 +2,6 @@
 	<div>4w<br>min<br>{{ currencySign }}{{ minValue }}</div>
 	<div></div>
 	<div>4w<br>min<br>{{ currencySign }}{{ maxValue }}</div>
-	<div><span>{{ currencySign }}{{ averageValue }}</span><br>({{ percentageSign }}{{ changePercentage }}%)</div>
+	<div><span class="h-24"
+			>{{ currencySign }}{{ averageValue }}</span><br><span ng-class="{true: 'positive', false: 'negative'}[isPositive]">({{ percentageSign }}{{ changePercentage }}%)</span></div>
 </div>

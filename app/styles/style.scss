@@ -21,6 +21,10 @@ $white: #ffffff;
 $color-brightblue: #1b9ad6;
 $line-gray: #949090;
 $font-gray: #565150;
+$table-bg: #f9f9f9;
+$bar-blue: #009cdf;
+$bar-stroke-gray: #c6c4c3;
+$chart-font: #393c3d;
 
 /* Using that to use padding to position elements inside the containers without changing the width */
 .pure-g > div {
@@ -139,11 +143,19 @@ $font-gray: #565150;
   margin-top: 60%;
 }
 
+span.positive {
+    color: $color-positive;
+}
+
 .positive {
   .rating__element {
     background: url('../images/small_up_arrow.png') $color-positive;
     background-size: 100%;
   }
+}
+
+span.negative {
+  color: $color-negative;
 }
 
 .negative {
@@ -183,6 +195,7 @@ $font-gray: #565150;
     overflow: hidden;
     text-align: center;
     border-radius: 4%;
+    padding-bottom: 1.3rem;
   }
 }
 
@@ -251,6 +264,7 @@ table {
   position: relative;
   width: 260px;
   margin: 0 auto;
+  color: $chart-font;
   & div:nth-child(1) {
     float: left;
     margin-top: 2.4rem;
@@ -265,8 +279,8 @@ table {
   }
   & div:nth-child(4) {
     position: absolute;
-    top: 3.3rem;
-    left: 6.5rem;
+    top: 2.7rem;
+    left: 38.7%;
   }
 }
 
@@ -275,20 +289,26 @@ table {
   position: relative;
   width: 93%;
   margin: 0 1rem;
+  color: $chart-font;
   & div:nth-child(1) {
     float: left;
     margin-top: 2.4rem;
   }
   & div:nth-child(2) {
-    width: 200px;
+    width: 150px;
     float: left;
   }
   & div:nth-child(3) {
     float: left;
+    position: relative;
+    width: 50%;
+    padding-top: 1.5rem;
   }
   & div:nth-child(4) {
     float: left;
     padding-top: 1rem;
+    position: relative;
+    width: 50%;
   }
 }
 

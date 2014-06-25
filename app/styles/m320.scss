@@ -7,6 +7,14 @@
   font-weight: 200;
 }
 
+.pull-left {
+  float:left;
+}
+
+.pull-right {
+  float:right;
+}
+
 /*Layout*/
 #layout {
   margin: 0 auto;
@@ -235,5 +243,13 @@ h4 {
   width: 20%;
   display: inline-block;
   margin-right: 1.3rem;
+}
+
+/*General box elements*/
+.gray-box {
+  background: #f4f3f3;
+  border-radius: 4%;
+  padding: 1rem 0;
+  position: relative;
 }
 

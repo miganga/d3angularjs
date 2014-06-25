@@ -20,14 +20,20 @@ angular.module('partnerApp')
                 width: '=',
                 height: '='
             },
+            controller: function($scope) {
+                if($scope.changePercentage > 0) {
+                    $scope.percentageSign = "+";
+                    $scope.isPositive = true;
+                }
+                else {
+                    $scope.isPositive = negative;
+                }
+                if($scope.currencySwitch == 'on') $scope.currencySign = '€';
+            },
             replace: true,
             link: function postLink(scope, element, attrs) {
-                if(scope.changePercentage > 0) scope.percentageSign = "+";
-                if(scope.currencySwitch == 'on') scope.currencySign = '€';
-
-
                 // the D3 bits...
-                var color = d3.scale.category10();
+                var color = ["#009cdf","#ffffff"];
                 var width = scope.width;
                 var height = scope.height;
                 var pi = Math.PI;
@@ -47,8 +53,9 @@ angular.module('partnerApp')
                     .enter().append('path')
                     .style('stroke', 'white')
                     .attr('d', arc)
+                    .data(color)
                     .attr('fill', function (d, i) {
-                        return color(i)
+                        return d;
                     });
                 /*svg.append("svg:text")
                     .text(function(d, i) { return "test"; });*/

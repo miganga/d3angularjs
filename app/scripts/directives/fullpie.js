@@ -26,7 +26,7 @@ angular.module('partnerApp')
 
 
                 // the D3 bits...
-                var color = d3.scale.category10();
+                var color = ["#ffffff","#009cdf"];
                 var width = scope.width;
                 var height = scope.height;
                 var pi = Math.PI;
@@ -46,8 +46,9 @@ angular.module('partnerApp')
                     .enter().append('path')
                     .style('stroke', 'white')
                     .attr('d', arc)
+                    .data(color)
                     .attr('fill', function (d, i) {
-                        return color(i)
+                        return d
                     });
                 /*svg.append("svg:text")
                  .text(function(d, i) { return "test"; });*/
