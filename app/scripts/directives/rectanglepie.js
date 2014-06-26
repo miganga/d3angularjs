@@ -32,11 +32,26 @@ angular.module('partnerApp')
                     return _.reduce(array, function (total, value, index, array) {
                         return index < key ? (total + value) : total;
                     }, 0);
-                })
+                });
+
                 /*sum of all array members*/
                 var sumData = _.reduce(xData, function (total, value, index, array) {
                     return (total + value);
                 }, 0);
+
+                /*sets up the array for the category axis*/
+                var tick_data = xxData.slice(0);
+                tick_data.push(sumData);
+                var ticker = _.map(tick_data, function (val, key, array) {
+                    return _.reduce(array, function (total, value, index, array) {
+                        return index < key+2 && index > key-1 ? (total + value) : total;
+                    }, 0);
+                });
+                ticker.pop();
+                /*every value is divided by 2 to center*/
+                var new_ticker = _.map(ticker, function (val, key, array) {
+                    return val / 2;
+                });
 
                 /*colors from left to right*/
                 var colors = ['009cdf', '4fcbff', 'a6e5ff', 'c1c1c1', '6a6a6a'];
@@ -46,6 +61,8 @@ angular.module('partnerApp')
                     height = scope.height - margin.top - margin.bottom;
 
 
+                var category_heights = [0, 50, 0, 50, 0];
+
                 var x = d3.scale
                     .linear()
                     .domain([0, d3.sum(scope.rectData, function (d) {
@@ -53,12 +70,10 @@ angular.module('partnerApp')
                     })])
                     .range([0, width]);
 
-                /*console.log(x);*/
 
                 var xRange = d3.scale.ordinal()
                     .domain(xName)
                     .rangeRoundBands([0, width]);
-                /*console.log(xRange);*/
 
                 var xAxis = d3.svg.axis()
                     .scale(xRange)
@@ -94,12 +109,26 @@ angular.module('partnerApp')
                     });
 
                 svg.append("g")
-                    .attr("class", "x axis")
+                    .attr("class", "x-axis")
                     .attr("transform", "translate(0," + height / 2 + ")")
                     .call(xAxis);
 
+                svg
+                    .select(".x-axis")
+                    .selectAll("g")
+                    .data(new_ticker)
+                    .attr("transform", function (d,i) {
+                        return "translate(" + (x(d)) + "," +(i%2 !== 0 ? 70 : 20)+")";
+                    });
 
-
+                svg
+                    .select(".x-axis")
+                    .selectAll("g")
+                    .select("line")
+                    .data(new_ticker)
+                    .attr("y2",function (d,i) {
+                        return (i%2 !== 0 ? -60 : -15);
+                    });
             }
         };
     });
