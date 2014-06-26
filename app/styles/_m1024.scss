@@ -126,3 +126,29 @@ h4 {
     margin-left: -0.6rem;
   }
 }
+
+/*Peak Time Section*/
+.peak-time {
+  width: 60%;
+  min-height: 125px;
+  margin-bottom: 6rem;
+  .valign div {
+    margin: 0 1rem;
+  }
+  + .footnotes {
+    float: right;
+  }
+  div:first-child {
+     background-color: $bar-blue;
+     color: $white;
+   }
+  div:nth-child(2) {
+    width: 10%;
+    background-color: $color-container;
+  }
+  div:nth-child(3) {
+    background-color: $white;
+    color: black;
+    border: 1px solid $table-gray;
+  }
+}

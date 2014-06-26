@@ -1,0 +1,67 @@
+/*general*/
+.text-center {
+  text-align: center;
+}
+
+.skinny {
+  font-weight: 200;
+}
+
+.pull-left {
+  float:left;
+}
+
+.pull-right {
+  float:right;
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
+}
+
+/*Layout*/
+#layout {
+  margin: 0 auto;
+  width: 95%;
+  max-width: 1280px;
+}
+
+.r-m-2 {
+  margin-right: 2.5%;
+}
+
+.l-m-2 {
+  margin-left: 2.5%;
+}
+
+.mr-1 {
+  margin-right: 1rem;
+}
+
+p, text {
+  color: $p-gray;
+}
+
+h1,h2,h3,h4 {
+  color: $font-gray;
+}
+
+/* Using that to use padding to position elements inside the containers without changing the width */
+.pure-g > div {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Styling of rating element */
+.rating__element {
+  position: absolute;
+  top: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  @include rating-element(100px);
+  &.small {
+    @include rating-element-small(48px);
+  }
+}

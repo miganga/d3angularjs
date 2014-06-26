@@ -13,7 +13,8 @@ angular.module('partnerApp')
       restrict: 'E',
       replace: true,
       scope: {
-        pageName: '='
+        pageName: '=',
+        benchmark: '='
       },
       link: function postLink(scope, element, attrs) {
 

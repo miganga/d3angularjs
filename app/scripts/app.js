@@ -8,14 +8,13 @@
  *
  * Main module of the application.
  */
-angular.module('partnerApp.services',[]);
+angular.module('partnerApp.services', []);
 angular
     .module('partnerApp', [
         'partnerApp.services',
         'ngAnimate',
         'ngCookies',
         'ngResource',
-        'ngRoute',
         'ngSanitize',
         'ngTouch',
         'ui.router'

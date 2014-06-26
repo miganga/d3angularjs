@@ -1,9 +1,13 @@
-@import "variables.scss";
+@import "variables";
+
+@import "style";
+
+@import "base";
 
 @media screen and (min-width: 20em) {
-  @import "m320.scss";
+  @import "m320";
 }
 
 @media screen and (min-width: 64em) {
-  @import "m1024.scss";
+  @import "m1024";
 }

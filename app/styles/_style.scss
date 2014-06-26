@@ -1,141 +1,3 @@
-/* Mixin that generates the rating element for the header and the KPI-Container*/
-@mixin rating-element($size) {
-  margin-top: -($size/2);
-  height: $size;
-  width: $size;
-}
-
-@mixin rating-element-small($size) {
-  margin-top: -($size/4);
-  margin-left: -($size/4);
-  height: $size;
-  width: $size;
-  top: 0;
-}
-
-/* Variables like Color Values */
-$color-negative: #f27779;
-$color-positive: #6dbd58;
-$color-container: #f4f3f3;
-$white: #ffffff;
-$color-brightblue: #1b9ad6;
-$line-gray: #949090;
-$font-gray: #565150;
-$table-bg: #f9f9f9;
-$bar-blue: #009cdf;
-$bar-stroke-gray: #c6c4c3;
-$chart-font: #393c3d;
-
-/* Using that to use padding to position elements inside the containers without changing the width */
-.pure-g > div {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-/* Setting min and max width */
-.container {
-  min-width: 1024px;
-  max-width: 1280px;
-  margin: 0 auto;
-}
-
-/* Header styling */
-.header-top {
-  padding: 1em 0;
-  margin-top: 2rem;
-}
-
-/*
-.header-top__item {
-  position: relative;
-  border-radius: 5%;
-  &.no-box {
-    text-align: center;
-    background: $white;
-    padding: 1em 0;
-  }
-  & h1 {
-    margin: 0;
-  }
-  & > div {
-    display: inline-block;
-  }
-  .text-content {
-    border-radius: 10px;
-    background: $color-container;
-    width: 79%;
-    height: 100%;
-    line-height: 1;
-  }
-  &.positive {
-    .rating__element {
-      background: url("../images/big_up_arrow.png") #6dbd58;
-      background-size: 100%;
-    }
-  }
-  &.negative {
-    .rating__element {
-      background: url('../images/big_down_arrow.png') $color-negative;
-      background-size: 100%;
-    }
-  }
-  &.left {
-    .rating__element {
-      left: 0;
-      top: 42px;
-    }
-    .text-content {
-      padding: 1em 0 1em 4.5em;
-      margin-left: 10px;
-      min-height: 50px;
-      text-align: center;
-      & span {
-        position: relative;
-        top: 1rem;
-        margin: 0 -0.6rem;
-        width: 100%;
-        display: block;
-        font-size: 1.2em;
-      }
-    }
-  }
-  &.right {
-    .rating__element {
-      right: 0;
-      top: 42px;
-    }
-    .text-content {
-      margin-right: 10px;
-      text-align: right;
-      padding: 1em 4.5em 1em 0;
-      min-height: 50px;
-      text-align: center;
-      & span {
-        position: relative;
-        top: 1rem;
-        margin: 0 0.6rem;
-        width: 100%;
-        display: block;
-        font-size: 1.2em;
-      }
-    }
-  }
-}
-*/
-
-/* Styling of rating element */
-.rating__element {
-  position: absolute;
-  top: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  @include rating-element(100px);
-  &.small {
-    @include rating-element-small(48px);
-  }
-}
 
 .element__content {
   text-align: center;
@@ -432,8 +294,13 @@ table {
     stroke-width: 7px;
     fill: none;
   }
+  & path:nth-child(1) {
+    stroke: $bar-blue;
+    stroke-width: 7px;
+    fill: none;
+  }
   & path:nth-child(2) {
-    stroke: rgb(221, 2, 221);
+    stroke: $white;
     stroke-width: 7px;
     fill: none;
   }
