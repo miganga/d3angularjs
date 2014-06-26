@@ -15,11 +15,32 @@
   float:right;
 }
 
+.mb-2 {
+  margin-bottom: 2rem;
+}
+
 /*Layout*/
 #layout {
   margin: 0 auto;
   width: 95%;
   max-width: 1280px;
+}
+
+.r-m-2 {
+  margin-right: 2.5%;
+}
+
+.l-m-2 {
+  margin-left: 2.5%;
+}
+
+
+p, text {
+  color: $p-gray;
+}
+
+h1,h2,h3,h4 {
+  color: $font-gray;
 }
 
 /*Header styles*/
@@ -176,7 +197,7 @@ h4 {
 }
 
 /*Tables*/
-.report-table {
+.g-table {
   font-size: 1.125em;
   line-height: 1.22222222;
   margin-bottom: 2rem;
@@ -184,7 +205,7 @@ h4 {
     &.small {
       width: 25px;
       height: 25px;
-      top: 16px;
+      top: 56px;
     }
   }
   &.table {
@@ -207,6 +228,13 @@ h4 {
   & tr:nth-child(2n-1) td {
     background-color: $table-bg;
   }
+  & td, th {
+    border-bottom: none;
+    height: 60px;
+  }
+}
+
+.report-table {
   & tr td:nth-child(2) {
     font-weight: bold;
   }
@@ -216,8 +244,32 @@ h4 {
   &.table:nth-child(3) td:nth-child(3) {
     color: $color-negative;
   }
-  & td, th {
-    border-bottom: none;
+}
+
+.customer-table {
+  & tr td:nth-child(2) {
+    font-weight: bold;
+  }
+  & tr td:nth-child(3) {
+    font-weight: bold;
+  }
+  & tr td:nth-child(4) {
+    font-weight: bold;
+  }
+}
+
+.top-table {
+  &.table:nth-child(2) td:nth-child(3) {
+    color: $table-gray;
+  }
+  &.table:nth-child(3) td:nth-child(3) {
+    color: $table-gray;
+  }
+  & tr td:nth-child(2) {
+    font-weight: normal;
+  }
+  & tr td:last-child {
+    font-weight: bold;
   }
 }
 
@@ -253,6 +305,10 @@ h4 {
   position: relative;
 }
 
+.lh {
+  line-height: 0.4;
+}
+
 .net-promoter {
   & .halfpie-fixed {
     margin: 0 2rem;
@@ -263,3 +319,7 @@ h4 {
   }
 }
 
+/* Rectangle Chart*/
+.rectchart {
+  padding-top: 1rem;
+}
