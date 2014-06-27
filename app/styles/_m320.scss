@@ -1,34 +1,6 @@
-/*Header styles*/
-h1 {
-  font-size: 2em;
-  /* 2x body copy size = 32px */
-  line-height: 1.25;
-  /* 45px / 36px */
-}
-
-h2 {
-  font-size: 1.625em;
-  /* 1.625x body copy size = 26px */
-  line-height: 1.15384615;
-  /* 30px / 26px */
-}
-
-h3 {
-  font-size: 1.375em;
-  /* 1.375x body copy size = 22px */
-  line-height: 1.13636364;
-  /* 25px / 22px */
-}
-
-h4 {
-  font-size: 1.125em;
-  /* 1.125x body copy size = 18px */
-  line-height: 1.11111111;
-}
-
 /*Report Header */
 .header-top {
-  margin-top: 0;
+  margin-top: 2rem;
 }
 
 .header-top__item {
@@ -133,7 +105,7 @@ h4 {
 
 .kpi-display-circle {
   & > div {
-    padding-top: 2.5rem;
+    padding-top: 1.5rem;
     > h1 {
       font-size: 3rem;
       font-weight: bold;
@@ -155,12 +127,12 @@ h4 {
 .g-table {
   font-size: 1.125em;
   line-height: 1.22222222;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   & .rating__element {
     &.small {
       width: 25px;
       height: 25px;
-      top: 56px;
+      top: 17px;
     }
   }
   &.table {
@@ -187,7 +159,7 @@ h4 {
   }
   & td, th {
     border-bottom: none;
-    height: 60px;
+    height: 0px;
   }
 }
 
@@ -204,6 +176,9 @@ h4 {
 }
 
 .customer-table {
+  & td {
+    height: 40px;
+  }
   & tr td:nth-child(2) {
     font-weight: bold;
   }
@@ -216,17 +191,36 @@ h4 {
 }
 
 .top-table {
+  td {
+    height: 50px;
+  }
   &.table:nth-child(2) td:nth-child(3) {
     color: $table-gray;
   }
   &.table:nth-child(3) td:nth-child(3) {
     color: $table-gray;
   }
+  td:nth-child(2) {
+    width: 43%;
+  }
   & tr td:nth-child(2) {
     font-weight: normal;
   }
   & tr td:last-child {
     font-weight: bold;
+  }
+}
+
+/*Top Products of Benchmark*/
+.top-products {
+  td {
+    height: 45px;
+  }
+  & tr td:nth-child(1) {
+    width: 1%;
+  }
+  & tr td:nth-child(2) {
+    width: 63%;
   }
 }
 
@@ -241,7 +235,7 @@ h4 {
   }
   text {
     fill: black;
-    font: 24px sans-serif;
+    font-size: 1.125em;;
     color: $font-gray;
   }
   text:nth-child(3) {
@@ -268,8 +262,12 @@ h4 {
 }
 
 .net-promoter {
+  position: relative;
   & .halfpie-fixed {
     margin: 0 2rem;
+  }
+  & div:nth-child(3) {
+
   }
   & div:nth-child(3) span {
     display: block;
@@ -317,7 +315,7 @@ h4 {
 /*
 World-Map*/
 .wm {
-  min-height: 558px;
+  min-height: 542px;
   background: url("../images/wm.png") $color-container;
   background-size: 100%;
   background-position-y: 9rem;
@@ -339,4 +337,5 @@ World-Map*/
 
 .average-product-rating {
   height: 335px;
+  overflow: visible;
 }

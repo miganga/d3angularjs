@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc directive
- * @name partnerApp.directive:bestDay
+ * @name partnerApp.directive:largestCustomer
  * @description
- * # bestDay
+ * # largestCustomer
  */
 angular.module('partnerApp')
-    .directive('bestDay', function () {
+    .directive('largestCustomer', function () {
         return {
             template: '<div class="rectchart"><div></div></div>',
             restrict: 'E',
@@ -19,9 +19,10 @@ angular.module('partnerApp')
                 height: '='
             },
             controller: function ($scope, organizeFactory) {
-                $scope.days = ["M.", "T.", "W.", "T.", "F.", "S.", "S."];
-                $scope.daysN = [0, 1, 2, 3, 4, 5, 6];
-                $scope.orders = [10.3, 10.66, 10.33, 50.99, 5.12, 10.11, 10.2];
+                $scope.days = ["Germany", "Australia", "U.S."];
+                $scope.daysN = [0, 1, 2];
+                $scope.orders = [21, 32, 17];
+                $scope.changes = [7, 2, -2];
                 $scope.colors = organizeFactory.colorPicker($scope.orders);
                 //console.log($scope.colors);
             },
@@ -53,22 +54,22 @@ angular.module('partnerApp')
                 /*enters the width & height for the rectangles, width is adjusted to the total width of the svg*/
                 var rect = svg
                     .append("g")
-                    .attr('transform', 'translate(' + 0 + ',' + 0 + ')')
+                    .attr('transform', 'translate(' + 0 + ',' + -50 + ')')
                     .selectAll("rect")
                     .data(scope.days)
                     .enter()
                     .append("rect")
                     .attr("width", width / 10)
-                    .attr("height", height - 20)
+                    .attr("height", height - 50)
                     .attr("fill", "#ffffff")
                     .data(scope.daysN)
                     .attr("x", function (d, i) {
-                        return x(d);
+                        return x(d) + (i === 0 ? 50 : i * 100 + 50);
                     });
 
                 var secondRect = svg
                     .append("g")
-                    .attr('transform', 'translate(' + 0 + ',' + -20 + ')')
+                    .attr('transform', 'translate(' + 0 + ',' + -100 + ')')
                     .selectAll("rect")
                     .data(scope.days)
                     .enter()
@@ -77,7 +78,7 @@ angular.module('partnerApp')
                     .attr("fill", "#000000")
                     .data(scope.daysN)
                     .attr("x", function (d, i) {
-                        return x(d);
+                        return x(d) + (i === 0 ? 50 : i * 100 + 50);
                     })
                     .data(scope.orders)
                     .attr("height", function (d, i) {
@@ -93,7 +94,7 @@ angular.module('partnerApp')
 
                 var textDays = svg
                     .append("g")
-                    .attr('transform', 'translate(' + 0 + ',' + 105 + ')')
+                    .attr('transform', 'translate(' + 0 + ',' + (scope.height - 70) + ')')
                     .selectAll("g")
                     .data(scope.days)
                     .enter()
@@ -101,12 +102,50 @@ angular.module('partnerApp')
                     .attr("text-anchor", "middle")
                     .data(scope.daysN)
                     .attr("x", function (d, i) {
-                        return x(d) + width / 20;
+                        return x(d) + width / 20 + (i === 0 ? 50 : i * 100 + 50);
                     })
                     .data(scope.days)
                     .text(function (d) {
                         return d;
                     });
+
+                var textPercentages = svg
+                    .append("g")
+                    .attr('transform', 'translate(' + -20 + ',' + (scope.height - 45) + ')')
+                    .selectAll("g")
+                    .data(scope.days)
+                    .enter()
+                    .append("text")
+                    .attr("text-anchor", "middle")
+                    .data(scope.daysN)
+                    .attr("x", function (d, i) {
+                        return x(d) + width / 20 + (i === 0 ? 50 : i * 100 + 50);
+                    })
+                    .data(scope.orders)
+                    .text(function (d) {
+                        return d + "%";
+                    });
+
+                var textChanges = svg
+                    .append("g")
+                    .attr('transform', 'translate(' + 20 + ',' + (scope.height - 45) + ')')
+                    .selectAll("g")
+                    .data(scope.days)
+                    .enter()
+                    .append("text")
+                    .attr("text-anchor", "middle")
+                    .data(scope.daysN)
+                    .attr("x", function (d, i) {
+                        return x(d) + width / 20 + (i === 0 ? 50 : i * 100 + 50);
+                    })
+                    .data(scope.changes)
+                    .text(function (d) {
+                        return "(" + (d > 0 ? '+' : '') + d + "%)";
+                    })
+                    .attr("style", function (d) {
+                        return "fill: " + (d > 0 ? '#6dbd58' : '#ff7a78') + ";";
+                    });
+
 
             }
         };

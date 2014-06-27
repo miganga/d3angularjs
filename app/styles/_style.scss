@@ -129,7 +129,7 @@ table {
   color: $chart-font;
   & div:nth-child(1) {
     float: left;
-    margin-top: 2.4rem;
+    margin-top: 1.4rem;
   }
   & div:nth-child(2) {
     width: 200px;
@@ -137,7 +137,7 @@ table {
   }
   & div:nth-child(3) {
     float: left;
-    margin-top: 2.5rem;
+    margin-top: 1.4rem;
   }
   & div:nth-child(4) {
     position: absolute;
@@ -189,7 +189,7 @@ table {
 /*Top Selling Products*/
 .top-sell {
   & table {
-    width: 47%;
+    width: 46%;
     float: left;
     margin: 0 1rem 2rem;
     border: none;
@@ -208,36 +208,7 @@ table {
   }
 }
 
-/*Top Three Products*/
-.top-three {
-  & table {
-    width: 100%;
-    /*float: left;*/
-    margin: 0 1rem 2rem;
-    border: none;
-  }
-  & td {
-    width: auto;
-  }
-  & th:first-child {
-    width: 1%;
-  }
-  & th:nth-child(2) {
-    width: 5%;
-  }
-  & th:nth-child(3) {
-    width: 5%;
-  }
-  & th:nth-child(4) {
-    width: 5%;
-  }
-  & th:nth-child(5) {
-    width: 5%;
-  }
-  & th:nth-child(6) {
-    width: 10%;
-  }
-}
+
 
 /*Star rating system*/
 .rating {

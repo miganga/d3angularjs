@@ -2,12 +2,22 @@
 
 @import "style";
 
-@import "base";
+@import url(http://fonts.googleapis.com/css?family=Wire+One);
 
 @media screen and (min-width: 20em) {
   @import "m320";
 }
 
+@media screen and (min-width: 48em) {
+  @import "m768";
+}
+
 @media screen and (min-width: 64em) {
   @import "m1024";
 }
+
+@media screen and (min-width: 71.875em) {
+  @import "m1150";
+}
+
+@import "base";

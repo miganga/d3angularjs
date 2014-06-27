@@ -28,6 +28,15 @@
   margin-bottom: 2rem;
 }
 
+.visible {
+  overflow: visible;
+}
+
+/*Fonts*/
+html * {
+  font-family: "Helvetica Neue", Helvetica !important;
+}
+
 /*Layout*/
 #layout {
   margin: 0 auto;
@@ -51,8 +60,52 @@ p, text {
   color: $p-gray;
 }
 
-h1,h2,h3,h4 {
+h1,h2,h3,h4,.h1,.h2,.h3,.h4 {
   color: $font-gray;
+}
+
+/*Font sizes */
+/*Header styles*/
+h1,.h1 {
+  font-size: 3em;
+  /* 3x body copy size = 48px */
+  line-height: 1.05;
+  /* keep to a multiple of the 20px line height
+  and something more appropriate for display headings */
+}
+
+h2,.h2 {
+  font-size: 2.25em;
+  /* 2.25x body copy size = 36px */
+  line-height: 1.25;
+}
+
+h3,.h3 {
+  font-size: 1.75em;
+  /* 1.75x body copy size = 28px */
+  line-height: 1.25;
+}
+
+h4,.h4 {
+  font-size: 1.125em;
+  line-height: 1.22222222;
+  /* (22px / 18px */
+}
+
+.h-42 {
+  font-size: 36px;
+  line-height: 1.25;
+}
+.h-32 {
+  font-size: 32px;
+  line-height: 1.25;
+}
+.h-24 {
+  font-size: 24px;
+  line-height: 1.25;
+}
+.h-248 {
+  font-size: 1.55em;
 }
 
 /* Using that to use padding to position elements inside the containers without changing the width */
@@ -69,7 +122,7 @@ h1,h2,h3,h4 {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
-  @include rating-element(100px);
+  @include rating-element(70px);
   &.small {
     @include rating-element-small(48px);
   }
