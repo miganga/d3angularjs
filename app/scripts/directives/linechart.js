@@ -98,8 +98,19 @@ angular.module('partnerApp')
 
                 // Add the line by appending an svg:path element with the data line we created above
                 // do this AFTER the axes above so that the line is above the tick-lines
-                graph.append("svg:path").attr("d", line(data));
+                var path = graph.append("svg:path")
+                    .attr("d", line(data));
 
+                var totalLength = path.node().getTotalLength();
+
+                path
+                    .attr("stroke-dasharray", totalLength + " " + totalLength)
+                    .attr("stroke-dashoffset", totalLength)
+                    .transition()
+                    .delay(2000)
+                    .duration(2000)
+                    .ease("linear")
+                    .attr("stroke-dashoffset", 0);
 
             }
         };
