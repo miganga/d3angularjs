@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Directive: performanceChart', function () {
+xdescribe('Directive: performanceChart', function () {
 
   // load the directive's module
   beforeEach(module('partnerApp'));

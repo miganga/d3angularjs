@@ -22,6 +22,15 @@ angular.module('partnerApp')
                 var xData = _.map(scope.rectData, function (val, key, array) {
                     return val.values;
                 });
+
+                /*scope.rectData.values extracted into an array with percentage signs*/
+                var xDataWithPercentages = _.map(scope.rectData, function (val, key, array) {
+                    return val.values + "%";
+                });
+
+                var bars = [1,2,3,4,5];
+
+
                 /*scope.rectData.name extracted into an array*/
                 var xName = _.map(scope.rectData, function (val, key, array) {
                     return val.name;
@@ -71,12 +80,24 @@ angular.module('partnerApp')
                     .range([0, width]);
 
 
+                /*Ticks for the Categories*/
                 var xRange = d3.scale.ordinal()
                     .domain(xName)
                     .rangeRoundBands([0, width]);
 
+                /*Ticks for the Percentages*/
+                var xPercentage = d3.scale.ordinal()
+                    .domain(bars)
+                    .rangeBands([0, width]);
+
+                /*Axis for the Categories*/
                 var xAxis = d3.svg.axis()
                     .scale(xRange)
+                    .orient("bottom");
+
+                /*Axis for the Percentages*/
+                var xPercentageAxis = d3.svg.axis()
+                    .scale(xPercentage)
                     .orient("bottom");
 
                 var svg = d3.select(element[0]).append("svg")
@@ -89,6 +110,8 @@ angular.module('partnerApp')
                     .domain(d3.keys(xxData[0]).filter(function (key) {
                         return key === "name";
                     }));
+
+                console.log(xName);
 
                 var rect = svg
                     .selectAll("rect")
@@ -110,15 +133,20 @@ angular.module('partnerApp')
 
                 svg.append("g")
                     .attr("class", "x-axis")
-                    .attr("transform", "translate(0," + height / 2 + ")")
+                    .attr("transform", "translate(0," + ((height / 2) - 45) + ")")
                     .call(xAxis);
+
+                svg.append("g")
+                    .attr("class", "x-p-axis")
+                    .attr("transform", "translate(0," + ((height / 2) - 45) + ")")
+                    .call(xPercentageAxis);
 
                 svg
                     .select(".x-axis")
                     .selectAll("g")
                     .data(new_ticker)
                     .attr("transform", function (d,i) {
-                        return "translate(" + (x(d)) + "," +(i%2 !== 0 ? 70 : 20)+")";
+                        return "translate(" + (x(d)) + "," +(i%2 !== 0 ? 90 : 40)+")";
                     });
 
                 svg
@@ -128,6 +156,51 @@ angular.module('partnerApp')
                     .data(new_ticker)
                     .attr("y2",function (d,i) {
                         return (i%2 !== 0 ? -60 : -15);
+                    });
+
+                svg
+                    .select(".x-axis")
+                    .selectAll("g")
+                    .select("text")
+                    .data(new_ticker)
+                    .attr("y",function (d,i) {
+                        return (26);
+                    });
+
+                svg
+                    .select(".x-p-axis")
+                    .selectAll("g")
+                    .data(new_ticker)
+                    .attr("transform", function (d,i) {
+                        return "translate(" + (x(d)) + "," +(i%2 !== 0 ? 70 : 20)+")";
+                    });
+
+                svg
+                    .select(".x-p-axis")
+                    .selectAll("g")
+                    .select("line")
+                    .data(new_ticker)
+                    .attr("y2",function (d,i) {
+                        return (i%2 !== 0 ? -60 : -15);
+                    });
+
+                svg
+                    .select(".x-p-axis")
+                    .selectAll("g")
+                    .select("text")
+                    .data(new_ticker)
+                    .attr("y",function (d,i) {
+                        return (26);
+                    });
+
+                svg
+                    .select(".x-p-axis")
+                    .selectAll("g")
+                    .select("text")
+                    .attr("class", "bold")
+                    .data(xDataWithPercentages)
+                    .text(function(d) {
+                        return d;
                     });
             }
         };

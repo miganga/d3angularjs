@@ -19,14 +19,14 @@ angular.module('partnerApp')
                 width: '=',
                 height: '='
             },
-            controller: function($scope) {
+            controller: function($scope, UtilsService) {
                 $scope.ratingWidth = (($scope.average/5*$scope.width)-1);
+                $scope.sign = UtilsService.checkSign($scope.changePercentage);
             },
             link: function postLink(scope, element, attrs) {
                element.css("width",scope.width);
                element.css("height",scope.height);
                element.children('.rating').css("width",scope.ratingWidth);
-               /*console.log(scope.ratingWidth);*/
             }
         };
     });

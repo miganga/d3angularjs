@@ -62,7 +62,7 @@ angular.module('partnerApp')
                     .attr("d", line(data));*/
 
                 var y_range = [_.min([_.min(dataB), _.min(dataC)]), _.max([_.max(dataB),_.max(dataC)])];
-                console.log(y_range);
+                //console.log(y_range);
 
 
                 var x = d3.scale.linear()

@@ -12,6 +12,8 @@ $bar-blue: #009cdf;
 $bar-stroke-gray: #c6c4c3;
 $chart-font: #393c3d;
 $table-gray: #111111;
+$rating-gray: #cac9c8;
+
 /* Mixin that generates the rating element for the header and the KPI-Container*/
 @mixin rating-element($size) {
   margin-top: -($size/2);

@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Directive: peakTime', function () {
+xdescribe('Directive: peakTime', function () {
 
   // load the directive's module
   beforeEach(module('partnerApp'));

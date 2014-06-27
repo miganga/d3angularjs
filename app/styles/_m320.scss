@@ -174,8 +174,10 @@ h4 {
   & thead th:first-child {
     position:relative;
   }
-  & thead th:first-child span {
-    margin-left: 1.8rem;
+  & th:first-child.positive, th:first-child.negative {
+     span {
+      margin-left: 1.8rem;
+    }
   }
   & th {
     font-weight: 400;
@@ -320,4 +322,21 @@ World-Map*/
   background-size: 100%;
   background-position-y: 9rem;
   background-repeat: no-repeat;
+}
+
+/*Down arrow*/
+.arrow-down:after {
+  background: url("../images/blue_down_arrow.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  min-width: 16px;
+  min-height: 16px;
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  margin-left: 0.5rem;
+}
+
+.average-product-rating {
+  height: 335px;
 }

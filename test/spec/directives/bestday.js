@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Directive: bestDay', function () {
+xdescribe('Directive: bestDay', function () {
 
   // load the directive's module
   beforeEach(module('partnerApp'));

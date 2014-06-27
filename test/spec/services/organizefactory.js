@@ -28,7 +28,7 @@ describe('Service: organizeFactory', function () {
     var mid_value_index = _.reduce(values, function(t,x,y,z) {
         return x == random_mid_value ? y + t : t;
     },0);
-    console.log(mid_value_index);
+    //console.log(mid_value_index);
 
     beforeEach(inject(function (_organizeFactory_) {
         organizeFactory = _organizeFactory_;

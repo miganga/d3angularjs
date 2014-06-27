@@ -23,9 +23,15 @@ angular.module('partnerApp')
                 secondPercentage: '='
             },
             transclude: true,
+            controller: function ($scope, UtilsService) {
+                $scope.firstSign = UtilsService.checkSign($scope.firstPercentage);
+                $scope.secondSign = UtilsService.checkSign($scope.secondPercentage);
+            },
             link: function postLink(scope, element, attrs) {
                 var data = [scope.firstData, scope.secondData];
                 var dataPercentage = [scope.firstPercentage, scope.secondPercentage];
+
+
 
                 if(scope.firstPercentage > 0) scope.firstPercent = "+";
                 if(scope.secondPercentage > 0) scope.secondPercent = "+";
