@@ -27,7 +27,7 @@ angular.module('partnerApp')
                 /*console.log(scope.data);*/
 
                 /*colors from left to right*/
-                var colors = ['009cdf', 'ffffff'];
+                var colors = ['rgb(0, 156, 223)', 'rgb(255, 255, 255)'];
 
                 /*margin settings*/
                 var margin = {top: 0, right: 0, bottom: 0, left: 0},

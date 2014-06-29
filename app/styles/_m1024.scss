@@ -163,7 +163,8 @@ body {
 .gray-box {
   background: #f4f3f3;
   border-radius: 10px;
-  padding: 1rem 0;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   position: relative;
   overflow: hidden;
 }
@@ -174,7 +175,6 @@ body {
   font-size: 1.125em;
   line-height: 1.22222222;
   margin-bottom: 1rem;
-  /*width: 100%;*/
   & .rating__element {
     &.small {
       width: 25px;
@@ -272,17 +272,19 @@ body {
     width: 1%;
   }
   & tr td:nth-child(2) {
-    width: 63%;
+    width: 68%;
+  }
+  & tr td:nth-child(3) {
+    width: 31%;
   }
 }
 
 /*Top Three Products*/
 .top-three {
-  & table {
-    width: 100%;
-    /*float: left;*/
+  &.table {
+   /* width: 100%;
     margin: 0 1rem 2rem;
-    border: none;
+    border: none;*/
   }
   & td {
     width: auto;
@@ -416,6 +418,9 @@ body {
 
 
 /*Net promoter section*/
+.net-promoter-c {
+  padding-bottom: 1.7rem;
+}
 .net-promoter {
   position: relative;
   & .halfpie-fixed {
