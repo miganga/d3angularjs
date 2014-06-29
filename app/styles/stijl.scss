@@ -1,8 +1,6 @@
 @import "variables";
 
-@import "style";
-
-@import url(http://fonts.googleapis.com/css?family=Wire+One);
+@import "base";
 
 @media screen and (min-width: 20em) {
   @import "m320";
@@ -19,5 +17,3 @@
 @media screen and (min-width: 71.875em) {
   @import "m1150";
 }
-
-@import "base";

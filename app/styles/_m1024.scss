@@ -1,10 +1,19 @@
+/*General*/
 body {
   font-size: 90%;
   line-height: 1.5;
 }
 
-.kpi-banner {
+/*Header element including left middle and right*/
+.header-top {
+  margin-top: 2rem;
+}
 
+/*Percentage element in the rating element*/
+.element__content {
+  text-align: center;
+  color: $white;
+  margin-top: 60%;
 }
 
 .header-top__item {
@@ -83,36 +92,187 @@ body {
   }
 }
 
-/* Styling of rating element */
-.rating__element {
-  &.small {
-    margin-left: -0.6rem;
+
+/*KPI Container & related*/
+.kpi-banner {
+  position: relative;
+  margin-bottom: 13px;
+  color: $line-gray;
+  h1, h2, h3, h4 {
+    color: $font-gray;
+  }
+  h1, h2, h3, h4 {
+    font-weight: 200;
+  }
+  h3 {
+    font-size: 1.55em;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+  &.negative {
+    .kpi-display-circle {
+      border-color: $color-negative;
+    }
+    .change-color {
+      color: $color-negative;
+    }
+  }
+  &.positive {
+    .kpi-display-circle {
+      border-color: $color-positive;
+    }
+    .change-color {
+      color: $color-positive;
+    }
+  }
+  .kpi-container__content {
+    background: $color-container;
+    overflow: hidden;
+    text-align: center;
+    border-radius: 4%;
+    padding-bottom: 1.3rem;
   }
 }
 
-/*Peak Time Section*/
-.peak-time {
-  width: 60%;
-  min-height: 125px;
-  margin-bottom: 6rem;
-  .valign div {
-    margin: 0 1rem;
+.kpi-display-circle {
+  border: 7px solid black;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  margin: 0 auto;
+  background: $white;
+  margin-bottom: 20px;
+  & > div {
+    padding-top: 1.5rem;
+    > h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      line-height: 0;
+    }
   }
-  + .footnotes {
-    float: right;
+}
+
+.kpi-container {
+  & h1, h2, h3, h4 {
+    font-weight: 200;
   }
-  div:first-child {
-     background-color: $bar-blue;
-     color: $white;
-   }
-  div:nth-child(2) {
-    width: 10%;
-    background-color: $color-container;
+}
+
+/*Gray Box*/
+.gray-box {
+  background: #f4f3f3;
+  border-radius: 10px;
+  padding: 1rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/*Tables*/
+/*General Table Layout*/
+.g-table {
+  font-size: 1.125em;
+  line-height: 1.22222222;
+  margin-bottom: 1rem;
+  /*width: 100%;*/
+  & .rating__element {
+    &.small {
+      width: 25px;
+      height: 25px;
+      top: 17px;
+    }
   }
-  div:nth-child(3) {
-    background-color: $white;
-    color: black;
-    border: 1px solid $table-gray;
+  &.table {
+    border:none;
+    border-collapse: separate;
+  }
+  & thead {
+    background: none;
+    color: $line-gray;
+  }
+  & thead th:first-child {
+    position:relative;
+  }
+  & th:first-child.positive, th:first-child.negative {
+    span {
+      margin-left: 1.8rem;
+    }
+  }
+  & th {
+    font-weight: 400;
+  }
+  & tr:nth-child(2n-1) td {
+    background-color: $table-bg;
+  }
+  & td, th {
+    border-bottom: none;
+    height: 0px;
+    width: 20%;
+  }
+}
+
+/*What went up & down table*/
+.report-table {
+  & tr td:nth-child(2) {
+    font-weight: bold;
+  }
+  &.table:nth-child(2) td:nth-child(3) {
+    color: $color-positive;
+  }
+  &.table:nth-child(3) td:nth-child(3) {
+    color: $color-negative;
+  }
+}
+
+/*Customer report table*/
+.customer-table {
+  & td {
+    height: 40px;
+  }
+  & tr td:nth-child(2) {
+    font-weight: bold;
+  }
+  & tr td:nth-child(3) {
+    font-weight: bold;
+  }
+  & tr td:nth-child(4) {
+    font-weight: bold;
+  }
+}
+
+/*Top selling products table*/
+.top-table {
+  td {
+    height: 50px;
+  }
+  &.table:nth-child(2) td:nth-child(3) {
+    color: $table-gray;
+  }
+  &.table:nth-child(3) td:nth-child(3) {
+    color: $table-gray;
+  }
+  td:nth-child(2) {
+    width: 43%;
+  }
+  & tr td:nth-child(2) {
+    font-weight: normal;
+  }
+  & tr td:last-child {
+    font-weight: bold;
+  }
+}
+
+
+/*Top Products of Benchmark Table*/
+.top-products {
+  td {
+    height: 45px;
+  }
+  & tr td:nth-child(1) {
+    width: 1%;
+  }
+  & tr td:nth-child(2) {
+    width: 63%;
   }
 }
 
@@ -145,5 +305,300 @@ body {
   }
   & th:nth-child(6) {
     width: 10%;
+  }
+}
+
+/*Charts*/
+.domain {
+  fill: none;
+}
+
+.x-axis line, .y-axis line {
+  fill: none;
+  stroke: black;
+  shape-rendering: crispEdges;
+}
+.chart {
+  rect:first-child {
+    fill: $bar-blue;
+  }
+  rect:nth-child(2) {
+    fill: $white;
+    stroke: $bar-stroke-gray;
+  }
+  text {
+    fill: black;
+    font-size: 1.125em;;
+    color: $font-gray;
+  }
+  text:nth-child(3) {
+    font-weight: bold;
+  }
+}
+/*Performance chart*/
+.performance {
+  & path:first-child {
+    stroke: rgb(221, 221, 221);
+    stroke-width: 7px;
+    fill: none;
+  }
+  & path:nth-child(1) {
+    stroke: $bar-blue;
+    stroke-width: 7px;
+    fill: none;
+  }
+  & path:nth-child(2) {
+    stroke: $white;
+    stroke-width: 7px;
+    fill: none;
+  }
+}
+
+/*line-comp Charts*/
+.line-comp-percentage div {
+  width: 20%;
+  display: inline-block;
+  margin-right: 1.3rem;
+}
+/* Rectangle Chart*/
+.rectchart {
+  padding-top: 1rem;
+}
+
+/*Full Pie stylings*/
+.fullpie {
+  position: relative;
+  width: 93%;
+  margin: 0 1rem;
+  color: $chart-font;
+  & div:nth-child(1) {
+    float: left;
+    margin-top: 2.4rem;
+  }
+  & div:nth-child(2) {
+    width: 150px;
+    float: left;
+  }
+  & div:nth-child(3) {
+    float: left;
+    position: relative;
+    width: 50%;
+    padding-top: 1.5rem;
+  }
+  & div:nth-child(4) {
+    float: left;
+    padding-top: 1rem;
+    position: relative;
+    width: 50%;
+  }
+}
+
+/*Rectangle Chart Stylings*/
+.rectchart {
+  & .big {
+    font-size: 30px;
+    fill: white;
+  }
+  & .small {
+    font-size: 14px;
+    fill: white;
+  }
+}
+/*Line chart*/
+.linechart {
+  margin: 10px 0;
+  path {
+    stroke: $line-gray;
+    stroke-width: 2;
+    fill: none;
+  }
+}
+
+
+/*Net promoter section*/
+.net-promoter {
+  position: relative;
+  & .halfpie-fixed {
+    margin: 0 2rem;
+  }
+  & div:nth-child(3) {
+
+  }
+  & div:nth-child(3) span {
+    display: block;
+    margin: 1.3rem 0;
+  }
+}
+
+
+/*Benchmark*/
+.benchmark {
+  .footnotes {
+    padding-left: 8.7rem;
+    padding-top: 0.9rem;
+  }
+}
+
+/*Footnotes*/
+.footnotes {
+  color: $line-gray;
+  font-weight: 100;
+  margin-right: 2rem;
+  div {
+    display: inline-block;
+  }
+}
+
+.blue-box {
+  background-color: $bar-blue;
+  border: 1px solid $bar-blue;
+  height: 10px;
+  width: 10px;
+}
+
+.white-box {
+  background-color: $white;
+  border: 1px solid $line-gray;
+  height: 10px;
+  width: 10px;
+}
+
+
+/* Styling of rating element */
+.rating__element {
+  &.small {
+    margin-left: -0.6rem;
+  }
+}
+.positive {
+  .rating__element {
+    background: url('../images/small_up_arrow.png') $color-positive;
+    background-size: 100%;
+  }
+}
+.negative {
+  .rating__element {
+    background: url('../images/small_down_arrow.png') $color-negative;
+    background-size: 100%;
+  }
+}
+
+span.negative {
+  color: $color-negative;
+}
+span.positive {
+  color: $color-positive;
+}
+
+
+
+/*Peak Time Section*/
+.peak-time {
+  width: 60%;
+  min-height: 125px;
+  margin-bottom: 6rem;
+  .valign div {
+    margin: 0 1rem;
+  }
+  + .footnotes {
+    float: right;
+  }
+  div:first-child {
+     background-color: $bar-blue;
+     color: $white;
+   }
+  div:nth-child(2) {
+    width: 10%;
+    background-color: $color-container;
+  }
+  div:nth-child(3) {
+    background-color: $white;
+    color: black;
+    border: 1px solid $table-gray;
+  }
+}
+
+/*
+World-Map*/
+.wm {
+  min-height: 542px;
+  background: url("../images/wm.png") $color-container;
+  background-size: 100%;
+  background-position-y: 9rem;
+  background-repeat: no-repeat;
+}
+
+/*Down arrow*/
+.arrow-down:after {
+  background: url("../images/blue_down_arrow.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  min-width: 16px;
+  min-height: 16px;
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  margin-left: 0.5rem;
+}
+
+/*Product Insights*/
+.average-product-rating {
+  height: 335px;
+  overflow: visible;
+}
+
+/*Half Pie Fixed width stylings*/
+.halfpie-fixed {
+  position: relative;
+  width: 260px;
+  margin: 0 auto;
+  color: $chart-font;
+  & div:nth-child(1) {
+    float: left;
+    margin-top: 1.4rem;
+  }
+  & div:nth-child(2) {
+    width: 200px;
+    float: left;
+  }
+  & div:nth-child(3) {
+    float: left;
+    margin-top: 1.4rem;
+  }
+  & div:nth-child(4) {
+    position: absolute;
+    top: 2.7rem;
+    left: 38.7%;
+  }
+}
+
+/*Star rating system*/
+.rating {
+  background: url(../images/report_star_blue.png) repeat-x top left;
+  background-size: 74px;
+  position: relative;
+  z-index: 2;
+  top: 0px;
+  height: 65px;
+  width: 0px;
+}
+
+.rating-bg {
+  background: url(../images/report_star.png) repeat-x top left;
+  background-size: 74px;
+  position: relative;
+  z-index: 1;
+  top: -64.2px;
+  height: 65px;
+  width: 370px;
+}
+
+.star-rating {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  margin: 0 auto;
+  & h2 {
+    line-height: 0;
   }
 }
