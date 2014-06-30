@@ -7,7 +7,7 @@
  * # lineChart
  */
 angular.module('partnerApp')
-  .directive('lineChart', function () {
+  .directive('lineChart', function ($window) {
         return {
             template: '<div class="linechart"></div>',
             restrict: 'E',
@@ -41,8 +41,9 @@ angular.module('partnerApp')
                 /* implementation heavily influenced by http://bl.ocks.org/1166403 */
 
                 // define dimensions of graph
+                console.log($window.innerWidth);
                 var m = [0, 0, 0, 0]; // margins
-                var w = scope.width - m[1] - m[3]; // width
+                var w = scope.width || $window.innerWidth / 3 - m[1] - m[3]; // width
                 var h = scope.height - m[0] - m[2]; // height
 
                 // create a simple data array that we'll plot with a line (this array represents only the Y values, X will just be the index location)

@@ -43,7 +43,7 @@ angular.module('partnerApp.services')
                 return deferred.promise;
             },*/
             customerTransactions: function () {
-                return $http.get('data/transaction-weekly-with-benchmark.json')
+                return $http.get('data/transaction-data.json');
             },
             customerTransactionsBenchmark: function () {
                 return $http.get('data/transaction-benchmark.json');

@@ -5,17 +5,6 @@ body {
 }
 
 /*Header element including left middle and right*/
-.header-top {
-  margin-top: 2rem;
-}
-
-/*Percentage element in the rating element*/
-.element__content {
-  text-align: center;
-  color: $white;
-  margin-top: 60%;
-}
-
 .header-top__item {
   position: relative;
   border-radius: 5%;
@@ -98,6 +87,7 @@ body {
   position: relative;
   margin-bottom: 13px;
   color: $line-gray;
+  padding: 0;
   h1, h2, h3, h4 {
     color: $font-gray;
   }
@@ -213,6 +203,9 @@ body {
 
 /*What went up & down table*/
 .report-table {
+  & tr td:nth-child(1) {
+    width: 20%;
+  }
   & tr td:nth-child(2) {
     font-weight: bold;
   }
@@ -438,40 +431,6 @@ body {
   }
 }
 
-
-/*Benchmark*/
-.benchmark {
-  .footnotes {
-    text-align: right;
-    width: 30rem;
-  }
-}
-
-/*Footnotes*/
-.footnotes {
-  color: $line-gray;
-  font-weight: 100;
-  margin-right: 2rem;
-  div {
-    display: inline-block;
-  }
-}
-
-.blue-box {
-  background-color: $bar-blue;
-  border: 1px solid $bar-blue;
-  height: 10px;
-  width: 10px;
-}
-
-.white-box {
-  background-color: $white;
-  border: 1px solid $line-gray;
-  height: 10px;
-  width: 10px;
-}
-
-
 /* Styling of rating element */
 .rating__element {
   &.small {
@@ -609,4 +568,9 @@ World-Map*/
   & h2 {
     line-height: 0;
   }
+}
+
+/*Visibility*/
+.invisible-768 {
+  display: block;
 }

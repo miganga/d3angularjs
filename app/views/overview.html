@@ -18,7 +18,7 @@
                 </div>
             </div>
         </div>
-		<div class="pure-u-1-24"></div>
+		<div class="pure-u-1-24 invisible-768"></div>
 
         <div class="pure-u-8-24 pure-triplets kpi-banner" ng-class="{true: 'positive', false: 'negative'}[customerRevenueData.isPositive]">
             <div class="rating__element small"></div>
@@ -34,7 +34,7 @@
                 </div>
             </div>
         </div>
-	    <div class="pure-u-1-24"></div>
+	    <div class="pure-u-1-24  invisible-768"></div>
         <div class="pure-u-8-24 pure-triplets kpi-banner" ng-class="{true: 'positive', false: 'negative'}[customerProductData.isPositive]">
             <div class="rating__element small"></div>
             <div class="kpi-container__content">
@@ -51,26 +51,32 @@
         </div>
 </div>
 <div class="pure-g">
-		<div class="pure-u-8-24 pure-triplets gray-box text-center">
-			<div>
-				<span class="h4">Top Order</span>
-				<h4>DATA</h4>
-			</div>
-		</div>
-		<div class="pure-u-1-24"></div>
-		<div class="pure-u-8-24 pure-triplets gray-box text-center">
-			<div>
-				<span class="h4">Peak Time</span>
-				<h4>DATA</h4>
-			</div>
-		</div>
-		<div class="pure-u-1-24"></div>
-		<div class="pure-u-8-24 pure-triplets gray-box text-center">
-			<div>
-				<span class="h4">Avg. Product Rating</span>
-				<h4>DATA</h4>
-			</div>
-		</div>
+    <div class="pure-u-8-24 pure-triplets">
+        <div class="gray-box text-center">
+            <div>
+                <span class="h4">Top Order</span>
+                <h4>DATA</h4>
+            </div>
+        </div>
+    </div>
+    <div class="pure-u-1-24 invisible-768"></div>
+    <div class="pure-u-8-24 pure-triplets">
+        <div class="gray-box text-center">
+            <div>
+                <span class="h4">Peak Time</span>
+                <h4>DATA</h4>
+            </div>
+        </div>
+    </div>
+    <div class="pure-u-1-24 invisible-768"></div>
+    <div class="pure-u-8-24 pure-triplets">
+        <div class="gray-box text-center">
+            <div>
+                <span class="h4">Avg. Product Rating</span>
+                <h4>DATA</h4>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="pure-g">
     <h3 class="pure-u-1 skinny">Most Notable Changes</h3>
@@ -88,7 +94,7 @@
 	        <td>{{ change.type }}</td>
 	        <td>{{ change.lastWeek }}</td>
 	        <td>{{ change.changePercentage }}% ({{ change.changeAmount }})</td>
-	        <td> <line-chart line-data="change.lineData" width="300" height="30"></line-chart></td>
+	        <td> <line-chart line-data="change.lineData" height="30"></line-chart></td>
         </tr>
         </tbody>
     </table>
@@ -106,7 +112,7 @@
 	        <td>{{ change.type }}</td>
 	        <td>{{ change.lastWeek }}</td>
 	        <td>{{ change.changePercentage }}% ({{ change.changeAmount }})</td>
-	        <td> <line-chart line-data="change.lineData" width="300" height="30"></line-chart></td>
+	        <td> <line-chart line-data="change.lineData" height="30"></line-chart></td>
         </tr>
         </tbody>
     </table>
@@ -136,7 +142,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="pure-u-1-24"></div>
+	<div class="pure-u-1-24 invisible-768"></div>
 	<div class="pure-u-8-24 pure-triplets kpi-banner positive">
 		<div class="rating__element small"></div>
 		<div class="kpi-container__content">
@@ -149,7 +155,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="pure-u-1-24"></div>
+	<div class="pure-u-1-24 invisible-768"></div>
 	<div class="pure-u-8-24 pure-triplets kpi-banner positive">
 		<div class="rating__element small"></div>
 		<div class="kpi-container__content">
@@ -180,7 +186,7 @@
 				</div>
 			</div>
 		</div>
-	<div class="pure-u-1-24"></div>
+	<div class="pure-u-1-24 invisible-768"></div>
 
 		<div class="pure-u-8-24 pure-triplets kpi-banner" ng-class="{true: 'positive', false: 'negative'}[customerRevenueData.isPositive]">
 			<div class="rating__element small"></div>
@@ -196,7 +202,7 @@
 				</div>
 			</div>
 		</div>
-	<div class="pure-u-1-24"></div>
+	<div class="pure-u-1-24 invisible-768"></div>
 		<div class="pure-u-8-24 pure-triplets kpi-banner" ng-class="{true: 'positive', false: 'negative'}[customerProductData.isPositive]">
 			<div class="rating__element small"></div>
 			<div class="kpi-container__content">
