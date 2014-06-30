@@ -17,12 +17,11 @@ angular
         'ngResource',
         'ngSanitize',
         'ngTouch',
-        'ui.router',
-        'restangular'
+        'ui.router'
 
-    ]).config(function ($stateProvider, $urlRouterProvider, RestangularProvider) {
-        RestangularProvider.setBaseUrl('http://10.0.106.156:9000/kpi/v1/retailer/34441');
-        RestangularProvider.setDefaultRequestParams('jsonp');
+    ]).config(function ($stateProvider, $urlRouterProvider) {
+        //RestangularProvider.setBaseUrl('http://10.0.106.156:9000/kpi/v1/retailer/34441');
+        //RestangularProvider.setDefaultRequestParams('jsonp');
         $stateProvider
             .state("overview", {
                 url: '/',
@@ -51,7 +50,7 @@ angular
                             sortOrder: 'ASCENDING',
                             sortField: 'DATE'
                         };
-                        return dataFactory.getData(queryParams);
+                        //return dataFactory.getData(queryParams);
                     },
                     transactionsBenchmark: function (dataFactory) {
                         var queryParams = {
@@ -63,7 +62,7 @@ angular
                             sortOrder: 'ASCENDING',
                             sortField: 'DATE'
                         };
-                        return dataFactory.getData(queryParams).$promise;
+                        //return dataFactory.getData(queryParams).$promise;
                     }
                 }
             });

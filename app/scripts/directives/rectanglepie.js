@@ -7,7 +7,7 @@
  * # rectanglePie
  */
 angular.module('partnerApp')
-    .directive('rectanglePie', function () {
+    .directive('rectanglePie', function ($window) {
         return {
             template: '<div></div>',
             restrict: 'E',
@@ -66,7 +66,7 @@ angular.module('partnerApp')
                 var colors = ['rgb(0, 156, 223)', 'rgb(79, 203, 255)', 'rgb(166, 229, 255)', 'rgb(193, 193, 193)', 'rgb(106, 106, 106)'];
 
                 var margin = {top: 0, right: 0, bottom: 0, left: 0},
-                    width = scope.width - margin.left - margin.right,
+                    width = $window.innerWidth < 1024 ? 340 : scope.width - margin.left - margin.right,
                     height = scope.height - margin.top - margin.bottom;
 
 

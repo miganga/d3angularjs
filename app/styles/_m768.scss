@@ -3,6 +3,10 @@ body {
   line-height: 1.5;
 }
 
+h2, .h2 {
+  font-size: 1.95em;
+  line-height: 1.25;
+}
 
 /*Header element including left middle and right*/
 .header-top {
@@ -424,6 +428,31 @@ body {
 }
 
 
+/*Half Pie Fixed width stylings*/
+.halfpie-fixed {
+  position: relative;
+  width: 192.8px;
+  margin: 0 auto;
+  color: $chart-font;
+  & div:nth-child(1) {
+    float: left;
+    margin-top: 2.2rem;
+  }
+  & div:nth-child(2) {
+    width: 150px;
+    float: left;
+  }
+  & div:nth-child(3) {
+    float: left;
+    margin-top: 2.2rem;
+  }
+  & div:nth-child(4) {
+    position: absolute;
+    top: 3.3rem;
+    left: 39.6%;
+  }
+}
+
 /*Visibility*/
 .invisible-768 {
   display: none;
@@ -453,6 +482,115 @@ span.negative {
 }
 span.positive {
   color: $color-positive;
+}
+
+/*Net promoter section*/
+.net-promoter-c {
+  padding-bottom: 1.7rem;
+}
+.net-promoter {
+  position: relative;
+  & .halfpie-fixed {
+    margin: 0 2rem;
+  }
+  & div:nth-child(2) {
+    float: left;
+    width: 67.5%;
+  }
+  & div:nth-child(3) {
+    position: relative;
+    text-align: left;
+  }
+  & div:nth-child(3) span {
+    display: block;
+    margin: 1.3rem 0;
+  }
+}
+
+/*
+World-Map*/
+.wm {
+  min-height: 480px;
+  background: url("../images/wm.png") $color-container;
+  background-size: 100%;
+  background-position: 0% 63%;
+  background-repeat: no-repeat;
+}
+
+/*Down arrow*/
+.arrow-down:after {
+  background: url("../images/blue_down_arrow.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  min-width: 16px;
+  min-height: 16px;
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  margin-left: 0.5rem;
+}
+
+/*Star rating system*/
+.rating {
+  background: url(../images/report_star_blue.png) repeat-x top left;
+  background-size: 67px;
+  position: relative;
+  z-index: 2;
+  top: 0px;
+  height: 65px;
+  width: 0px;
+}
+
+.rating-bg {
+  background: url(../images/report_star.png) repeat-x top left;
+  background-size: 67px;
+  position: relative;
+  z-index: 1;
+  top: -64.2px;
+  height: 65px;
+  width: 340px;
+}
+
+.star-rating {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  margin: 0 auto;
+  & h2 {
+    line-height: 0;
+  }
+}
+
+/*Product Insights*/
+.average-product-rating {
+  height: 321px;
+  overflow: visible;
+}
+
+/*Peak Time Section*/
+.peak-time {
+  width: 60%;
+  min-height: 125px;
+  margin-bottom: 6rem;
+  .valign div {
+    margin: 0 1rem;
+  }
+  + .footnotes {
+    float: right;
+  }
+  div:first-child {
+    background-color: $bar-blue;
+    color: $white;
+  }
+  div:nth-child(2) {
+    width: 10%;
+    background-color: $color-container;
+  }
+  div:nth-child(3) {
+    background-color: $white;
+    color: black;
+    border: 1px solid $table-gray;
+  }
 }
 
 /*Benchmark*/

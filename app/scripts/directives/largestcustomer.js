@@ -7,7 +7,7 @@
  * # largestCustomer
  */
 angular.module('partnerApp')
-    .directive('largestCustomer', function () {
+    .directive('largestCustomer', function ($window) {
         return {
             template: '<div class="rectchart"><div></div></div>',
             restrict: 'E',
@@ -32,24 +32,27 @@ angular.module('partnerApp')
                 var colors = ['009cdf', 'ffffff'];
                 /*console.log(scope.daysN);*/
 
+                /*console.log(x(2));*/
+
+                /*margin settings*/
+                var margin = {top: 0, right: 0, bottom: 0, left: 0},
+                    width = $window.innerWidth < 1024 ? 340 : scope.width - margin.left - margin.right,
+                    height = scope.height - margin.top - margin.bottom;
+
+                var x_location = $window.innerWidth < 1024 ? 50 : 100;
+
+                var svg = d3.select(element[0].children[0]).append("svg")
+                    .attr("width", width + margin.left + margin.right)
+                    .attr("height", height + margin.top + margin.bottom);
+
                 var x = d3.scale.linear()
                     .domain([0, 7])
-                    .range([0, scope.width]);
+                    .range([0, width]);
 
                 var y = d3.scale.linear()
                     .domain([0, 100])
                     .range([0, scope.height - 20]);
 
-                /*console.log(x(2));*/
-
-                /*margin settings*/
-                var margin = {top: 0, right: 0, bottom: 0, left: 0},
-                    width = scope.width - margin.left - margin.right,
-                    height = scope.height - margin.top - margin.bottom;
-
-                var svg = d3.select(element[0].children[0]).append("svg")
-                    .attr("width", width + margin.left + margin.right)
-                    .attr("height", height + margin.top + margin.bottom);
 
                 /*enters the width & height for the rectangles, width is adjusted to the total width of the svg*/
                 var rect = svg
@@ -64,7 +67,7 @@ angular.module('partnerApp')
                     .attr("fill", "#ffffff")
                     .data(scope.daysN)
                     .attr("x", function (d, i) {
-                        return x(d) + (i === 0 ? 50 : i * 100 + 50);
+                        return x(d) + (i === 0 ? 50 : i * x_location + 50);
                     });
 
                 var secondRect = svg
@@ -78,7 +81,7 @@ angular.module('partnerApp')
                     .attr("fill", "#000000")
                     .data(scope.daysN)
                     .attr("x", function (d, i) {
-                        return x(d) + (i === 0 ? 50 : i * 100 + 50);
+                        return x(d) + (i === 0 ? 50 : i * x_location + 50);
                     })
                     .data(scope.orders)
                     .attr("height", function (d, i) {
@@ -102,7 +105,7 @@ angular.module('partnerApp')
                     .attr("text-anchor", "middle")
                     .data(scope.daysN)
                     .attr("x", function (d, i) {
-                        return x(d) + width / 20 + (i === 0 ? 50 : i * 100 + 50);
+                        return x(d) + width / 20 + (i === 0 ? 50 : i * x_location + 50);
                     })
                     .data(scope.days)
                     .text(function (d) {
@@ -119,7 +122,7 @@ angular.module('partnerApp')
                     .attr("text-anchor", "middle")
                     .data(scope.daysN)
                     .attr("x", function (d, i) {
-                        return x(d) + width / 20 + (i === 0 ? 50 : i * 100 + 50);
+                        return x(d) + width / 20 + (i === 0 ? 50 : i * x_location + 50);
                     })
                     .data(scope.orders)
                     .text(function (d) {
@@ -136,7 +139,7 @@ angular.module('partnerApp')
                     .attr("text-anchor", "middle")
                     .data(scope.daysN)
                     .attr("x", function (d, i) {
-                        return x(d) + width / 20 + (i === 0 ? 50 : i * 100 + 50);
+                        return x(d) + width / 20 + (i === 0 ? 50 : i * x_location + 50);
                     })
                     .data(scope.changes)
                     .text(function (d) {

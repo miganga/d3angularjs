@@ -7,7 +7,7 @@
  * # bestDay
  */
 angular.module('partnerApp')
-    .directive('bestDay', function () {
+    .directive('bestDay', function ($window) {
         return {
             template: '<div class="rectchart"><div></div></div>',
             restrict: 'E',
@@ -31,20 +31,20 @@ angular.module('partnerApp')
                 var colors = ['009cdf', 'ffffff'];
                 /*console.log(scope.daysN);*/
 
-                var x = d3.scale.linear()
-                    .domain([0, 7])
-                    .range([0, scope.width]);
-
-                var y = d3.scale.linear()
-                    .domain([0, 100])
-                    .range([0, scope.height - 20]);
-
                 /*console.log(x(2));*/
 
                 /*margin settings*/
                 var margin = {top: 0, right: 0, bottom: 0, left: 0},
-                    width = scope.width - margin.left - margin.right,
+                    width = $window.innerWidth < 1024 ? 340 : scope.width - margin.left - margin.right,
                     height = scope.height - margin.top - margin.bottom;
+
+                var x = d3.scale.linear()
+                    .domain([0, 7])
+                    .range([0, width]);
+
+                var y = d3.scale.linear()
+                    .domain([0, 100])
+                    .range([0, scope.height - 20]);
 
                 var svg = d3.select(element[0].children[0]).append("svg")
                     .attr("width", width + margin.left + margin.right)

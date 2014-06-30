@@ -7,7 +7,7 @@
  * # fullPie
  */
 angular.module('partnerApp')
-  .directive('fullPie', function () {
+  .directive('fullPie', function ($window) {
         return {
             templateUrl: 'views/fullpie.html',
             restrict: 'E',
@@ -27,7 +27,7 @@ angular.module('partnerApp')
 
                 // the D3 bits...
                 var color = ["#ffffff","#009cdf"];
-                var width = scope.width;
+                var width = $window.innerWidth < 1024 ? 80 : scope.width;
                 var height = scope.height;
                 var pi = Math.PI;
                 var pie = d3.layout.pie()

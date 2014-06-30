@@ -7,7 +7,7 @@
  * # halfPie
  */
 angular.module('partnerApp')
-    .directive('halfPie', function () {
+    .directive('halfPie', function ($window) {
         return {
             templateUrl: 'views/halfpie.html',
             restrict: 'E',
@@ -34,7 +34,7 @@ angular.module('partnerApp')
             link: function postLink(scope, element, attrs) {
                 // the D3 bits...
                 var color = ["#009cdf","#ffffff"];
-                var width = scope.width;
+                var width = $window.innerWidth < 1024 ? 150 : scope.width;
                 var height = scope.height;
                 var pi = Math.PI;
                 var pie = d3.layout.pie()

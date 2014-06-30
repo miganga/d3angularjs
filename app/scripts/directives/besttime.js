@@ -7,7 +7,7 @@
  * # bestTime
  */
 angular.module('partnerApp')
-  .directive('bestTime', function () {
+  .directive('bestTime', function ($window) {
         return {
             template: '<div class="rectchart"><div></div></div>',
             restrict: 'E',
@@ -35,24 +35,24 @@ angular.module('partnerApp')
                 var colors = ['009cdf', 'ffffff'];
                 /*console.log(scope.bars);*/
 
-                var x = d3.scale.linear()
-                    .domain([0,7])
-                    .range([0, scope.width]);
-
-                var y = d3.scale.linear()
-                    .domain([0,100])
-                    .range([0, scope.height-20]);
-
                 /*console.log(x(2));*/
 
                 /*margin settings*/
                 var margin = {top: 0, right: 0, bottom: 0, left: 0},
-                    width = scope.width - margin.left - margin.right,
+                    width = $window.innerWidth < 1024 ? 340 : scope.width - margin.left - margin.right,
                     height = scope.height - margin.top - margin.bottom;
 
                 var svg = d3.select(element[0].children[0]).append("svg")
                     .attr("width", width + margin.left + margin.right)
                     .attr("height", height + margin.top + margin.bottom)
+
+                var x = d3.scale.linear()
+                    .domain([0,7])
+                    .range([0, width]);
+
+                var y = d3.scale.linear()
+                    .domain([0,100])
+                    .range([0, scope.height-20]);
 
                 /*enters the width & height for the rectangles, width is adjusted to the total width of the svg*/
                 var rect = svg
