@@ -72,6 +72,10 @@ html * {
   font-family: "Helvetica Neue", Helvetica !important;
 }
 
+a:visited, a {
+  color: #009cdf;
+}
+
 p, text {
   color: $p-gray;
 }

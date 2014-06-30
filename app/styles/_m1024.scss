@@ -358,9 +358,8 @@ body {
 
 /*line-comp Charts*/
 .line-comp-percentage div {
-  width: 20%;
+  width: 37.5%;;
   display: inline-block;
-  margin-right: 1.3rem;
 }
 /* Rectangle Chart*/
 .rectchart {
@@ -378,7 +377,7 @@ body {
     margin-top: 2.4rem;
   }
   & div:nth-child(2) {
-    width: 150px;
+    width: 46%;
     float: left;
   }
   & div:nth-child(3) {
@@ -426,8 +425,12 @@ body {
   & .halfpie-fixed {
     margin: 0 2rem;
   }
+  & div:nth-child(2) {
+    float: left;
+  }
   & div:nth-child(3) {
-
+    position: relative;
+    text-align: left;
   }
   & div:nth-child(3) span {
     display: block;
@@ -439,8 +442,8 @@ body {
 /*Benchmark*/
 .benchmark {
   .footnotes {
-    padding-left: 8.7rem;
-    padding-top: 0.9rem;
+    text-align: right;
+    width: 30rem;
   }
 }
 

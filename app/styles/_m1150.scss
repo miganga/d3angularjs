@@ -2,3 +2,16 @@ body {
   font-size: 100%;
   line-height: 1.5;
 }
+
+/*line-comp Charts*/
+.line-comp-percentage div {
+  width: 31.3%;;
+  display: inline-block;
+}
+
+/*Net promoter section*/
+.net-promoter {
+  & div:nth-child(3) span {
+    padding-left: 70%;
+  }
+}
