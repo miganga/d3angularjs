@@ -179,7 +179,7 @@ body {
     &.small {
       width: 25px;
       height: 25px;
-      top: 17px;
+      top: 8px;
     }
   }
   &.table {
@@ -532,7 +532,7 @@ World-Map*/
   min-height: 542px;
   background: url("../images/wm.png") $color-container;
   background-size: 100%;
-  background-position-y: 9rem;
+  background-position: 0% 63%;
   background-repeat: no-repeat;
 }
 
@@ -545,7 +545,7 @@ World-Map*/
   min-height: 16px;
   content: '';
   position: absolute;
-  bottom: 10px;
+  bottom: 0px;
   margin-left: 0.5rem;
 }
 
