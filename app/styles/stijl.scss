@@ -11,14 +11,18 @@
   @import "m768";
 }*/
 
-@media screen and (min-width: 20em) {
+@media all and (min-width: 20em) {
   @import "m768";
 }
 
-@media screen and (min-width: 64em) {
+@media all and (min-width: 64em) {
   @import "m1024";
 }
 
-@media screen and (min-width: 71.875em) {
+@media all and (min-width: 71.875em) {
   @import "m1150";
+}
+
+@media print {
+  @import "print";
 }

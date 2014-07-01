@@ -82,6 +82,7 @@ angular
                 templateUrl: 'views/error.html'
             })
             .state("timeout", {
+                url: '/timeout.error',
                 parent: 'errors'
             });
         // if none of the above states are matched, use this as the fallback
