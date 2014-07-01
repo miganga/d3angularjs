@@ -50,30 +50,38 @@ angular
                     },
                     transactions: function (dataFactory) {
                         var queryParams = {
-                            startDate: '2014-05-05',
-                            endDate: '2014-05-11',
+                            startDate: '2014-06-02',
+                            endDate: '2014-06-08',
                             currency: 'EUR',
-                            rollup: ['DAY', 'RETURNING'],
+                            rollup: ['DAY'],
                             includeBenchmark: '1',
                             sortOrder: 'ASCENDING',
                             sortField: 'DATE'
                         };
-                        /*return dataFactory.getData(queryParams).$promise
+                        return dataFactory.getData(queryParams).$promise
                             .then(function (data) {
-                                return data;
-                            });*/
+                                var d = data;
+                                return d;
+                            });
                     },
-                    transactionsBenchmark: function (dataFactory) {
+                    transactionsBenchmark: function (dataFactory, $timeout) {
                         var queryParams = {
-                            startDate: '2014-05-05',
-                            endDate: '2014-05-20',
+                            startDate: '2014-06-02',
+                            endDate: '2014-06-29',
                             currency: 'EUR',
-                            rollup: ['DAY', 'RETURNING'],
+                            rollup: ['DAY'],
                             includeBenchmark: '1',
                             sortOrder: 'ASCENDING',
                             sortField: 'DATE'
                         };
-                        /*return dataFactory.getData(queryParams).$promise;*/
+
+                        return $timeout(function () {
+                            return dataFactory.getData(queryParams).$promise
+                                .then(function (data) {
+                                    var d = data;
+                                    return d;
+                                });
+                        }, 0);
                     }
                 }
             })

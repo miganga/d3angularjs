@@ -9,6 +9,8 @@
  */
 angular.module('partnerApp')
     .controller('OverviewCtrl', function ($scope, mockData, Kpifactory, customerTransactions, customerTransactionsMonthly, topSellingProducts, transactions, transactionsBenchmark) {
+        console.log('transactions Benchmark', transactions);
+        //console.log('transactions Benchmark sorted', Kpifactory.sortByDate(transactionsBenchmark.rows, 0));
         $scope.customerOrdersData = {};
         $scope.customerRevenueData = {};
         $scope.customerProductData = {};

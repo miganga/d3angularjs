@@ -20,8 +20,8 @@ angular.module('partnerApp')
                     params: {
                         action: 'transactions'
                     },
-                    timeout : 3000,
-                    cache: true
+                    timeout : 5000,
+                    cache: false
                 }
             }
         );

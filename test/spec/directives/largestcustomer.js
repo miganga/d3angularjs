@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Directive: largestCustomer', function () {
+xdescribe('Directive: largestCustomer', function () {
 
   // load the directive's module
   beforeEach(module('partnerApp'));
