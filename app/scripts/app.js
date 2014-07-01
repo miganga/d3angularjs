@@ -19,7 +19,15 @@ angular
         'ngTouch',
         'ui.router'
 
-    ]).config(function ($stateProvider, $urlRouterProvider) {
+    ]).run(function ($state, $rootScope) {
+        $rootScope.$on('$stateChangeError', function (event, toState, toParams, fromState, fromParams, error) {
+            event.preventDefault();
+            console.log( JSON.stringify(error));
+            $state.go('timeout', JSON.stringify(error)); // error has data, status and config properties
+        });
+    })
+    .config(function ($stateProvider, $urlRouterProvider) {
+        //I might use this if the data gets more complex in the future
         //RestangularProvider.setBaseUrl('http://10.0.106.156:9000/kpi/v1/retailer/34441');
         //RestangularProvider.setDefaultRequestParams('jsonp');
         $stateProvider
@@ -50,7 +58,10 @@ angular
                             sortOrder: 'ASCENDING',
                             sortField: 'DATE'
                         };
-                        //return dataFactory.getData(queryParams);
+                        /*return dataFactory.getData(queryParams).$promise
+                            .then(function (data) {
+                                return data;
+                            });*/
                     },
                     transactionsBenchmark: function (dataFactory) {
                         var queryParams = {
@@ -62,9 +73,16 @@ angular
                             sortOrder: 'ASCENDING',
                             sortField: 'DATE'
                         };
-                        //return dataFactory.getData(queryParams).$promise;
+                        /*return dataFactory.getData(queryParams).$promise;*/
                     }
                 }
+            })
+            .state("errors", {
+                url: '/errors',
+                templateUrl: 'views/error.html'
+            })
+            .state("timeout", {
+                parent: 'errors'
             });
         // if none of the above states are matched, use this as the fallback
         $urlRouterProvider.otherwise('/');

@@ -19,7 +19,9 @@ angular.module('partnerApp')
                     method: 'GET',
                     params: {
                         action: 'transactions'
-                    }
+                    },
+                    timeout : 3000,
+                    cache: true
                 }
             }
         );
@@ -27,5 +29,6 @@ angular.module('partnerApp')
         factory.getData = function (x) {
             return resource.getData({startDate: x.startDate, endDate: x.endDate, currency: x.currency, rollup: x.rollup, includeBenchmark: x.includeBenchmark, sortOrder: x.sortOrder, sortField: x.sortField});
         };
+
         return factory;
     });

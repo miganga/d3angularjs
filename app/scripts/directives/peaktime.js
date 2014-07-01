@@ -16,7 +16,6 @@ angular.module('partnerApp')
                 $scope.height = angular.element('.top-products').find('table').height();
             },
             link: function postLink(scope, element, attrs) {
-                console.log(scope.height);
                 element.parent().css("height", scope.height);
             }
         };

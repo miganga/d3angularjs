@@ -130,9 +130,9 @@ angular.module('partnerApp')
 
         /*REST API data*/
         /*$scope.customerTransactions = transactions;
-        $scope.customerTransactionsMonthly = transactionsBenchmark;*/
+         $scope.customerTransactionsMonthly = transactionsBenchmark;*/
         $scope.customerTransactions = customerTransactions.data;
-        console.log(customerTransactions.data);
+        //console.log(customerTransactions.data);
         $scope.customerTransactionsMonthly = customerTransactionsMonthly.data;
         $scope.topSellingProducts = topSellingProducts.data;
 

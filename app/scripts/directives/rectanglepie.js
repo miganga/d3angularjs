@@ -111,7 +111,6 @@ angular.module('partnerApp')
                         return key === "name";
                     }));
 
-                console.log(xName);
 
                 var rect = svg
                     .selectAll("rect")

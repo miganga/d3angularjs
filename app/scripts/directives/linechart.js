@@ -18,7 +18,6 @@ angular.module('partnerApp')
                 height : '='
             },
             link: function postLink(scope, element, attrs) {
-                console.log($window.innerWidth);
                 // the D3 bits...
                 /*var color = d3.scale.category10();
                 var width = 500;
@@ -42,7 +41,6 @@ angular.module('partnerApp')
                 /* implementation heavily influenced by http://bl.ocks.org/1166403 */
 
                 // define dimensions of graph
-                console.log($window.innerWidth);
                 var m = [0, 0, 0, 0]; // margins
                 var w = scope.width || $window.innerWidth / 3 - m[1] - m[3]; // width
                 var h = scope.height - m[0] - m[2]; // height
