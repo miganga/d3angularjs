@@ -65,7 +65,7 @@ h2, .h2 {
       padding: 0;
       margin-left: 10px;
       text-align: center;
-      width: 83%;
+      width: 100%;
       & span {
         position: relative;
         top: 1rem;
@@ -85,7 +85,7 @@ h2, .h2 {
       margin-right: 10px;
       padding: 0;
       text-align: center;
-      width: 83%;
+      width: 100%;
       & span {
         position: relative;
         top: 1rem;
@@ -103,7 +103,6 @@ h2, .h2 {
   position: relative;
   margin-bottom: 13px;
   color: $line-gray;
-  padding: 0 0.6rem;
   h1, h2, h3, h4 {
     color: $font-gray;
   }
@@ -213,7 +212,7 @@ h2, .h2 {
   & td, th {
     border-bottom: none;
     height: 0px;
-    width: 20%;
+    width: 18%;
   }
 }
 
@@ -238,17 +237,24 @@ h2, .h2 {
 
 /*Customer report table*/
 .customer-table {
+  width: 100%;
   & td {
     height: 40px;
   }
+  & tr td:nth-child(1) {
+    width: 40%;
+  }
   & tr td:nth-child(2) {
     font-weight: bold;
+    width: 15%;
   }
   & tr td:nth-child(3) {
     font-weight: bold;
+    width: 25%;
   }
   & tr td:nth-child(4) {
     font-weight: bold;
+    width: 25%;
   }
 }
 
@@ -489,6 +495,12 @@ span.positive {
   padding-bottom: 1.7rem;
 }
 .net-promoter {
+  .halfpie-fixed {
+    width: 228.8px;
+  }
+  .halfpie-fixed div:nth-child(4) {
+    left: 35%;
+  }
   position: relative;
   & .halfpie-fixed {
     margin: 0 2rem;
@@ -569,14 +581,17 @@ World-Map*/
 
 /*Peak Time Section*/
 .peak-time {
-  width: 60%;
   min-height: 125px;
   margin-bottom: 6rem;
+  padding-top: 0rem;
+  width: 296px;
+  height: 125px;
   .valign div {
     margin: 0 1rem;
   }
   + .footnotes {
     float: right;
+    padding-bottom: 1rem;
   }
   div:first-child {
     background-color: $bar-blue;

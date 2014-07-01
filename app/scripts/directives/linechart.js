@@ -18,6 +18,7 @@ angular.module('partnerApp')
                 height : '='
             },
             link: function postLink(scope, element, attrs) {
+                console.log($window.innerWidth);
                 // the D3 bits...
                 /*var color = d3.scale.category10();
                 var width = 500;

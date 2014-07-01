@@ -2,12 +2,16 @@
 
 @import "base";
 
-@media screen and (min-width: 20em) {
+/*@media screen and (min-width: 20em) {
   @import "m320";
   @import "m768";
-}
+}*/
 
-@media screen and (min-width: 48em) {
+/*@media screen and (min-width: 48em) {
+  @import "m768";
+}*/
+
+@media screen and (min-width: 20em) {
   @import "m768";
 }
 

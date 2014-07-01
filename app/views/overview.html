@@ -1,12 +1,13 @@
 <top-header page-name="'Overview'" benchmark="'true'"></top-header>
 <div class="pure-g kpi-container">
     <div class="pure-u-1">
-	    <h3>Key Performance Indicator (KPI)</h3></div>
+        <h3>Key Performance Indicator (KPI)</h3></div>
 
-        <div class="pure-u-8-24 pure-triplets kpi-banner" ng-class="{true: 'positive', false: 'negative'}[customerOrdersData.isPositive]">
-            <div class="rating__element small"></div>
+    <div class="pure-u-8-24 pure-triplets">
+        <div class="kpi-banner" ng-class="{true: 'positive', false: 'negative'}[customerOrdersData.isPositive]">
             <div class="kpi-container__content">
                 <h4>Customer Orders</h4>
+
                 <div class="kpi-display-circle">
                     <kpi-banner total-number="customerOrdersData.totalNumber"
                                 change-percent="customerOrdersData.changePercentage"
@@ -17,13 +18,16 @@
 
                 </div>
             </div>
-        </div>
-		<div class="pure-u-1-24 invisible-768"></div>
-
-        <div class="pure-u-8-24 pure-triplets kpi-banner" ng-class="{true: 'positive', false: 'negative'}[customerRevenueData.isPositive]">
             <div class="rating__element small"></div>
+        </div>
+    </div>
+    <div class="pure-u-1-24 invisible-768"></div>
+
+    <div class="pure-u-8-24 pure-triplets">
+        <div class="kpi-banner" ng-class="{true: 'positive', false: 'negative'}[customerRevenueData.isPositive]">
             <div class="kpi-container__content">
                 <h4>Revenue</h4>
+
                 <div class="kpi-display-circle">
                     <kpi-banner total-number="customerRevenueData.totalNumber"
                                 change-percent="customerRevenueData.changePercentage"
@@ -33,12 +37,15 @@
                     </kpi-banner>
                 </div>
             </div>
-        </div>
-	    <div class="pure-u-1-24  invisible-768"></div>
-        <div class="pure-u-8-24 pure-triplets kpi-banner" ng-class="{true: 'positive', false: 'negative'}[customerProductData.isPositive]">
             <div class="rating__element small"></div>
+        </div>
+    </div>
+    <div class="pure-u-1-24  invisible-768"></div>
+    <div class="pure-u-8-24 pure-triplets">
+        <div class="kpi-banner" ng-class="{true: 'positive', false: 'negative'}[customerProductData.isPositive]">
             <div class="kpi-container__content">
                 <h4>Products Sold</h4>
+
                 <div class="kpi-display-circle">
                     <kpi-banner total-number="customerProductData.totalNumber"
                                 change-percent="customerProductData.changePercentage"
@@ -48,32 +55,40 @@
                     </kpi-banner>
                 </div>
             </div>
+            <div class="rating__element small"></div>
         </div>
+    </div>
 </div>
 <div class="pure-g">
     <div class="pure-u-8-24 pure-triplets">
-        <div class="gray-box text-center">
-            <div>
-                <span class="h4">Top Order</span>
-                <h4>DATA</h4>
+        <div>
+            <div class="gray-box text-center">
+                <div>
+                    <span class="h4">Top Order</span>
+                    <h4>DATA</h4>
+                </div>
             </div>
         </div>
     </div>
     <div class="pure-u-1-24 invisible-768"></div>
     <div class="pure-u-8-24 pure-triplets">
-        <div class="gray-box text-center">
-            <div>
-                <span class="h4">Peak Time</span>
-                <h4>DATA</h4>
+        <div>
+            <div class="gray-box text-center">
+                <div>
+                    <span class="h4">Peak Time</span>
+                    <h4>DATA</h4>
+                </div>
             </div>
         </div>
     </div>
     <div class="pure-u-1-24 invisible-768"></div>
     <div class="pure-u-8-24 pure-triplets">
-        <div class="gray-box text-center">
-            <div>
-                <span class="h4">Avg. Product Rating</span>
-                <h4>DATA</h4>
+        <div>
+            <div class="gray-box text-center">
+                <div>
+                    <span class="h4">Avg. Product Rating</span>
+                    <h4>DATA</h4>
+                </div>
             </div>
         </div>
     </div>
@@ -83,7 +98,11 @@
     <table class="pure-u-1 table pure-table pure-table-horizontal pure-table-striped g-table report-table">
         <thead>
         <tr>
-            <th class="positive"><div class="visible"><div class="rating__element small"></div></div><span>What went up</span></th>
+            <th class="positive">
+                <div class="visible">
+                    <div class="rating__element small"></div>
+                </div>
+                <span>What went up</span></th>
             <th>Last Week</th>
             <th><a href="" ng-click="reverseUp=!reverseUp">Changes (%)</a></th>
             <th>Last 4 weeks</th>
@@ -91,17 +110,23 @@
         </thead>
         <tbody>
         <tr ng-repeat="change in mostNotableChanges|limitTo:3|orderBy:sorter:!reverseUp">
-	        <td>{{ change.type }}</td>
-	        <td>{{ change.lastWeek }}</td>
-	        <td>{{ change.changePercentage }}% ({{ change.changeAmount }})</td>
-	        <td> <line-chart line-data="change.lineData" height="30"></line-chart></td>
+            <td>{{ change.type }}</td>
+            <td>{{ change.lastWeek }}</td>
+            <td>{{ change.changePercentage }}% ({{ change.changeAmount }})</td>
+            <td>
+                <line-chart line-data="change.lineData" height="30"></line-chart>
+            </td>
         </tr>
         </tbody>
     </table>
     <table class="pure-u-1 table pure-table pure-table-horizontal pure-table-striped g-table report-table">
         <thead>
         <tr>
-            <th class="negative"><div class="visible"><div class="rating__element small"></div></div><span>What went down</span></th>
+            <th class="negative">
+                <div class="visible">
+                    <div class="rating__element small"></div>
+                </div>
+                <span>What went down</span></th>
             <th>Last Week</th>
             <th><a href="" ng-click="reverseDown=!reverseDown">Changes (%)</a></th>
             <th>Last 4 weeks</th>
@@ -109,16 +134,19 @@
         </thead>
         <tbody>
         <tr ng-repeat="change in mostNotableChanges|limitTo:-3|orderBy:sorter:reverseDown">
-	        <td>{{ change.type }}</td>
-	        <td>{{ change.lastWeek }}</td>
-	        <td>{{ change.changePercentage }}% ({{ change.changeAmount }})</td>
-	        <td> <line-chart line-data="change.lineData" height="30"></line-chart></td>
+            <td>{{ change.type }}</td>
+            <td>{{ change.lastWeek }}</td>
+            <td>{{ change.changePercentage }}% ({{ change.changeAmount }})</td>
+            <td>
+                <line-chart line-data="change.lineData" height="30"></line-chart>
+            </td>
         </tr>
         </tbody>
     </table>
 </div>
 <div class="pure-g benchmark margin-bottom">
-	<h3 class="pure-u-1-3 skinny">Benchmark Comparison</h3>
+    <h3 class="pure-u-1-3 skinny">Benchmark Comparison</h3>
+
     <div class="pure-u-1-3"></div>
     <div class="pure-u-1-3">
         <div class="valign">
@@ -130,158 +158,177 @@
             </div>
         </div>
     </div>
-	<div class="pure-u-8-24 pure-triplets kpi-banner negative">
-		<div class="rating__element small"></div>
-		<div class="kpi-container__content">
-			<h4>Customer Orders</h4>
-			<div>
-				<line-comp width="200" height="100" first-data="customerOrdersData.totalNumber"
-				           second-data="customerOrdersData.totalNumberBenchmark"
-				           first-percentage="customerOrdersData.changePercentage"
-				           second-percentage="customerOrdersData.changePercentage"></line-comp>
-			</div>
-		</div>
-	</div>
-	<div class="pure-u-1-24 invisible-768"></div>
-	<div class="pure-u-8-24 pure-triplets kpi-banner positive">
-		<div class="rating__element small"></div>
-		<div class="kpi-container__content">
-			<h4>Revenue</h4>
-			<div>
-				<line-comp width="200" height="100" first-data="customerRevenueData.totalNumber"
-				           second-data="customerRevenueData.totalNumberBenchmark"
-				           first-percentage="customerRevenueData.changePercentage"
-				           second-percentage="customerRevenueData.changePercentage"></line-comp>
-			</div>
-		</div>
-	</div>
-	<div class="pure-u-1-24 invisible-768"></div>
-	<div class="pure-u-8-24 pure-triplets kpi-banner positive">
-		<div class="rating__element small"></div>
-		<div class="kpi-container__content">
-			<h4>Products Sold</h4>
-			<div>
-				<line-comp width="200" height="100" first-data="customerProductData.totalNumber"
-				           second-data="customerProductData.totalNumberBenchmark"
-				           first-percentage="customerProductData.changePercentage"
-				           second-percentage="customerProductData.changePercentage"></line-comp>
-			</div>
-		</div>
-	</div>
+    <div class="pure-u-8-24 pure-triplets">
+        <div class="kpi-banner negative">
+            <div class="rating__element small"></div>
+            <div class="kpi-container__content">
+                <h4>Customer Orders</h4>
+
+                <div>
+                    <line-comp width="200" height="100" first-data="customerOrdersData.totalNumber"
+                               second-data="customerOrdersData.totalNumberBenchmark"
+                               first-percentage="customerOrdersData.changePercentage"
+                               second-percentage="customerOrdersData.changePercentage"></line-comp>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pure-u-1-24 invisible-768"></div>
+    <div class="pure-u-8-24 pure-triplets">
+        <div class=" kpi-banner positive">
+            <div class="rating__element small"></div>
+            <div class="kpi-container__content">
+                <h4>Revenue</h4>
+
+                <div>
+                    <line-comp width="200" height="100" first-data="customerRevenueData.totalNumber"
+                               second-data="customerRevenueData.totalNumberBenchmark"
+                               first-percentage="customerRevenueData.changePercentage"
+                               second-percentage="customerRevenueData.changePercentage"></line-comp>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pure-u-1-24 invisible-768"></div>
+    <div class="pure-u-8-24 pure-triplets">
+        <div class="kpi-banner positive">
+            <div class="rating__element small"></div>
+            <div class="kpi-container__content">
+                <h4>Products Sold</h4>
+
+                <div>
+                    <line-comp width="200" height="100" first-data="customerProductData.totalNumber"
+                               second-data="customerProductData.totalNumberBenchmark"
+                               first-percentage="customerProductData.changePercentage"
+                               second-percentage="customerProductData.changePercentage"></line-comp>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <top-header page-name="'Customer Report'" benchmark="'false'"></top-header>
 <div class="pure-g">
-	<h3 class="pure-u-1 skinny">Customer Loyalty</h3>
-		<div class="pure-u-8-24 pure-triplets kpi-banner" ng-class="{true: 'positive', false: 'negative'}[customerOrdersData.isPositive]">
-			<div class="kpi-container__content">
-				<h4>New VS Returning</h4>
-				<div>
-					<full-pie first-value="21"
-					          second-value="7"
-					          first-name="'New'"
-					          second-name="'Returning'"
-					          height="110"
-					          width="110"></full-pie>
-				</div>
-			</div>
-		</div>
-	<div class="pure-u-1-24 invisible-768"></div>
+    <h3 class="pure-u-1 skinny">Customer Loyalty</h3>
 
-		<div class="pure-u-8-24 pure-triplets kpi-banner" ng-class="{true: 'positive', false: 'negative'}[customerRevenueData.isPositive]">
-			<div class="rating__element small"></div>
-			<div class="kpi-container__content">
-				<h4>New Customers</h4>
-				<div>
-					<half-pie average-value="21"
-					          max-value="34"
-					          min-value="15"
-					          change-percentage="3"
-					          height="110"
-					          width="200"></half-pie>
-				</div>
-			</div>
-		</div>
-	<div class="pure-u-1-24 invisible-768"></div>
-		<div class="pure-u-8-24 pure-triplets kpi-banner" ng-class="{true: 'positive', false: 'negative'}[customerProductData.isPositive]">
-			<div class="rating__element small"></div>
-			<div class="kpi-container__content">
-				<h4>Returning Customers</h4>
-				<div>
-					<half-pie average-value="7"
-					          max-value="38"
-					          min-value="9"
-					          change-percentage="10"
-					          currency-switch="'off'"
-					          height="110"
-					          width="200"></half-pie>
-				</div>
-			</div>
-		</div>
+    <div class="pure-u-8-24 pure-triplets">
+        <div class="kpi-banner" ng-class="{true: 'positive', false: 'negative'}[customerOrdersData.isPositive]">
+            <div class="kpi-container__content">
+                <h4>New VS Returning</h4>
+
+                <div>
+                    <full-pie first-value="21"
+                              second-value="7"
+                              first-name="'New'"
+                              second-name="'Returning'"
+                              height="110"
+                              width="110"></full-pie>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pure-u-1-24 invisible-768"></div>
+
+    <div class="pure-u-8-24 pure-triplets">
+        <div class="kpi-banner" ng-class="{true: 'positive', false: 'negative'}[customerRevenueData.isPositive]">
+            <div class="rating__element small"></div>
+            <div class="kpi-container__content">
+                <h4>New Customers</h4>
+
+                <div>
+                    <half-pie average-value="21"
+                              max-value="34"
+                              min-value="15"
+                              change-percentage="3"
+                              height="110"
+                              width="200"></half-pie>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pure-u-1-24 invisible-768"></div>
+    <div class="pure-u-8-24 pure-triplets">
+        <div class="kpi-banner" ng-class="{true: 'positive', false: 'negative'}[customerProductData.isPositive]">
+            <div class="rating__element small"></div>
+            <div class="kpi-container__content">
+                <h4>Returning Customers</h4>
+
+                <div>
+                    <half-pie average-value="7"
+                              max-value="38"
+                              min-value="9"
+                              change-percentage="10"
+                              currency-switch="'off'"
+                              height="110"
+                              width="200"></half-pie>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="pure-g">
-	<table class="pure-u-1 table pure-table pure-table-horizontal pure-table-striped g-table customer-table">
-		<thead>
-		<tr>
-			<th>Customers</th>
-			<th>Overall</th>
-			<th>New Customers</th>
-			<th>Returning Customers</th>
-		</tr>
-		</thead>
-		<tbody>
-		<tr ng-repeat="change in customerLoyalty">
-			<td>{{ change.type }}</td>
-			<td>{{ change.overall }}</td>
-			<td>{{ change.newCustomers }}</td>
-			<td>{{ change.returningCustomers }}</td>
-		</tr>
-		</tbody>
-	</table>
+    <table class="pure-u-1 table pure-table pure-table-horizontal pure-table-striped g-table customer-table">
+        <thead>
+        <tr>
+            <th>Customers</th>
+            <th>Overall</th>
+            <th>New Customers</th>
+            <th>Returning Customers</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="change in customerLoyalty">
+            <td>{{ change.type }}</td>
+            <td>{{ change.overall }}</td>
+            <td>{{ change.newCustomers }}</td>
+            <td>{{ change.returningCustomers }}</td>
+        </tr>
+        </tbody>
+    </table>
     <div class="pure-u-1"><span class="pull-right"><sup>*</sup>Time Between Purchases</span></div>
 </div>
 <div class="pure-g">
-	<h3 class="pure-u-1 skinny">Segmentation, Activity & Feedback</h3>
+    <h3 class="pure-u-1 skinny">Segmentation, Activity & Feedback</h3>
 
-	<div class="pure-u-12-24">
-		<div class="visible" ng-class="{true: 'positive', false: 'negative'}[customerOrdersData.isPositive]">
-			<div class="rating__element small"></div>
-			<div class="gray-box text-center r-m-2 m-b-2 visible net-promoter-c">
-				<div class="net-promoter">
-					<h4 class="skinny">Net Promoter Score</h4>
+    <div class="pure-u-12-24">
+        <div class="visible" ng-class="{true: 'positive', false: 'negative'}[customerOrdersData.isPositive]">
+            <div class="rating__element small"></div>
+            <div class="gray-box text-center r-m-2 m-b-2 visible net-promoter-c">
+                <div class="net-promoter">
+                    <h4 class="skinny">Net Promoter Score</h4>
 
-					<div>
-						<half-pie average-value="21"
-						          max-value="34"
-						          min-value="15"
-						          change-percentage="3"
-						          height="110"
-						          width="200"></half-pie>
-					</div>
-					<div>
-						<span>Promoter (+1) <strong>18%</strong></span>
+                    <div>
+                        <half-pie average-value="21"
+                                  max-value="34"
+                                  min-value="15"
+                                  change-percentage="3"
+                                  height="110"
+                                  width="200"></half-pie>
+                    </div>
+                    <div>
+                        <span>Promoter (+1) <strong>18%</strong></span>
 
-						<span>Neautral(+0) <strong>7%</strong></span>
+                        <span>Neautral(+0) <strong>7%</strong></span>
 
-						<span>Detractor (-1) <strong>3%</strong></span>
-					</div>
-				</div>
+                        <span>Detractor (-1) <strong>3%</strong></span>
+                    </div>
+                </div>
 
-			</div>
-		</div>
-	</div>
-	<div class="pure-u-12-24">
-		<div class="visible pd-l-1" ng-class="{true: 'positive', false: 'negative'}[customerRevenueData.isPositive]">
-			<div class="rating__element small"></div>
-			<div class="gray-box text-center mb-2 visible">
-				<h4 class="skinny">Review Conversion</h4>
-				<rect-chart rect-data="36"
-				            change-percentage="+4"
-				            width="380"
-				            height="100"></rect-chart>
-			</div>
-		</div>
-	</div>
+            </div>
+        </div>
+    </div>
+    <div class="pure-u-12-24">
+        <div class="visible pd-l-1" ng-class="{true: 'positive', false: 'negative'}[customerRevenueData.isPositive]">
+            <div class="rating__element small"></div>
+            <div class="gray-box text-center mb-2 visible">
+                <h4 class="skinny">Review Conversion</h4>
+                <rect-chart rect-data="36"
+                            change-percentage="+4"
+                            width="380"
+                            height="100"></rect-chart>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="pure-g margin-bottom">
@@ -325,9 +372,9 @@
 
             <div>
                 <largest-customer rect-data="36"
-                          change-percentage="+4"
-                          width="465"
-                          height="350"></largest-customer>
+                                  change-percentage="+4"
+                                  width="465"
+                                  height="350"></largest-customer>
             </div>
         </div>
     </div>
@@ -335,142 +382,166 @@
 
 <top-header page-name="'Product Report'" benchmark="'false'"></top-header>
 <div class="pure-g">
-	<h3 class="pure-u-1 skinny">Sales Metrics</h3>
-		<div class="pure-u-8-24 pure-triplets kpi-banner" ng-class="{true: 'positive', false: 'negative'}[customerOrdersData.isPositive]">
-			<div class="rating__element small"></div>
-			<div class="kpi-container__content">
-				<h4>Products Per Order</h4>
-				<div>
-					<half-pie average-value="1.8"
-							max-value="3.8"
-							min-value="1.2"
-							change-percentage="82"
-							height="110"
-							width="200"></half-pie>
-				</div>
-			</div>
-		</div>
+    <h3 class="pure-u-1 skinny">Sales Metrics</h3>
 
-	<div class="pure-u-1-24 invisible-768"></div>
-		<div class="pure-u-8-24 pure-triplets kpi-banner" ng-class="{true: 'positive', false: 'negative'}[customerRevenueData.isPositive]">
-			<div class="rating__element small"></div>
-			<div class="kpi-container__content">
-				<h4>Products Sold</h4>
-				<div>
-					<half-pie average-value="42"
-					          max-value="59"
-					          min-value="22"
-					          change-percentage="12"
-					          height="110"
-					          width="200"></half-pie>
-				</div>
-			</div>
-		</div>
-	<div class="pure-u-1-24 invisible-768"></div>
-		<div class="pure-u-8-24 pure-triplets kpi-banner" ng-class="{true: 'positive', false: 'negative'}[customerProductData.isPositive]">
-			<div class="rating__element small"></div>
-			<div class="kpi-container__content">
-				<h4>Average Order Value</h4>
-				<div>
-					<half-pie average-value="31"
-					          max-value="50"
-					          min-value="10"
-					          change-percentage="1.3"
-					          currency-switch="'on'"
-					          height="110"
-					          width="200"></half-pie>
-				</div>
-			</div>
-		</div>
+    <div class="pure-u-8-24 pure-triplets">
+        <div class="kpi-banner" ng-class="{true: 'positive', false: 'negative'}[customerOrdersData.isPositive]">
+            <div class="rating__element small"></div>
+            <div class="kpi-container__content">
+                <h4>Products Per Order</h4>
+
+                <div>
+                    <half-pie average-value="1.8"
+                              max-value="3.8"
+                              min-value="1.2"
+                              change-percentage="82"
+                              height="110"
+                              width="200"></half-pie>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pure-u-1-24 invisible-768"></div>
+    <div class="pure-u-8-24 pure-triplets">
+        <div class="kpi-banner" ng-class="{true: 'positive', false: 'negative'}[customerRevenueData.isPositive]">
+            <div class="rating__element small"></div>
+            <div class="kpi-container__content">
+                <h4>Products Sold</h4>
+
+                <div>
+                    <half-pie average-value="42"
+                              max-value="59"
+                              min-value="22"
+                              change-percentage="12"
+                              height="110"
+                              width="200"></half-pie>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pure-u-1-24 invisible-768"></div>
+    <div class="pure-u-8-24 pure-triplets">
+        <div class="kpi-banner" ng-class="{true: 'positive', false: 'negative'}[customerProductData.isPositive]">
+            <div class="rating__element small"></div>
+            <div class="kpi-container__content">
+                <h4>Average Order Value</h4>
+
+                <div>
+                    <half-pie average-value="31"
+                              max-value="50"
+                              min-value="10"
+                              change-percentage="1.3"
+                              currency-switch="'on'"
+                              height="110"
+                              width="200"></half-pie>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="pure-g top-sell">
-	<h3 class="pure-u-1 skinny">Top Selling Products</h3>
-	<div class="pure-u-1-2"><table class="table pure-table pure-table-horizontal pure-table-striped g-table top-table pd-r-1">
-		<thead>
-		<tr>
-			<th colspan="3"><div class="visible">Ordered by quantity sold<span class="arrow-down"></span></div></th>
-		</tr>
-		</thead>
-		<tbody>
-		<tr ng-repeat="product in topSellingProducts|limitTo:5|orderBy:'quantity':true">
-			<td>{{ $index + 1 }}</td>
-			<td>{{ product.name }}</td>
-			<td>{{ product.quantity }} units</td>
-		</tr>
-		</tbody>
-	</table></div>
-	<div class="pure-u-1-2"><table class="pure-u-1-2 table pure-table pure-table-horizontal pure-table-striped g-table top-table pd-l-1">
-		<thead>
-		<tr>
-			<th colspan="4"><div class="visible">Ordered by revenue share<span class="arrow-down"></span></div></th>
-		</tr>
-		</thead>
-		<tbody>
-		<tr ng-repeat="product in topSellingProducts|limitTo:5|orderBy:'revenueShare':true">
-			<td>{{ $index + 1 }}</td>
-			<td>{{ product.name }}</td>
-			<td>{{ product.revenueShare }}%</td>
-			<td>{{ product.revenueValue }} €</td>
-		</tr>
-		</tbody>
-	</table></div>
+    <h3 class="pure-u-1 skinny">Top Selling Products</h3>
+
+    <div class="pure-u-1-2">
+        <table class="table pure-table pure-table-horizontal pure-table-striped g-table top-table pd-r-1">
+            <thead>
+            <tr>
+                <th colspan="3">
+                    <div class="visible">Ordered by quantity sold<span class="arrow-down"></span></div>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="product in topSellingProducts|limitTo:5|orderBy:'quantity':true">
+                <td>{{ $index + 1 }}</td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.quantity }} units</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="pure-u-1-2">
+        <table class="pure-u-1-2 table pure-table pure-table-horizontal pure-table-striped g-table top-table pd-l-1">
+            <thead>
+            <tr>
+                <th colspan="4">
+                    <div class="visible">Ordered by revenue share<span class="arrow-down"></span></div>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="product in topSellingProducts|limitTo:5|orderBy:'revenueShare':true">
+                <td>{{ $index + 1 }}</td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.revenueShare }}%</td>
+                <td>{{ product.revenueValue }} €</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 <div class="pure-g">
-	<h3 class="pure-u-1 skinny">Product Insights</h3>
-		<div class="pure-u-1-2">
-			<div class="gray-box text-center r-m-2">
-				<h3 class="skinny h-248 lh">Top 5 Categories</h3>
-                <p class="lh">per % of total orders</p>
-			<rectangle-pie rect-data="topFiveCategories"
-					width="430"
-					height="250"></rectangle-pie>
-			</div>
-		</div>
-		<div class="pure-u-1-2">
+    <h3 class="pure-u-1 skinny">Product Insights</h3>
 
-			<div class="gray-box text-center l-m-2 average-product-rating" ng-class="{true: 'positive', false: 'negative'}[customerOrdersData.isPositive]">
-                <div class="rating__element small"></div>
-				<h3 class="skinny h-248 lh">Average Product Rating</h3>
-			<p class="lh">based on 128 ratings</p>
-			<star-rating average="2.5"
-			        change-percentage="+3.2"
-					average-values=""
-					width="370"
-					height="130"></star-rating>
-                <h4 class="skinny lh">Avg. Design <strong>2 / 5</strong></h4>
-                <h4 class="skinny lh">Avg. Quality <strong>2 / 5</strong></h4>
-                <h4 class="skinny lh">Avg. Value <strong>2.5 / 5</strong></h4>
-			</div>
-		</div>
+    <div class="pure-u-1-2">
+        <div class="gray-box text-center r-m-2">
+            <h3 class="skinny h-248 lh">Top 5 Categories</h3>
+
+            <p class="lh">per % of total orders</p>
+            <rectangle-pie rect-data="topFiveCategories"
+                           width="430"
+                           height="250"></rectangle-pie>
+        </div>
+    </div>
+    <div class="pure-u-1-2">
+
+        <div class="gray-box text-center l-m-2 average-product-rating"
+             ng-class="{true: 'positive', false: 'negative'}[customerOrdersData.isPositive]">
+            <div class="rating__element small"></div>
+            <h3 class="skinny h-248 lh">Average Product Rating</h3>
+
+            <p class="lh">based on 128 ratings</p>
+            <star-rating average="2.5"
+                         change-percentage="+3.2"
+                         average-values=""
+                         width="370"
+                         height="130"></star-rating>
+            <h4 class="skinny lh">Avg. Design <strong>2 / 5</strong></h4>
+            <h4 class="skinny lh">Avg. Quality <strong>2 / 5</strong></h4>
+            <h4 class="skinny lh">Avg. Value <strong>2.5 / 5</strong></h4>
+        </div>
+    </div>
 </div>
 <div class="pure-g margin-bottom">
-	<h3 class="pure-u-1 skinny">Top 3 Orders</h3>
-	<table class="pure-u-1 table pure-table pure-table-horizontal pure-table-striped g-table top-three">
-		<thead>
-		<tr>
-			<th>Rank</th>
-			<th>Items</th>
-			<th>Value</th>
-			<th>Time</th>
-			<th>Location</th>
-			<th>Most Expensive Product</th>
-		</tr>
-		</thead>
-		<tbody>
-		<tr ng-repeat="order in topOrders|limitTo:3|orderBy:''">
-			<td>{{ $index + 1 }}</td>
-			<td>{{ order.items }}</td>
-			<td>{{ order.value }}</td>
-			<td>{{ order.time }}</td>
-			<td>{{ order.location }}</td>
-			<td>{{ order.mostExpensiveProduct }}</td>
-		</tr>
-		</tbody>
-	</table>
+    <h3 class="pure-u-1 skinny">Top 3 Orders</h3>
+    <table class="pure-u-1 table pure-table pure-table-horizontal pure-table-striped g-table top-three">
+        <thead>
+        <tr>
+            <th>Rank</th>
+            <th>Items</th>
+            <th>Value</th>
+            <th>Time</th>
+            <th>Location</th>
+            <th>Most Expensive Product</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="order in topOrders|limitTo:3|orderBy:''">
+            <td>{{ $index + 1 }}</td>
+            <td>{{ order.items }}</td>
+            <td>{{ order.value }}</td>
+            <td>{{ order.time }}</td>
+            <td>{{ order.location }}</td>
+            <td>{{ order.mostExpensiveProduct }}</td>
+        </tr>
+        </tbody>
+    </table>
 </div>
 <top-header page-name="'Benchmark Report'" benchmark="'false'"></top-header>
 <div class="pure-g benchmark">
-	<h3 class="pure-u-1-3 skinny">Benchmark Comparisons</h3>
+    <h3 class="pure-u-1-3 skinny">Benchmark Comparisons</h3>
+
     <div class="pure-u-1-3"></div>
     <div class="pure-u-1-3">
         <div class="valign">
@@ -482,120 +553,136 @@
             </div>
         </div>
     </div>
-		<div class="pure-u-8-24 pure-triplets kpi-banner" ng-class="{true: 'positive', false: 'negative'}[customerOrdersData.isPositive]">
-			<div class="rating__element small"></div>
-			<div class="kpi-container__content">
-				<h4>Customer Life TimeValue</h4>
-				<div>
-					<line-comp width="200" height="100" first-data="customerOrdersData.totalNumber"
-					           second-data="customerOrdersData.totalNumberBenchmark"
-					           first-percentage="customerOrdersData.changePercentage"
-					           second-percentage="customerOrdersData.changePercentage"></line-comp>
-				</div>
-			</div>
-		</div>
-	<div class="pure-u-1-24 invisible-768"></div>
+    <div class="pure-u-8-24 pure-triplets">
+        <div class="kpi-banner" ng-class="{true: 'positive', false: 'negative'}[customerOrdersData.isPositive]">
+            <div class="rating__element small"></div>
+            <div class="kpi-container__content">
+                <h4>Customer Life TimeValue</h4>
 
-		<div class="pure-u-8-24 pure-triplets kpi-banner" ng-class="{true: 'positive', false: 'negative'}[customerRevenueData.isPositive]">
-			<div class="rating__element small"></div>
-			<div class="kpi-container__content">
-				<h4 class="pure-u-20-24">Average Time Between Purchases</h4>
-				<div>
-					<line-comp width="200" height="100" first-data="customerOrdersData.totalNumber"
-					           second-data="customerOrdersData.totalNumberBenchmark"
-					           first-percentage="customerOrdersData.changePercentage"
-					           second-percentage="customerOrdersData.changePercentage"></line-comp>
-				</div>
-			</div>
-		</div>
-	<div class="pure-u-1-24 invisible-768"></div>
-		<div class="pure-u-8-24 pure-triplets kpi-banner" ng-class="{true: 'positive', false: 'negative'}[customerProductData.isPositive]">
-			<div class="rating__element small"></div>
-			<div class="kpi-container__content">
-				<h4>Average Order Value</h4>
-				<div>
-					<line-comp width="200" height="100" first-data="customerOrdersData.totalNumber"
-					           second-data="customerOrdersData.totalNumberBenchmark"
-					           first-percentage="customerOrdersData.changePercentage"
-					           second-percentage="customerOrdersData.changePercentage"></line-comp>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="pure-g">
-		<div class="pure-u-8-24 pure-triplets kpi-banner" ng-class="{true: 'positive', false: 'negative'}[customerOrdersData.isPositive]">
-			<div class="rating__element small"></div>
-			<div class="kpi-container__content">
-				<h4>Net Promoter Score</h4>
-				<div>
-					<line-comp width="200" height="100" first-data="customerOrdersData.totalNumber"
-					           second-data="customerOrdersData.totalNumberBenchmark"
-					           first-percentage="customerOrdersData.changePercentage"
-					           second-percentage="customerOrdersData.changePercentage"></line-comp>
-				</div>
-			</div>
-		</div>
-		<div class="pure-u-1-24 invisible-768"></div>
+                <div>
+                    <line-comp width="200" height="100" first-data="customerOrdersData.totalNumber"
+                               second-data="customerOrdersData.totalNumberBenchmark"
+                               first-percentage="customerOrdersData.changePercentage"
+                               second-percentage="customerOrdersData.changePercentage"></line-comp>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pure-u-1-24 invisible-768"></div>
 
-		<div class="pure-u-8-24 pure-triplets kpi-banner" ng-class="{true: 'positive', false: 'negative'}[customerRevenueData.isPositive]">
-			<div class="rating__element small"></div>
-			<div class="kpi-container__content">
-				<h4>Returning Customer Rate</h4>
-				<div>
-					<line-comp width="200" height="100" first-data="customerOrdersData.totalNumber"
-					           second-data="customerOrdersData.totalNumberBenchmark"
-					           first-percentage="customerOrdersData.changePercentage"
-					           second-percentage="customerOrdersData.changePercentage"></line-comp>
-				</div>
-			</div>
-		</div>
-		<div class="pure-u-1-24 invisible-768"></div>
-		<div class="pure-u-8-24 pure-triplets kpi-banner" ng-class="{true: 'positive', false: 'negative'}[customerProductData.isPositive]">
-			<div class="rating__element small"></div>
-			<div class="kpi-container__content">
-				<h4>Average Product Rating</h4>
-				<div>
-					<line-comp width="200" height="100" first-data="customerOrdersData.totalNumber"
-					           second-data="customerOrdersData.totalNumberBenchmark"
-					           first-percentage="customerOrdersData.changePercentage"
-					           second-percentage="customerOrdersData.changePercentage"></line-comp>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="pure-u-8-24 pure-triplets">
+        <div class="kpi-banner" ng-class="{true: 'positive', false: 'negative'}[customerRevenueData.isPositive]">
+            <div class="rating__element small"></div>
+            <div class="kpi-container__content">
+                <h4 class="pure-u-20-24">Average Time Between Purchases</h4>
+
+                <div>
+                    <line-comp width="200" height="100" first-data="customerOrdersData.totalNumber"
+                               second-data="customerOrdersData.totalNumberBenchmark"
+                               first-percentage="customerOrdersData.changePercentage"
+                               second-percentage="customerOrdersData.changePercentage"></line-comp>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pure-u-1-24 invisible-768"></div>
+    <div class="pure-u-8-24 pure-triplets">
+        <div class="kpi-banner" ng-class="{true: 'positive', false: 'negative'}[customerProductData.isPositive]">
+            <div class="rating__element small"></div>
+            <div class="kpi-container__content">
+                <h4>Average Order Value</h4>
+
+                <div>
+                    <line-comp width="200" height="100" first-data="customerOrdersData.totalNumber"
+                               second-data="customerOrdersData.totalNumberBenchmark"
+                               first-percentage="customerOrdersData.changePercentage"
+                               second-percentage="customerOrdersData.changePercentage"></line-comp>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="pure-g">
-	<div class="pure-u-1-2">
-		<h3 class="skinny">Product Insights</h3>
-		<div class="gray-box text-center r-m-2">
-					<h4 class="skinny">Peak Time To Sell</h4>
-					<peak-time></peak-time>
-		</div>
-	</div>
-	<div class="pure-u-1-2 top-products">
-		<h3 class="skinny">Top Products Of Benchmark</h3>
+    <div class="pure-u-8-24 pure-triplets">
+        <div class="kpi-banner" ng-class="{true: 'positive', false: 'negative'}[customerOrdersData.isPositive]">
+            <div class="rating__element small"></div>
+            <div class="kpi-container__content">
+                <h4>Net Promoter Score</h4>
 
-			<table class="table pure-table pure-table-horizontal pure-table-striped g-table">
-				<thead>
-				<tr>
-					<th>Rank</th>
-					<th>Name</th>
-					<th>Price</th>
-				</tr>
-				</thead>
-				<tbody>
-				<tr ng-repeat="product in topSellingProducts|limitTo:5|orderBy:'revenueShare':true">
-					<td>{{ $index + 1 }}</td>
-					<td>{{ product.name }}</td>
-					<td>{{ product.revenueValue }} €</td>
-				</tr>
-				</tbody>
-			</table>
+                <div>
+                    <line-comp width="200" height="100" first-data="customerOrdersData.totalNumber"
+                               second-data="customerOrdersData.totalNumberBenchmark"
+                               first-percentage="customerOrdersData.changePercentage"
+                               second-percentage="customerOrdersData.changePercentage"></line-comp>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pure-u-1-24 invisible-768"></div>
 
-	</div>
+    <div class="pure-u-8-24 pure-triplets">
+        <div class="kpi-banner" ng-class="{true: 'positive', false: 'negative'}[customerRevenueData.isPositive]"><div class="rating__element small"></div>
+        <div class="kpi-container__content">
+            <h4>Returning Customer Rate</h4>
+
+            <div>
+                <line-comp width="200" height="100" first-data="customerOrdersData.totalNumber"
+                           second-data="customerOrdersData.totalNumberBenchmark"
+                           first-percentage="customerOrdersData.changePercentage"
+                           second-percentage="customerOrdersData.changePercentage"></line-comp>
+            </div>
+        </div></div>
+    </div>
+    <div class="pure-u-1-24 invisible-768"></div>
+    <div class="pure-u-8-24 pure-triplets">
+        <div class="kpi-banner" ng-class="{true: 'positive', false: 'negative'}[customerProductData.isPositive]"><div class="rating__element small"></div>
+        <div class="kpi-container__content">
+            <h4>Average Product Rating</h4>
+
+            <div>
+                <line-comp width="200" height="100" first-data="customerOrdersData.totalNumber"
+                           second-data="customerOrdersData.totalNumberBenchmark"
+                           first-percentage="customerOrdersData.changePercentage"
+                           second-percentage="customerOrdersData.changePercentage"></line-comp>
+            </div>
+        </div></div>
+    </div>
+</div>
+</div>
+<div class="pure-g">
+    <div class="pure-u-1-2">
+        <h3 class="skinny">Product Insights</h3>
+
+        <div class="gray-box text-center r-m-2">
+            <h4 class="skinny">Peak Time To Sell</h4>
+            <peak-time></peak-time>
+        </div>
+    </div>
+    <div class="pure-u-1-2 top-products">
+        <h3 class="skinny">Top Products Of Benchmark</h3>
+
+        <table class="table pure-table pure-table-horizontal pure-table-striped g-table">
+            <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Name</th>
+                <th>Price</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="product in topSellingProducts|limitTo:5|orderBy:'revenueShare':true">
+                <td>{{ $index + 1 }}</td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.revenueValue }} €</td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
 </div>
 <div class="pure-g performance benchmark margin-bottom">
     <h3 class="pure-u-2-3 skinny">Your Performance VS Benchmark (Customer Orders)</h3>
+
     <div class="pure-u-1-3">
         <div class="valign">
             <div class="footnotes">
@@ -606,10 +693,10 @@
             </div>
         </div>
     </div>
-	<div class="pure-u-1 gray-box">
-		<performance-chart
-				line-data="customerTransactionsMonthly"
-				width="1024"
-				height="350"></performance-chart>
-	</div>
+    <div class="pure-u-1 gray-box">
+        <performance-chart
+                line-data="customerTransactionsMonthly"
+                width="1024"
+                height="350"></performance-chart>
+    </div>
 </div>

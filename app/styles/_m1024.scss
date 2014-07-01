@@ -420,6 +420,12 @@ h2,.h2 {
   padding-bottom: 1.7rem;
 }
 .net-promoter {
+  .halfpie-fixed {
+    width: 260px;
+  }
+  .halfpie-fixed div:nth-child(4) {
+    left: 38.7%;
+  }
   position: relative;
   & .halfpie-fixed {
     margin: 0 2rem;
@@ -467,9 +473,11 @@ span.positive {
 
 /*Peak Time Section*/
 .peak-time {
-  width: 60%;
-  min-height: 125px;
+  min-height: 145px;
   margin-bottom: 6rem;
+  padding-top: 0rem;
+  width: 350px;
+  height: 145px;
   .valign div {
     margin: 0 1rem;
   }
@@ -578,5 +586,5 @@ World-Map*/
 
 /*Visibility*/
 .invisible-768 {
-  display: block;
+  display: inline-block;
 }

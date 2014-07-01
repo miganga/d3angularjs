@@ -215,13 +215,17 @@
 @media screen and (min-width: 48em) {
   .pure-triplets {
     width: 33.3333%;
-    padding: 0 0.6rem;
+    > div:first-child {
+      padding: 0 0.6rem;
+    }
   }
 }
 
 @media screen and (min-width: 64em) {
   .pure-triplets {
     width: 30.5333%;
-    padding: 0;
+    > div:first-child {
+      padding: 0;
+    }
   }
 }
