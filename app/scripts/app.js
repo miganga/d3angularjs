@@ -58,11 +58,11 @@ angular
                             sortOrder: 'ASCENDING',
                             sortField: 'DATE'
                         };
-                        return dataFactory.getData(queryParams).$promise
+                        /*return dataFactory.getData(queryParams).$promise
                             .then(function (data) {
                                 var d = data;
                                 return d;
-                            });
+                            });*/
                     },
                     transactionsBenchmark: function (dataFactory, $timeout) {
                         var queryParams = {
@@ -75,13 +75,13 @@ angular
                             sortField: 'DATE'
                         };
 
-                        return $timeout(function () {
+                        /*return $timeout(function () {
                             return dataFactory.getData(queryParams).$promise
                                 .then(function (data) {
                                     var d = data;
                                     return d;
                                 });
-                        }, 0);
+                        }, 0);*/
                     }
                 }
             })
